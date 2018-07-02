@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        
+        <link rel="stylesheet" href="aos.css">
+        
+        <link rel="stylesheet" href="hover-min.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bree Serif">
+        
+        <style>
+            *{font-family: 'Bree Serif';}
+            
+            .register{
+                margin: 50px;
+                position: relative;
+                top: -10px;
+                padding: 15px 20px;
+                background-color: rgb(95, 0, 142);
+                color: white;
+                font-size: 25px;
+                border: none;
+                
+            }
+            
+            .details, .tab-pane{
+                width: 80%;
+            }
+            
+            .nav a{
+                margin: 0px 20px;
+                font-size: 20px;
+                color: rgb(95, 0, 142);
+            }
+            
+            .navbar-default{
+                background-color: white;
+                border: none;
+            }
+            
+            .poster{
+                margin: 20px; border: 1px solid; width: 70%; height: 500px; animation-duration: 0.5s
+                
+            }
+            
+            @media only screen and (max-width: 768px){
+                .details{
+                    width: 100%;
+                }
+                
+                .navbar-default{
+                    background-color: #F8F8F8 ;
+                    border: 1px solid #DDDDDD;
+                    border-radius: 5px;
+                }
+                
+                #navcontent{
+                }
+                
+                .nav li a{
+                    border: 1px solid #DDDDDD;  
+                    border-radius: 5px;
+                    padding: 10px 50px;
+                    
+                }
+                
+                .nav li{                   
+
+                    margin: 0px 8%;
+                    width: 80%;
+                }
+                
+                .poster{
+                    width: 110%;
+                    position: relative;
+                    left: -35px;
+                    height: 350px;
+                }
+            }            
+            p{
+                text-align: left;
+                padding: 30px;
+                font-size: 20px;
+            }
+            
+        </style>
+
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+            <div class="wow">
+                <center>
+                    <div class="head">
+                        <h1 class="wow rotateInDownLeft" style="display: inline-block;  animation-duration: 0.5s">Event Name</h1>
+
+                        <button class="register wow rotateInDownRight hvr-underline-from-center" style="display: inline-block;  animation-duration: 0.5s">Register</button>
+                    </div>
+                    
+                    
+                                        
+                    <div class="details">
+                        <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button class="navbar-toggle" data-toggle="collapse" data-target="#navcontent">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="navcontent">
+                                <ul class="nav nav-tabs wow fadeInUp" style="animation-duration: 0.5s">
+                                    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                                    <li><a href="#menu1" data-toggle="tab">Description</a></li>
+                                    <li><a href="#menu2" data-toggle="tab">Rules</a>
+                                    <li><a href="#menu3" data-toggle="tab">Judging Criteria</a>
+                                    <li><a href="#menu4" data-toggle="tab">Event Details</a></li>
+                                    <li><a href="#menu5" data-toggle="tab">Co-ordinator's Details</a></li>
+
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </nav>
+                        
+                        
+                        
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <div class="poster wow zoomIn" style="">
+                                <h1>Event Poster</h1>
+                            
+                            </div>
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <p>This is the content for the Description tab.</p>
+                            <p>This is the content for the Description tab.</p>
+                            <p>This is the content for the Description tab.</p>
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <p>This is the content for the Rules tab.</p>
+                            <p>This is the content for the Rules tab.</p>
+                            <p>This is the content for the Rules tab.</p>
+                            
+                        </div>
+                        <div id="menu3" class="tab-pane fade">
+                            <p>This is the content for the Judging Criteria</p>
+                            <p>This is the content for the Judging Criteria</p>
+                            <p>This is the content for the Judging Criteria</p>
+                        </div>
+                        <div id="menu4" class="tab-pane fade">
+                            <p>This is the content for the Event Details</p>
+                            <p>This is the content for the Event Details</p>
+                            <p>This is the content for the Event Details</p>
+                            
+                        </div>
+                        <div id="menu5" class="tab-pane fade">
+                            <p>This is the content for the Co-ordinator's Details</p>
+                            <p>This is the content for the Co-ordinator's Details</p>
+                            <p>This is the content for the Co-ordinator's Details</p>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+                        
+
+            
+        
+        
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            
+          <script src="wow.js"></script>
+            
+              <script>
+              new WOW().init();
+              </script>
+            
+            <script src="aos.js"></script>
+            
+    </body>
+</html>
