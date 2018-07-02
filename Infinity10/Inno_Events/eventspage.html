@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        
+        <link rel="stylesheet" href="aos.css">
+        
+        <link rel="stylesheet" href="hover-min.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bree Serif">
+
+        
+        <style>
+            
+            *{box-sizing: border-box; font-family: 'Bree Serif';}
+            
+            .card{
+                margin: 20px 15px;
+                height: 320px;
+                width: 320px;
+                border: 1px solid;
+                text-align: center;
+                padding-top: 25px;
+                display: inline-block;
+                cursor: pointer;
+                animation-duration: 0.75s;
+            }
+            
+            
+            
+            .hvr-grow {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-transform: perspective(1px) translateZ(0);
+              transform: perspective(1px) translateZ(0);
+              box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-property: transform;
+              transition-property: transform;
+            }
+            
+            .hvr-grow:hover,
+            .hvr-grow:focus,
+            .hvr-grow:active {
+              -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+            }
+            
+            .hvr-grow-rotate-right {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-transform: perspective(1px) translateZ(0);
+              transform: perspective(1px) translateZ(0);
+              box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-property: transform;
+              transition-property: transform;
+            }
+            .hvr-grow-rotate-right:hover,
+            .hvr-grow-rotate-right:focus,
+            .hvr-grow-rotate-right:active {
+              -webkit-transform: scale(1.1) rotate(4deg);
+              transform: scale(1.1) rotate(4deg);
+            }
+            
+            .hvr-grow-rotate-left {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-transform: perspective(1px) translateZ(0);
+              transform: perspective(1px) translateZ(0);
+              box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-property: transform;
+              transition-property: transform;
+            }
+            .hvr-grow-rotate-left:hover,
+            .hvr-grow-rotate-left:focus,
+            .hvr-grow-rotate-left:active {
+              -webkit-transform: scale(1.1) rotate(-4deg);
+              transform: scale(1.1) rotate(-4deg);
+            }
+            
+            .vis{
+                visibility: visible;
+            }
+            
+            
+            .title{
+                margin: 50px;
+                font-size: 50px;
+                animation-duration: 0.75s;
+            }
+            
+            #menu{
+                margin-top: 40px;   
+                list-style-type: none;                  
+            }
+            #menu li{
+                display: inline-block;
+                margin: 10px;
+                
+                
+            }
+            #menu li a{
+                text-decoration: none;
+                background-color: rgb(95, 0, 142);
+                color: white;
+                padding: 20px;
+                font-size: 20px;
+            }
+            
+            @media only screen and (max-width: 768px){
+                #menu li a{
+                    padding: 20px 50px;
+                }
+                .title{
+                    text-align: center;
+                }
+            }
+            .gotop{
+                position: fixed;
+                top: 550px;
+                left: 1250px;
+            }
+            
+          
+            
+            
+        </style>
+        
+    </head>
+    
+    
+    <body>
+        
+        <div class="container-fluid"> 
+            <div class="wow">
+                
+                <center>
+                    <ul id="menu">
+                        <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#flagship">Flagship</a></li>
+                        
+                        <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#events">Events</a></li>
+                        
+                        <li><a class="animated bounceInDown hvr-bounce-to-bottom scroll" href="#workshops">Workshops</a></li>       
+                        <li><a class="animated bounceInRight hvr-bounce-to-left scroll" href="#cultural">Cultural</a></li>                        
+                        <li><a class="animated bounceInRight hvr-bounce-to-left scroll" href="#exhibitions">Exhibitions</a></li>
+                    </ul>
+                </center>
+                <section id="flagship">
+                    <hr / style="visibility: hidden;">
+                    <h1 class="title" data-aos="fade-left">Flagship</h1>
+
+                    
+                    <center>
+                        <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right"> 
+
+                            <h1>Event Poster</h1>
+
+                        </div></a>
+
+                        <a href="event1.html" target="_blank"><div class="card wow fadeInUp hvr-grow">
+
+                            <h1>Event Poster</h1>
+
+                        </div></a>
+
+                        <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
+                            <h1>Event Poster</h1>
+                        </div></a>
+
+
+                        <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+
+                            <h1>Event Poster</h1>
+
+                        </div></a>
+
+                        <a href="event1.html" target="_blank"><div class="card wow fadeInUp hvr-grow">
+
+                            <h1>Event Poster</h1>
+
+                        </div></a>
+
+                        <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
+                            <h1>Event Poster</h1>
+                        </div></a>
+                    </center>
+                    
+                </section>
+                
+                
+                <section id="events">    
+                    <hr />
+
+                    <h1 class="title" data-aos="fade-left">Events</h1>
+
+                    <center>
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+
+                        <h1>Event Poster</h1>
+
+                    </div></a>
+
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInUp hvr-grow">
+
+                        <h1>Event Poster</h1>
+
+                    </div></a>
+
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
+                        <h1>Event Poster</h1>
+                    </div></a>
+                        
+                        </center>
+
+
+                    
+                    
+                </section>
+                
+                
+            
+            
+            
+                 <section id="workshops">              
+                     <hr />
+                   
+                     <h1 class="title" data-aos="fade-left">Workshops</h1>
+
+                     <center>
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+
+                        <h1>Event Poster</h1>
+
+                    </div></a>
+
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInUp hvr-grow">
+
+                        <h1>Event Poster</h1>
+
+                    </div></a>
+
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
+                        <h1>Event Poster</h1>
+                    </div></a>
+
+                         </center>
+
+                    
+                    
+                </section>
+            
+            
+                
+                
+                <section id="exhibitions">
+                    <hr />
+                    <h1 class="title" data-aos="fade-left">Exhibitions</h1>
+
+                    <center>
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+
+                        <h1>Event Poster</h1>
+
+                    </div></a>
+
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInUp hvr-grow">
+
+                        <h1>Event Poster</h1>
+
+                    </div></a>
+
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
+                        <h1>Event Poster</h1>
+                    </div></a>
+                        
+                        </center>
+
+
+                    
+                    
+                </section>
+                
+                
+                
+                <section id="cultural">
+                    <hr />
+                    <h1 class="title" data-aos="fade-left">Cultural</h1>
+                    <center>
+                    
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+
+                        <h1>Event Poster</h1>
+
+                    </div></a>
+
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInUp hvr-grow">
+
+                        <h1>Event Poster</h1>
+
+                    </div></a>
+
+                    <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
+                        <h1>Event Poster</h1>
+                    </div></a>
+                        
+
+
+                    
+                    </center>
+                </section>
+                
+                <a href="#menu" class="gotop scroll"><button>Go Top</button></a>
+                
+                
+            </div>
+        </div>
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            
+            <script src="wow.js"></script>
+            
+              <script>
+              new WOW().init();
+              </script>
+            
+            <script src="aos.js"></script>
+                
+            <script type="text/javascript">
+                AOS.init({
+                    duration: 500,
+                });
+            
+            </script>
+                
+                
+                
+                
+            
+            <script>               
+                
+            $(document).ready(function(){
+                
+                $(".scroll").click(function(event){
+                    event.preventDefault();
+                    
+                    $("body,html").animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 1000)
+                    
+                });
+            });
+
+            </script>
+                
+                
+        
+    </body>
+</html>
