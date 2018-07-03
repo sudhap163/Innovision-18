@@ -159,7 +159,7 @@ p.lead {
   font-family: "montserrat-regular", sans-serif;
   font-size: 2rem;
   line-height: 1.8;
-  color: #4f4f4f;
+  color: #8c8c8c;
   margin-bottom: 3.6rem;
 }
 @media only screen and (max-width: 768px) {
@@ -2570,7 +2570,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   font-family: "librebaskerville-bold", serif;
   font-size: 2rem;
   line-height: 1;
-  color: #2e383f;
+  color: #b3b3b3;
   margin-top: 6rem;
 }
 @media only screen and (max-width: 600px) {
