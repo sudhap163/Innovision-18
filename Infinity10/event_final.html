@@ -20,7 +20,9 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <link rel="stylesheet" href="css/base.css">
    <link rel="stylesheet" href="css/vendor.css">  
-   <link rel="stylesheet" href="css/main.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/aos.css">     
+   <link rel="stylesheet" href="css/hover-min.css"> 
 
    <!-- script
    ================================================== -->
@@ -35,70 +37,16 @@
 	<link rel="shortcut icon" href="images/Innovision_Logo.png" type="image/png">
 	<link rel="icon" href="images/Innovision_Logo.png" type="image/png">
 
-	<style>
-        
-            
-            .modal-content p{
-                text-align: justify;
-            }
-            
-            .container p{
-                text-align: center;
-            }
-            
-            .card{
-                width: 260px;
-                height: 330px;
-                border: 1px solid rgb(196, 190, 190);
-                background-color: white;
-                border-radius: 15px;
-                box-shadow: 0;
-                position: relative;
-                margin: 10px;
-                bottom: 0px;
-                transition: bottom, box-shadow, 0.5s;
-            }
-            
-            .card:hover{
-                bottom: 7px;
-                
-            }
-
-            .card:active{
-                transform: translateY(10px);
-            }
-            
-            
-            .modal-title{
-                font-size: 25px;
-            }
-            
-            .upper{
-                position: relative;
-                top: 10px;
-            }
-            
-            .cross{
-                font-size: 30px;
-            }
-            
-            .modal-header button{
-                
-                transition: transform 1s;                
-            }
-            
-            .modal-header button:hover{
-                transform: rotate(-180deg);
-    </style>
     <style>
             
             *{box-sizing: border-box; font-family: 'Bree Serif';}
             
             .card{
                 margin: 20px 15px;
-                height: 320px;
-                width: 320px;
+                height: 300px;
+                width: 300px;
                 border: 1px solid;
+                border-radius: 15px;
                 text-align: center;
                 padding-top: 25px;
                 display: inline-block;
@@ -170,7 +118,8 @@
             
             .title{
                 margin: 50px;
-                font-size: 50px;
+                font-size: 40px;
+                color: black!important;
                 animation-duration: 0.75s;
             }
             
@@ -181,9 +130,8 @@
             #menu li{
                 display: inline-block;
                 margin: 10px;
-                
-                
             }
+
             #menu li a{
                 text-decoration: none;
                 background-color: rgb(95, 0, 142);
@@ -207,12 +155,15 @@
                 left: 1250px;
             }
             
-          #portfolio .intro-wrap {
-		  padding: 15rem 0 22.5rem;
-		  background: black;
-		}
-		            
-            
+         	#portfolio .intro-wrap {
+		  		padding: 15rem 0 22.5rem;
+		  		background: black;
+			}
+
+			.container p{
+                text-align: center;
+            }
+       		
         </style>
 
 </head>
@@ -240,10 +191,10 @@
 	   	<h3>Innovision'18.</h3>  
 
 			<ul class="nav-list">
-				<li class="current"><a class="smoothscroll" href="#home" title="">Home</a></li>
-				<li><a class="smoothscroll" href="#" title="">Events | Workshops | Exhibitions</a></li>
-				<li><a class="smoothscroll" href="#" title="">FAQ | Help</a></li>
-				<li><a class="smoothscroll" href="#" title="">Contact</a></li>					
+				<li><a class="smoothscroll" href="./index.html" title="">Home</a></li>
+				<li class="current"><a class="smoothscroll" href="javascript:void(0)" title="">Events | Workshops | Exhibitions</a></li>
+				<li><a class="smoothscroll" href="./faq.html" title="">FAQ | Help</a></li>
+				<li><a class="smoothscroll" href="./login_out.html" title="">Sign In | Sign Up</a></li>					
 			</ul>	
 
 			<!-- <p class="sponsor-text">
@@ -292,7 +243,7 @@
 
    <!-- portfolio
    ================================================== -->
-   <section id="portfolio">
+   <section id="portfolio" style="overflow: hidden;">
    	
    	<div class="intro-wrap">
 
@@ -303,14 +254,25 @@
 		   		
 		   		<p class="lead">*** Registration in individual event is mandatory in order to participate in the same and receive certificate ***</p>	   			
 	   		</div>   		
-	   	</div> <!-- end row section-intro -->   		
+	   	</div> <!-- end row section-intro -->
+	   	<center>
+            <ul id="menu">
+                <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#flagship">Flagship</a></li>
+                        
+                <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#events">Events</a></li>
+                        
+                <li><a class="animated bounceInDown hvr-bounce-to-bottom scroll" href="#workshops">Workshops</a></li>       
+                <li><a class="animated bounceInRight hvr-bounce-to-left scroll" href="#cultural">Cultural</a></li>                        
+                <li><a class="animated bounceInRight hvr-bounce-to-left scroll" href="#exhibitions">Exhibitions</a></li>
+            </ul>
+        </center>  		
 
    	</div> <!-- end intro-wrap -->   	
 
-   	<div class="row portfolio-content" id="top">
-   		<div class="col-twelve">
+   	<!-- <div class="row" id="top"> -->
+   		<!-- <div class="col-twelve"> -->
    			<!-- <div id="folio-wrap" class="bricks-wrapper"> -->
-   			<div class="container" style="margin-top: 5em">
+   			<!-- <div class="container" style="margin-top: 5em">
    				<ul class="nav nav-pills nav-justified" style="font-size: 2em;font-weight: bold;color: white">
 				    <li><a class="scroll" href="#flagship">Flagships</a></li>
 				    <li><a class="scroll" href="#events">Events</a></li>
@@ -318,23 +280,13 @@
 				    <li><a class="scroll" href="#exhibitions">Exhibitions</a></li>
 				    <li><a class="scroll" href="#cultural">Cultural</a></li>
 				  </ul>
-   			</div>					
- 				<div class="container-fluid"> 
+   			</div>		 -->			
+ 			<div class="container-fluid"> 
             <div class="wow">
                 
-                <!-- <center>
-                    <ul id="menu">
-                        <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" >Flagship</a></li>
-                        
-                        <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#events">Events</a></li>
-                        
-                        <li><a class="animated bounceInDown hvr-bounce-to-bottom scroll" href="#workshops">Workshops</a></li>       
-                        <li><a class="animated bounceInRight hvr-bounce-to-left scroll" href="#cultural">Cultural</a></li>                        
-                        <li><a class="animated bounceInRight hvr-bounce-to-left scroll" href="#exhibitions">Exhibitions</a></li>
-                    </ul>
-                </center> -->
-                <section id="flagship" style="margin-top: 10em">
-                    <hr / style="visibility: hidden;">
+               
+                <section id="flagship" style="margin-top: 12em">
+                    <hr style="visibility: hidden;"/>
                     <h1 class="title" data-aos="fade-left">Flagship</h1>
 
                     
@@ -502,8 +454,8 @@
         </div>
 
    			</div> <!-- end folio-wrap -->
-   		</div> <!-- end twelve -->
-   	</div> <!-- end portfolio-content -->   	
+   		<!-- </div> --> <!-- end twelve -->
+   	<!-- </div> --> <!-- end portfolio-content -->   	
 
 
 
@@ -513,7 +465,7 @@
    ================================================== -->
 
       <div id="go-top">
-		   <a class="smoothscroll" title="Back to Top" href="#top">
+		   <a class="smoothscroll" title="Back to Top" href="#menu">
 		   	<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
 		   </a>
 		</div>		
@@ -550,6 +502,7 @@
    <!-- <script  src="js/animation.js"></script> -->
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
+   <script src="wow.js"></script>
 
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
             
@@ -567,11 +520,7 @@
                 });
             
             </script>
-                
-                
-                
-                
-            
+
             <script>               
                 
             $(document).ready(function(){
