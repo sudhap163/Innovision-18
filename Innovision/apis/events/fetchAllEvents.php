@@ -11,7 +11,7 @@
     		$result[] = $res;
 		}
 
-		echo (json_encode($result));
+		echo(json_encode(array('status' => 'success', 'result' => $result)));
 	}
 
 ?>
