@@ -139,6 +139,23 @@
                 padding: 20px;
                 font-size: 20px;
             }
+
+            #here{
+              margin-top: 1em;
+              font-size: 2em;
+              padding-top: 2em;
+            }
+
+            #intro{
+              padding-top: 4em;
+              box-sizing: content-box;
+            }
+
+              #portfolio .intro-wrap {
+          padding: 15rem 0 22.5rem;
+          height: 44em;
+          background: black;
+      }
             
             @media only screen and (max-width: 768px){
                 #menu li a{
@@ -148,17 +165,28 @@
                     text-align: center;
                     color: white;
                 }
+                #here{
+                  margin-top:-2.7em;
+                  font-size: 1.8em;
+                  padding-top: 0em;
             }
             .gotop{
                 position: fixed;
                 top: 550px;
                 left: 1250px;
             }
+             #intro{
+              padding-top: 0em;
+            }
+
+              #portfolio .intro-wrap {
+          padding: 15rem 0 22.5rem;
+          height: 45em;
+          background: black;
+      }
+          }
             
-         	#portfolio .intro-wrap {
-		  		padding: 15rem 0 22.5rem;
-		  		background: black;
-			}
+         
 
 			.container p{
                 text-align: center;
@@ -247,15 +275,15 @@
    	
    	<div class="intro-wrap">
 
-   		<div class="row narrow section-intro with-bottom-sep animate-this">
-	   		<div class="col-twelve">
+   		<div class="row narrow section-intro with-bottom-sep animate-this" >
+	   		<div class="col-twelve" id="intro">
 	   			<h1>Inno Events</h1>
 		   		<h3>Events | Workshops | Exhibitions</h3>  			
 		   		
 		   		<p class="lead">*** Registration in individual event is mandatory in order to participate in the same and receive certificate ***</p>	   			
 	   		</div>   		
 	   	</div> <!-- end row section-intro -->
-	   	<center>
+	   <!-- 	<center>
             <ul id="menu">
                 <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#flagship">Flagship</a></li>
                         
@@ -265,27 +293,28 @@
                 <li><a class="animated bounceInRight hvr-bounce-to-left scroll" href="#cultural">Cultural</a></li>                        
                 <li><a class="animated bounceInRight hvr-bounce-to-left scroll" href="#exhibitions">Exhibitions</a></li>
             </ul>
-        </center>  		
+        </center> -->  	
+        <div class="container" id="here">
+          <ul class="nav nav-pills nav-justified" style="font-weight: bold;color: white">
+            <li><a class="scroll" href="#flagship">Flagships</a></li>
+            <li><a class="scroll" href="#events">Events</a></li>
+            <li><a class="scroll" href="#workshops">Workshops</a></li>
+            <li><a class="scroll" href="#exhibitions">Exhibitions</a></li>
+            <li><a class="scroll" href="#cultural">Cultural</a></li>
+          </ul>
+        </div>        	
 
    	</div> <!-- end intro-wrap -->   	
 
    	<!-- <div class="row" id="top"> -->
    		<!-- <div class="col-twelve"> -->
    			<!-- <div id="folio-wrap" class="bricks-wrapper"> -->
-   			<!-- <div class="container" style="margin-top: 5em">
-   				<ul class="nav nav-pills nav-justified" style="font-size: 2em;font-weight: bold;color: white">
-				    <li><a class="scroll" href="#flagship">Flagships</a></li>
-				    <li><a class="scroll" href="#events">Events</a></li>
-				    <li><a class="scroll" href="#workshops">Workshops</a></li>
-				    <li><a class="scroll" href="#exhibitions">Exhibitions</a></li>
-				    <li><a class="scroll" href="#cultural">Cultural</a></li>
-				  </ul>
-   			</div>		 -->			
+   				
  			<div class="container-fluid"> 
             <div class="wow">
                 
                
-                <section id="flagship" style="margin-top: 12em">
+                <section id="flagship" style="margin-top: 2em">
                     <hr style="visibility: hidden;"/>
                     <h1 class="title" data-aos="fade-left">Flagship</h1>
 
@@ -465,7 +494,7 @@
    ================================================== -->
 
       <div id="go-top">
-		   <a class="smoothscroll" title="Back to Top" href="#menu">
+		   <a class="smoothscroll" title="Back to Top" href="#here">
 		   	<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
 		   </a>
 		</div>		
