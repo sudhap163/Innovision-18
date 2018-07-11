@@ -1,6 +1,6 @@
 <?php
 
-	include('../db.php');
+	include('../../db.php');
 
 	$inno_id = $_GET["q"];
 
@@ -10,7 +10,7 @@
 
 		if (mysqli_num_rows($query) == 0) {
 
-			echo(json_encode(array('status' => 'failure', 'message' => 'inno_id not found')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'inno_id not found')));
 		}
 
 		else {
