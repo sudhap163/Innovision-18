@@ -9,8 +9,6 @@
         $query = "INSERT INTO events (title, description, rules, judging_criteria, date, venue, time, category, coordinatorName1,
         coordinatorContact1, coordinatorName2, coordinatorContact2, max_par) VALUES ('".mysqli_real_escape_string($conn,$_POST['title'])."','".mysqli_real_escape_string($conn,$_POST['description'])."','".mysqli_real_escape_string($conn,$_POST['rules'])."','".mysqli_real_escape_string($conn,$_POST['judging_criteria'])."','".mysqli_real_escape_string($conn,$_POST['date'])."','".mysqli_real_escape_string($conn,$_POST['venue'])."','".mysqli_real_escape_string($conn,$_POST['time'])."','".mysqli_real_escape_string($conn,$_POST['category'])."','".mysqli_real_escape_string($conn,$_POST['coordinatorName1'])."','".mysqli_real_escape_string($conn,$_POST['coordinatorContact1'])."','".mysqli_real_escape_string($conn,$_POST['coordinatorName2'])."','".mysqli_real_escape_string($conn,$_POST['coordinatorContact2'])."', '".mysqli_real_escape_string($conn,$_POST['max_par'])."' )";
 
-        echo $query;
-
         $resultEventAdd = mysqli_query($conn, $query);
         
         // if(is_uploaded_file($_FILES["image"]["name"]) && $resultEventAdd) {     is_uploaded_file() returns true for HTTP POST
