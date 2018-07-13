@@ -10,7 +10,7 @@
 
 		if (mysqli_num_rows($query) == 0) {
 
-			echo(json_encode(array('status' => 'failure', 'message' => 'eid not found')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'eid not found')));
 		}
 
 		else {
