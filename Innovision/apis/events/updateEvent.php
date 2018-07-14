@@ -1,5 +1,8 @@
 <?php
+    
     include('../db.php');
+    include('../panels/cms/verifyCMSAdmin.php');
+
     $eid = $_POST["eid"];
     $query = mysqli_query($conn, "SELECT * FROM events WHERE eid =".$eid);
     if (mysqli_num_rows($query) == 0) {
