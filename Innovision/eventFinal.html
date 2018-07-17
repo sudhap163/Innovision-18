@@ -300,7 +300,7 @@
             </ul>
         </center> -->  	
         <div class="container" id="here">
-          <ul class="nav nav-pills nav-justified" style="font-weight: bold;color: white">
+          <ul class="nav nav-pills nav-justified" style="font-weight: bold;color: white;text-align: center;margin-left: 0;">
             <li><a class="scroll" href="#flagship">Flagships</a></li>
             <li><a class="scroll" href="#events">Events</a></li>
             <li><a class="scroll" href="#workshops">Workshops</a></li>
@@ -582,8 +582,9 @@
                     $(".signed_out").css("display", "none"); 
                 }
               });
-              $(document).on("click", "[href='event_individual.html']" , function(){
-                  localStorage.eid = $(this).val;
+              $(document).on("click", "[href='javascript:void(0)']" , function(){
+                  localStorage.eid = $(this)[0].attributes[1].value;
+                  location.replace("event_individual.html");
               });
             </script>
  
