@@ -7,7 +7,7 @@
 		$query = mysqli_query($conn, "SELECT * FROM events");
 
 		$result = array();
-		while($res = mysqli_fetch_array($query, MYSQL_ASSOC)) {
+		while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
     		$result[] = $res;
 		}
 
