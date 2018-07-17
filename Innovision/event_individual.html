@@ -19,6 +19,30 @@
 	================================================== -->
 	<link rel="shortcut icon" href="images/Innovision_Logo.png" type="image/png">
 	<link rel="icon" href="images/Innovision_Logo.png" type="image/png">
+	<style type="text/css">
+		@media screen and (min-width: 768px)
+		{
+			.custom
+			{
+				display: block;
+			}
+			.mobile
+			{
+				display: none;
+			}
+		}
+		@media screen and (max-width: 768px)
+		{
+			.custom
+			{
+				display: none;
+			}
+			.mobile
+			{
+				display: block;
+			}
+		}
+	</style>
 </head>
 <body>
 <script>
@@ -34,14 +58,17 @@
     <h1>Event Name</h1>
   </div>
   <div class="row" style="margin:1em">
-    <div class="col-md-9 col-sm-12"></div>
+  	<div class="col-md-3 col-sm-12 custom" style="text-align: center;">
+  		<button class="btn btn-lg back" style="background-color: #444444;border-radius: 0px;color:white">BACK TO EVENTS</button>
+  	</div>
+    <div class="col-md-6 col-sm-12"></div>
     <div class="col-md-3 col-sm-12" style="text-align: center;">
-      <button class="btn btn-lg" style="background-color: #111111;border-radius: 0px;color:white">REGISTER</button>
+      <button class="btn btn-lg register" style="background-color: #111111;border-radius: 0px;color:white">REGISTER</button>
     </div>
   </div>
   <dl id="gridtab-1">
     <dt>Home</dt>
-    <dd>
+    <dd class="poster">
       Event Poster
       <div style="height: 200px;width: 200px;border: 1px solid grey">
         
@@ -49,14 +76,15 @@
     </dd>
 
     <dt>Description</dt>
-    <dd>
+    <dd class="desc">
+      <!-- <p>This is the content for the Description tab.</p>
       <p>This is the content for the Description tab.</p>
-      <p>This is the content for the Description tab.</p>
-      <p>This is the content for the Description tab.</p>
+      <p>This is the content for the Description tab.</p> -->
     </dd>
 
     <dt>Rules</dt>
-    <dd>
+    <dd class="rules">
+      <!-- <p>This is the content for the Rules tab.</p>
       <p>This is the content for the Rules tab.</p>
       <p>This is the content for the Rules tab.</p>
       <p>This is the content for the Rules tab.</p>
@@ -70,12 +98,12 @@
       <p>This is the content for the Rules tab.</p>
       <p>This is the content for the Rules tab.</p>
       <p>This is the content for the Rules tab.</p>
-      <p>This is the content for the Rules tab.</p>
-      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p> -->
     </dd>
 
     <dt>Judging Criteria</dt>
-    <dd>
+    <dd class="criteria">
+      <!-- <p>This is the content for the Judging Criteria</p>
       <p>This is the content for the Judging Criteria</p>
       <p>This is the content for the Judging Criteria</p>
       <p>This is the content for the Judging Criteria</p>
@@ -90,30 +118,36 @@
       <p>This is the content for the Judging Criteria</p>
       <p>This is the content for the Judging Criteria</p>
       <p>This is the content for the Judging Criteria</p>
-      <p>This is the content for the Judging Criteria</p>
-      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p> -->
     </dd>
 
     <dt>Event Details</dt>
-    <dd>
+    <dd class="details">
+      <!-- <p>This is the content for the Event Details</p>
       <p>This is the content for the Event Details</p>
       <p>This is the content for the Event Details</p>
       <p>This is the content for the Event Details</p>
-      <p>This is the content for the Event Details</p>
-      <p>This is the content for the Event Details</p>
+      <p>This is the content for the Event Details</p> -->
     </dd>
 
-    <dt>Coordintor Details</dt>
-    <dd>
+    <dt>Coordinator Details</dt>
+    <dd class="details_coordinator">
+      <!-- <p>This is the content for the Co-ordinator's Details</p>
       <p>This is the content for the Co-ordinator's Details</p>
-      <p>This is the content for the Co-ordinator's Details</p>
-      <p>This is the content for the Co-ordinator's Details</p>
+      <p>This is the content for the Co-ordinator's Details</p> -->
     </dd>
 </dl>
 
 </div>
-
-	
+<div class="col-sm-12 mobile" style="text-align: center;margin: 1em 0em 2em;">
+  	<button class="btn btn-lg back" style="background-color: #444444;border-radius: 0px;color:white">BACK TO EVENTS</button>
+ </div>
+<script type="text/javascript" src="js/ajax/event_individual.js"></script>
+<script type="text/javascript">
+	$(document).on("click", ".back", function(){
+		location.replace("eventFinal.html");
+	});
+</script>
 </body>
 
 </html>
