@@ -30,6 +30,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
+  <script src="js/ajax/eventFinal.js"></script>
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
    <!-- favicons
@@ -222,7 +223,8 @@
 				<li><a href="./index.html" title="">Home</a></li>
 				<li class="current"><a class="smoothscroll" href="javascript:void(0)" title="">Events | Workshops | Exhibitions</a></li>
 				<li><a href="./faq.html" title="">FAQ | Help</a></li>
-				<li><a href="./signInOut.html" title="">Sign In | Sign Up</a></li>					
+				<li class="signed_out"><a href="./signInOut.html" title="">Sign In | Sign Up</a></li>
+        <li class="signed_in"><a href="./index.html" title="">Sign Out</a></li>
 			</ul>	
 
 			<!-- <p class="sponsor-text">
@@ -320,7 +322,7 @@
 
                     
                     <center>
-                        <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right"> 
+                        <!-- <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right"> 
 
                             <h1>Event Poster</h1>
 
@@ -351,7 +353,7 @@
 
                         <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
                             <h1>Event Poster</h1>
-                        </div></a>
+                        </div></a> -->
                     </center>
                     
                 </section>
@@ -363,7 +365,7 @@
                     <h1 class="title" data-aos="fade-left">Events</h1>
 
                     <center>
-                    <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+                    <!-- <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
 
                         <h1>Event Poster</h1>
 
@@ -377,7 +379,7 @@
 
                     <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
                         <h1>Event Poster</h1>
-                    </div></a>
+                    </div></a> -->
                         
                         </center>
 
@@ -396,7 +398,7 @@
                      <h1 class="title" data-aos="fade-left">Workshops</h1>
 
                      <center>
-                    <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+                    <!-- <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
 
                         <h1>Event Poster</h1>
 
@@ -410,7 +412,7 @@
 
                     <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
                         <h1>Event Poster</h1>
-                    </div></a>
+                    </div></a> -->
 
                          </center>
 
@@ -426,7 +428,7 @@
                     <h1 class="title" data-aos="fade-left">Exhibitions</h1>
 
                     <center>
-                    <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+                    <!-- <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
 
                         <h1>Event Poster</h1>
 
@@ -440,7 +442,7 @@
 
                     <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
                         <h1>Event Poster</h1>
-                    </div></a>
+                    </div></a> -->
                         
                         </center>
 
@@ -456,7 +458,7 @@
                     <h1 class="title" data-aos="fade-left">Cultural</h1>
                     <center>
                     
-                    <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
+                    <!-- <a href="event1.html" target="_blank"><div class="card wow fadeInLeft hvr-grow-rotate-right">
 
                         <h1>Event Poster</h1>
 
@@ -470,7 +472,7 @@
 
                     <a href="event1.html" target="_blank"><div class="card wow fadeInRight hvr-grow-rotate-left">
                         <h1>Event Poster</h1>
-                    </div></a>
+                    </div></a> -->
                         
 
 
@@ -527,11 +529,11 @@
    <!-- Java Script
    ================================================== --> 
 
-   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-   <!-- <script  src="js/animation.js"></script> -->
+<!--    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+ -->   <!-- <script  src="js/animation.js"></script> -->
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
-   <script src="wow.js"></script>
+   <script src="js/wow.js"></script>
 
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
             
@@ -564,6 +566,22 @@
                 });
             });
 
+            </script>
+            <script>
+              $(document).ready(function(){
+                if(localStorage.innoID == null || localStorage.innoID == "" || !(localStorage.innoID))
+                {
+                    $(".signed_out").css("display", "block");
+                    $(".signed_in").css("display", "none");
+                }
+                else{
+                    $(".signed_in").css("display", "block");
+                    $(".signed_out").css("display", "none"); 
+                }
+              });
+              $(document).on("click", "[href='event_individual.html']" , function(){
+                  localStorage.eid = $(this).val;
+              });
             </script>
  
 </body>
