@@ -64,15 +64,7 @@
   <link rel="icon" href="images/Innovision_Logo.png" type="image/png">
 
   <style type="">
-    h4{
-      color: white;
-      text-align: left;
-      width: 100%;
-    }
-    label{
-      color: white;
-      text-align: left;
-    }
+    h4{ color: white; text-align: left; width: 100%; } label{ color: white; text-align: left; }
   </style>
 
 </head>
@@ -106,7 +98,7 @@
         <li>
           <a href="./eventFinal.html" title="">Events | Workshops | Exhibitions</a>
         </li>
-       
+
         <li class="current">
           <a class="smoothscroll" href="javascript:void(0)" title="">Sign In | Sign Up</a>
         </li>
@@ -144,7 +136,7 @@
 
   </header>
   <!-- end header -->
-  
+
 
   <section id="contact">
 
@@ -159,107 +151,108 @@
 
     <div class="row contact-content">
 
-    
+
       <!-- end col-seven -->
       <!-- RGISTER -->
 
-    <!--  <div class="col-twelve tab-full"> -->
-        <form name="contactForm" id="contactForm" method="post">
+      <!--  <div class="col-twelve tab-full"> -->
+      <form name="contactForm" id="contactForm" method="post">
 
-          <div class="form-field">
-            <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-          </div>
+        <div class="form-field">
+          <input name="contactName" type="text" id="q1" placeholder="Name" value="" minlength="2" required="">
+        </div>
 
-          <div class="row">
-            <div class="col-six tab-full">
-              <div class="form-field">
-                <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-              </div>
-            </div>
-            <div class="col-six tab-full">
-              <div class="form-field">
-                <input name="contactSubject" type="text" id="contactnumber" placeholder="Phone" value="">
-              </div>
+        <div class="row">
+          <div class="col-six tab-full">
+            <div class="form-field">
+              <input name="contactEmail" type="email" id="q2" placeholder="Email" value="" required="">
             </div>
           </div>
+          <div class="col-six tab-full">
+            <div class="form-field">
+              <input name="contactSubject" type="text" id="q3" placeholder="Phone" value="">
+            </div>
+          </div>
+        </div>
 
-          <div class="row">
-            <div class="col-four tab-full">
-              <div>
-                <label for="sampleRecipientInput">Choose College</label>
-                <div class="ss-custom-select" style="background-color: rgba(30,39,43,0.7);">
-                  <select class="full-width" id="sampleRecipientInput">
-                    <option value="Option 1">Clg 1</option>
-                    <option value="Option 2">Clg 2</option>
-                    <option value="Option 3">Others</option>
-                  </select>
-                </div>                
-            </div>
-            </div>
-            <div class="col-three tab-full">
-              <div>
-                <label for="sampleRecipientInput">Year of study</label>
-                <div class="ss-custom-select" style="background-color:rgba(30,39,43,0.7) ;">
-                  <select class="full-width" id="sampleRecipientInput">
-                    <option value="Option 1">First</option>
-                    <option value="Option 2">Second</option>
-                    <option value="Option 3">Pre-Final</option>
-                    <option value="Option 3">Final</option>
-                  </select>
-                </div>                
-            </div>
-            </div>
-             <div class="col-five tab-full">
-              <label>Course</label>
-              <div class="form-field">
-                <input name="course" type="text" id="course" placeholder="Course" value="">
+        <div class="row">
+          <div class="col-four tab-full">
+            <div>
+              <label for="sampleRecipientInput">Choose College</label>
+              <div class="ss-custom-select" style="background-color: rgba(30,39,43,0.7);">
+                <select class="full-width" id="q4">
+                  <option value="Option 1">Clg 1</option>
+                  <option value="Option 2">Clg 2</option>
+                  <option value="Option 3">Others</option>
+                </select>
               </div>
             </div>
           </div>
-
-          <div class="form-field">
-            <h4>Current/Earlier position of responsibility held in college ?</h4>
-            <textarea name="contactMessage" id="contactMessage" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
+          <div class="col-three tab-full">
+            <div>
+              <label for="sampleRecipientInput">Year of study</label>
+              <div class="ss-custom-select" style="background-color:rgba(30,39,43,0.7) ;">
+                <select class="full-width" id="q6">
+                  <option value="Option 1">First</option>
+                  <option value="Option 2">Second</option>
+                  <option value="Option 3">Pre-Final</option>
+                  <option value="Option 3">Final</option>
+                </select>
+              </div>
+            </div>
           </div>
-
-           <div class="form-field">
-            <h4>Have you ever been to innovision earlier ? When ?</h4>
-            <textarea name="contactMessage" id="contactMessage" placeholder="Your answer here" rows="4" cols="50" required=""></textarea>
+          <div class="col-five tab-full">
+            <label>Course</label>
+            <div class="form-field">
+              <input name="course" type="text" id="q5" placeholder="Course" value="">
+            </div>
           </div>
+        </div>
 
-           <div class="form-field">
-            <h4>Write in brief about what you know about innovision. </h4>
-            <textarea name="contactMessage" id="contactMessage" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
-          </div>
+        <div class="form-field">
+          <h4>Current/Earlier position of responsibility held in college ?</h4>
+          <textarea name="contactMessage" id="q7" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
+        </div>
 
-           <div class="form-field">
-            <h4>How many students do you think you can convince into bringing to innovision this year ? Your strategy to promote innovision ?</h4>
-            <textarea name="contactMessage" id="contactMessage" placeholder="Your answer here" rows="4" cols="50" required=""></textarea>
-          </div>
+        <div class="form-field">
+          <h4>Have you ever been to innovision earlier ? When ?</h4>
+          <textarea name="contactMessage" id="q8" placeholder="Your answer here" rows="4" cols="50" required=""></textarea>
+        </div>
 
-          <div class="form-field">
-            <h4>Social media platforms that you are active on.</h4>
-            <textarea name="contactMessage" id="contactMessage" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
-          </div>
+        <div class="form-field">
+          <h4>Write in brief about what you know about innovision. </h4>
+          <textarea name="contactMessage" id="q9" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
+        </div>
 
-          <div class="form-field">
-            <h4>Languages that you are fluent in  </h4>
-            <textarea name="contactMessage" id="contactMessage" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
-          </div>
+        <div class="form-field">
+          <h4>How many students do you think you can convince into bringing to innovision this year ? Your strategy to promote
+            innovision ?</h4>
+          <textarea name="contactMessage" id="q10" placeholder="Your answer here" rows="4" cols="50" required=""></textarea>
+        </div>
 
-           <div class="form-field">
-            <h4>What makes you unique from others ?</h4>
-            <textarea name="contactMessage" id="contactMessage" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
-          </div>
+        <div class="form-field">
+          <h4>Social media platforms that you are active on.</h4>
+          <textarea name="contactMessage" id="q11" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
+        </div>
 
-         <!--  <div class="form-field">
+        <div class="form-field">
+          <h4>Languages that you are fluent in </h4>
+          <textarea name="contactMessage" id="q12" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
+        </div>
+
+        <div class="form-field">
+          <h4>What makes you unique from others ?</h4>
+          <textarea name="contactMessage" id="q13" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
+        </div>
+
+        <!--  <div class="form-field">
             <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
           </div> -->
 
-          <div class="form-field">
-            <button class="submitform">Register</button>
+        <div class="form-field">
+          <button class="submitform">Register</button>
 
-            <!-- <div id="submit-loader">
+          <!-- <div id="submit-loader">
               <div class="text-loader">Sending...</div>
               <div class="s-loader">
                 <div class="bounce1"></div>
@@ -267,16 +260,17 @@
                 <div class="bounce3"></div>
               </div>
             </div> -->
-          </div>
+        </div>
 
-        </form>
+      </form>
 
-     <!--  </div> -->
+      <!--  </div> -->
 
       <!-- end cinfo -->
 
     </div>
     <!-- end row contact-content -->
+    <script src="../js/ajax/createCAapp.js"></script>
 
   </section>
   <!-- end contact -->
@@ -285,7 +279,7 @@
   <!-- footer
    ================================================== -->
   <footer>
-    
+
     <!-- end footer-main -->
 
     <div class="footer-bottom">
