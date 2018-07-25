@@ -50,7 +50,7 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_flagships.length)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_flagships[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_flagships[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_flagships[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_flagships[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_flagships[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_flagships[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_flagships[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_flagships[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_flagships[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_flagships[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_flagships[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_flagships[3*index+2]["image_path"]+'"></div></a>';
 							$("#flagship").children("center").append(str);
 							index = index + 1;
 						}
@@ -60,17 +60,17 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_flagships.length-(event_flagships.length)%3)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_flagships[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_flagships[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_flagships[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_flagships[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_flagships[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_flagships[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_flagships[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_flagships[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_flagships[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_flagships[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_flagships[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_flagships[3*index+2]["image_path"]+'"></div></a>';
 							$("#flagship").children("center").append(str);
 							index = index + 1;
 						}
 						if((event_flagships.length)%3 == 1)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_flagships[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_flagships[3*index]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_flagships[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_flagships[3*index]["image_path"]+'"></div></a>';
 						}
 						else if((event_flagships.length)%3 == 2)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_flagships[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_flagships[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_flagships[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_flagships[3*index+1]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_flagships[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_flagships[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_flagships[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_flagships[3*index+1]["image_path"]+'"></div></a>';
 						}
 						$("#flagship").children("center").append(str2);
 					}
@@ -87,7 +87,7 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_events.length())/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_events[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_events[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_events[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_events[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_events[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_events[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_events[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_events[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_events[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_events[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_events[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_events[3*index+2]["image_path"]+'"></div></a>';
 							$("#events").children("center").append(str);
 							index = index + 1;
 						}
@@ -97,17 +97,17 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_events.length-(event_events.length)%3)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_events[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_events[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_events[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_events[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_events[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_events[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_events[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_events[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_events[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_events[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_events[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_events[3*index+2]["image_path"]+'"></div></a>';
 							$("#events").children("center").append(str);
 							index = index + 1;
 						}
 						if((event_events.length)%3 == 1)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_events[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_events[3*index]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_events[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_events[3*index]["image_path"]+'"></div></a>';
 						}
 						else if((event_events.length)%3 == 2)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_events[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_events[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_events[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_events[3*index+1]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_events[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_events[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_events[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_events[3*index+1]["image_path"]+'"></div></a>';
 						}
 						$("#events").children("center").append(str2);
 					}					
@@ -124,7 +124,7 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_workshops.length)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_workshops[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_workshops[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_workshops[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_workshops[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_workshops[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_workshops[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_workshops[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_workshops[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_workshops[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_workshops[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_workshops[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_workshops[3*index+2]["image_path"]+'"></div></a>';
 							$("#workshops").children("center").append(str);
 							index = index + 1;
 						}
@@ -134,17 +134,17 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_workshops.length-(event_workshops.length)%3)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_workshops[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_workshops[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_workshops[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_workshops[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_workshops[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_workshops[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_workshops[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_workshops[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_workshops[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_workshops[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_workshops[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_workshops[3*index+2]["image_path"]+'"></div></a>';
 							$("#workshops").children("center").append(str);
 							index = index + 1;
 						}
 						if((event_workshops.length)%3 == 1)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_workshops[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_workshops[3*index]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_workshops[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_workshops[3*index]["image_path"]+'"></div></a>';
 						}
 						else if((event_workshops.length)%3 == 2)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_workshops[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_workshops[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_workshops[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_workshops[3*index+1]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_workshops[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_workshops[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_workshops[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_workshops[3*index+1]["image_path"]+'"></div></a>';
 						}
 						$("#workshops").children("center").append(str2);
 					}					
@@ -161,7 +161,7 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_exhibitions.length)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_exhibitions[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_exhibitions[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_exhibitions[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_exhibitions[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_exhibitions[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_exhibitions[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_exhibitions[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_exhibitions[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_exhibitions[3*index+2]["image_path"]+'"></div></a>';
 							$("#exhibitions").children("center").append(str);
 							index = index + 1;
 						}
@@ -171,17 +171,17 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_exhibitions.length-(event_exhibitions.length)%3)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_exhibitions[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_exhibitions[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_exhibitions[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_exhibitions[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_exhibitions[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_exhibitions[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_exhibitions[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_exhibitions[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_exhibitions[3*index+2]["image_path"]+'"></div></a>';
 							$("#exhibitions").children("center").append(str);
 							index = index + 1;
 						}
 						if((event_exhibitions.length)%3 == 1)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_exhibitions[3*index]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_exhibitions[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_exhibitions[3*index]["image_path"]+'"></div></a>';
 						}
 						else if((event_exhibitions.length)%3 == 2)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_exhibitions[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_exhibitions[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_exhibitions[3*index+1]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_exhibitions[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_exhibitions[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_exhibitions[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_exhibitions[3*index+1]["image_path"]+'"></div></a>';
 						}
 						$("#exhibitions").children("center").append(str2);
 					}					
@@ -198,7 +198,7 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_cultural.length)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_cultural[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_cultural[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_cultural[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_cultural[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_cultural[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_cultural[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_cultural[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_cultural[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_cultural[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_cultural[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_cultural[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_cultural[3*index+2]["image_path"]+'"></div></a>';
 							$("#cultural").children("center").append(str);
 							index = index + 1;
 						}
@@ -208,17 +208,17 @@ $(document).ready(function(){
 						var index = 0;
 						while(index < (event_cultural.length-(event_cultural.length)%3)/3)
 						{
-							var str = '<a href="event_individual.html" target="_blank" value="'+event_cultural[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_cultural[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_cultural[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_cultural[3*index+1]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_cultural[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_cultural[3*index+2]["image_path"]+'"></div></a>';
+							var str = '<a href="javascript:void(0)" value="'+event_cultural[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_cultural[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_cultural[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_cultural[3*index+1]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_cultural[3*index+2]["eid"]+'"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="'+event_cultural[3*index+2]["image_path"]+'"></div></a>';
 							$("#cultural").children("center").append(str);
 							index = index + 1;
 						}
 						if((event_cultural.length)%3 == 1)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_cultural[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_cultural[3*index]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_cultural[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_cultural[3*index]["image_path"]+'"></div></a>';
 						}
 						else if((event_cultural.length)%3 == 2)
 						{
-							var str2 = '<a href="event_individual.html" target="_blank" value="'+event_cultural[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_cultural[3*index]["image_path"]+'"></div></a><a href="event_individual.html" target="_blank" value="'+event_cultural[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_cultural[3*index+1]["image_path"]+'"></div></a>';
+							var str2 = '<a href="javascript:void(0)" value="'+event_cultural[3*index]["eid"]+'"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="'+event_cultural[3*index]["image_path"]+'"></div></a><a href="javascript:void(0)" value="'+event_cultural[3*index+1]["eid"]+'"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="'+event_cultural[3*index+1]["image_path"]+'"></div></a>';
 						}
 						$("#cultural").children("center").append(str2);
 					}					

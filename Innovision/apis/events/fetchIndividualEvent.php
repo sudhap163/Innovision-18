@@ -6,17 +6,18 @@
 
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $eid != "") {
 
-		$query = mysqli_query($conn, "SELECT title, description, rules, judging_criteria, max_par, date, venue, time, category, coordinatorName1, coordinatorContact1, coordinatorName2, coordinatorContact2, image_path FROM events where eid=".$eid);
+		$query ="SELECT title, description, rules, judging_criteria, max_par, `date`, venue, `time`, category, coordinatorName1, coordinatorContact1, coordinatorName2, coordinatorContact2, image_path FROM events where eid=".$eid;
+		$result =mysqli_query($conn, $query);
 
-		if (mysqli_num_rows($query) == 0) {
+		if (mysqli_num_rows($result) == 0) {
 
-			echo(json_encode(array('status' => 'failure', 'message' => 'eid not found')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'eid not found')));
 		}
 
 		else {
 
-			$result = mysqli_fetch_array($query);
-			echo(json_encode(array('status' => 'success', 'result' => $result)));
+			$res = mysqli_fetch_array($result);
+			echo(json_encode(array('status' => 'success', 'result' => $res)));
 		}
 	}
 

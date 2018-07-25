@@ -6,7 +6,7 @@
 		$res1 = mysqli_query($conn, $sql1);
 		if(mysqli_num_rows($res1) == 0)
 		{
-			$sql2 = "INSERT INTO events_registration (inno_id, event_id) VALUES (".$_POST("innoID").", ".$_POST("eid")."')";
+			$sql2 = "INSERT INTO events_registration (inno_id, event_id) VALUES (".$_POST("innoID").", ".$_POST("eid").")";
 			$res2 = mysqli_query($conn, $sql2);
 			if($res)
 			{
