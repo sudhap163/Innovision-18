@@ -11,7 +11,7 @@ $(document).ready(function(){
 				if(dataArray["status"] == "success")
 				{
 					var eventArr = dataArray["result"];
-					$(".poster").children("div").html("<img height='200' width='200' class='img-responsive' src='"+eventArr["image_path"]+"'>");
+					/*$(".poster").children("div").html("<img height='200' width='200' class='img-responsive' src='"+eventArr["image_path"]+"'>");
 					event_desc = (eventArr["description"]).split("//");
 					event_rules = (eventArr["rules"]).split("//");
 					event_judging_criteria = (eventArr["judging_criteria"]).split("//");
@@ -28,7 +28,7 @@ $(document).ready(function(){
 						$(".criteria").append("<p>"+event_judging_criteria[i]+"</p>");
 					}
 					$(".details").append("<p>Date of Event: "+eventArr["date"]+"</p><p>Time of Event: "+eventArr["time"]+"</p><p>Venue: "+eventArr["venue"]+"</p>");
-					$(".details_coordinator").append("<h2>Coordinator 1</h2><p>Name: "+eventArr["coordinatorName1"]+"</p><p>Contact: "+eventArr["coordinatorContact1"]+"</p><h2>Coordinator 2</h2><p>Name: "+eventArr["coordinatorName2"]+"</p><p>Contact: "+eventArr["coordinatorContact2"]+"</p>");
+					$(".details_coordinator").append("<h2>Coordinator 1</h2><p>Name: "+eventArr["coordinatorName1"]+"</p><p>Contact: "+eventArr["coordinatorContact1"]+"</p><h2>Coordinator 2</h2><p>Name: "+eventArr["coordinatorName2"]+"</p><p>Contact: "+eventArr["coordinatorContact2"]+"</p>");*/
 				}
 			}
 		});
