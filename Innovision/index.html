@@ -115,6 +115,21 @@
 		.modal-header button:hover {
 			transform: rotate(-180deg);
 	</style>
+	<style>
+.parallax {
+    /* The image used */
+    background-image: url("test.jpg");
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
 
 </head>
 
@@ -142,22 +157,22 @@
 
 			<ul class="nav-list">
 				<li class="current">
-					<a class="smoothscroll" href="javascript:void(0)" title="">Home</a>
+					<a style="text-decoration: none;" href="javascript:void(0)" title="">Home</a>
 				</li>
 				<li>
-					<a href="./eventFinal.html" title="">Events | Workshops | Exhibitions</a>
+					<a style="text-decoration: none;" href="./eventFinal.html" title="">Events | Workshops | Exhibitions</a>
 				</li>
 				<li>
-					<a href="./faq.html">FAQ | Help</a>
+					<a style="text-decoration: none;" href="./faq.html">FAQ | Help</a>
 				</li>
-				<li class="signed_out">
+				<!-- <li class="signed_out">
 					<a href="./signInOut.html" title="">Sign In | Sign Up</a>
-				</li>
+				</li> -->
 				<li class="signed_in signout_opt">
-					<a href="./index.html" title="">Sign Out</a>
+					<a style="text-decoration: none;" href="./index.html" title="">Sign Out</a>
 				</li>
-				<li class="signed_in">
-		          <a href="./campus_ambassodar_register.html" title="">Campus Ambassodar Signup</a>
+				<li>
+		          <a style="text-decoration: none;" href="./campus_ambassodar_register.html" title="">Campus Ambassodar Signup</a>
 		        </li>	
 				
 				
@@ -287,6 +302,13 @@
 	</section>
 	<!-- end about -->
 
+	<section style="text-align: center;">
+		<div style="padding-top: 13%;font-family: verdana;color: white;font-size: 3em" class="parallax">Join Over 1000+ People To Serve The Noble Cause
+		<a href="campus_ambassodar_register.html" style="text-decoration: none;"><button type="button" style= "margin-top: 4em;opacity: 0.93;" class="btn btn-default">JOIN US</button></a>
+		</div>
+		
+	</section>
+
 
 	<!-- about
    ================================================== -->
@@ -329,11 +351,10 @@
 						<i class="icon-paint-brush"></i>
 					</span>
 					<div class="service-content">
-						<h3 class="h05">Branding</h3>
+						<h3 class="h05">Digital Excellence</h3>
 
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-							eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-							voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						<p>
+Since Innovision is among the largest techno-management fests of India, it is natural that the fest uses the best of digital resources available to it.
 						</p>
 					</div>
 
@@ -347,11 +368,10 @@
 					</span>
 
 					<div class="service-content">
-						<h3 class="h05">Web Design</h3>
+						<h3 class="h05">Strategy</h3>
 
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-							eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-							voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						<p>
+A well devised plan of action has been put into place, taking into factor various possible situations, so that the participants have the best experience while at Innovision.
 						</p>
 					</div>
 
@@ -365,33 +385,17 @@
 					</span>
 
 					<div class="service-content">
-						<h3 class="h05">Web Development</h3>
+						<h3 class="h05">Social Responsibility</h3>
 
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-							eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-							voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						<p>
+With the first wave of digitalization almost upon us , it is now more than ever that we need to recognize our responsibilities towards the society, which Team Innovision does.
 						</p>
 					</div>
 
 				</div>
 				<!-- end bgrid -->
 
-				<div class="bgrid service-item animate-this">
-
-					<span class="icon">
-						<i class="icon-megaphone"></i>
-					</span>
-
-					<div class="service-content">
-						<h3 class="h05">Marketing</h3>
-
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-							eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-							voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-						</p>
-					</div>
-
-				</div>
+				
 				<!-- end bgrid -->
 
 			</div>
@@ -402,18 +406,14 @@
 
 	</section>
 	<!-- end services -->
-
-
-	<!-- portfolio
-   ================================================== -->
-	<section id="portfolio">
+		<section id="portfolio">
 
 		<div class="intro-wrap">
 
 			<div class="row narrow section-intro with-bottom-sep animate-this">
 				<div class="col-twelve">
-					<h3>Showcase: Proshows and Workshops</h3>
-					<h1>Most Featured</h1>
+					<h1>Gallery</h1>
+					<h3>Most Featured</h3>
 
 					<p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum
 						ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>
@@ -440,7 +440,7 @@
 								</div>
 							</a>
 							<a href="https://www.behance.net/" class='details-link' title="details">
-								<i class="icon-link"></i>
+								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
@@ -467,7 +467,7 @@
 								</div>
 							</a>
 							<a href="https://www.behance.net/" class='details-link' title="details">
-								<i class="icon-link"></i>
+								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
@@ -494,7 +494,7 @@
 								</div>
 							</a>
 							<a href="https://www.behance.net/" class='details-link' title="details">
-								<i class="icon-link"></i>
+								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
@@ -521,7 +521,7 @@
 								</div>
 							</a>
 							<a href="https://www.behance.net/" class='details-link' title="details">
-								<i class="icon-link"></i>
+								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
@@ -548,7 +548,7 @@
 								</div>
 							</a>
 							<a href="https://www.behance.net/" class='details-link' title="details">
-								<i class="icon-link"></i>
+								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
@@ -575,7 +575,7 @@
 								</div>
 							</a>
 							<a href="https://www.behance.net/" class='details-link' title="details">
-								<i class="icon-link"></i>
+								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
@@ -598,10 +598,72 @@
 		<!-- end portfolio-content -->
 
 	</section>
+
+
+	<!-- portfolio
+   ================================================== -->
+	<!-- <section id="portfolio">
+
+		<div class="intro-wrap">
+
+			<div class="row narrow section-intro with-bottom-sep animate-this">
+				<div class="col-twelve">
+					<h3>Showcase: Proshows and Workshops</h3>
+					<h1>Most Featured</h1>
+
+					<p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum
+						ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>
+				</div>
+			</div>
+			
+
+		</div>
+
+		<div class="row portfolio-content">
+			<div class="col-twelve">
+				<div id="folio-wrap" class="bricks-wrapper">
+
+					<div class="brick folio-item">
+						<div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-shutterbug.jpg" data-sub-html="#01">
+							<a href="#" class="overlay">
+								<img src="images/portfolio/shutterbug.jpg" alt="Skaterboy">
+								<div class="item-text">
+									<span class="folio-types">
+										Web Development
+									</span>
+									<h3 class="folio-title">Shutterbug</h3>
+								</div>
+							</a>
+							<a href="https://www.behance.net/" class='details-link' title="details">
+								<i class="icon-link"></i>
+							</a>
+						</div>
+						
+
+						<div id="01" class='hide'>
+							<h4>Shutterbug</h4>
+							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
+								velit.
+								<a href="https://www.behance.net/">Details</a>
+							</p>
+						</div>
+					</div>
+				
+
+					
+
+				</div>
+		
+			</div>
+		
+		</div>
+		
+
+	</section> -->
 	<!-- end portfolio -->
 
 	<!-- **************************Gallery************** -->
-	<section id="portfolio">
+	<!-- <section id="portfolio">
 		<div class="flex-container">
 			<div class="intro-wrap">
 
@@ -667,7 +729,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- ***********************************INCLUDING VIDEO****************** -->
 	<!-- <section id="portfolio">
@@ -925,7 +987,7 @@
 
 		<div class="row narrow section-intro with-bottom-sep">
 			<div class="col-twelve">
-				<h3>Contact</h3>
+			<!-- 	<h3>Contact</h3> -->
 				<h1>Get In Touch.</h1>
 
 				<p class="lead">How can we help you? We are always available.</p>
@@ -933,92 +995,18 @@
 		</div>
 		<!-- end section-intro -->
 
-		<div class="row contact-content">
-
-			<div class="col-seven tab-full">
-
-				<h5>Send Us A Message</h5>
-
-				<!-- form -->
-				<form name="contactForm" id="contactForm" method="post">
-
-					<div class="form-field">
-						<input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-					</div>
-
-					<div class="row">
-						<div class="col-six tab-full">
-							<div class="form-field">
-								<input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-							</div>
-						</div>
-						<div class="col-six tab-full">
-							<div class="form-field">
-								<input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-							</div>
-						</div>
-					</div>
-
-					<div class="form-field">
-						<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-					</div>
-
-					<div class="form-field">
-						<button class="submitform">Submit</button>
-
-						<div id="submit-loader">
-							<div class="text-loader">Sending...</div>
-							<div class="s-loader">
-								<div class="bounce1"></div>
-								<div class="bounce2"></div>
-								<div class="bounce3"></div>
-							</div>
-						</div>
-					</div>
-
-				</form>
-				<!-- end form -->
-
-				<!-- contact-warning -->
-				<div id="message-warning"></div>
-
-				<!-- contact-success -->
-				<div id="message-success">
-					<i class="fa fa-check"></i>Your message was sent, thank you!
-					<br>
-				</div>
+		<div class="row">
+			<div class="col-md-5" style="text-align: center;"><h3 style="color: white">Mail Us:<a href="mailto:innovision.nitrkl@gmail.com">innovision.nitrkl@gmail.com</a></h3></div>
+			<div class="col-md-2">
+				<h1 style="color: white;text-align: center;">
+					<i style="padding:0.2em;border-left: 8px solid rgb(1,95,207)" class="fa fa-facebook-square"></i>
+					<i style="padding:0.2em;border-left: 8px solid rgb(1,95,207)" class="fa fa-instagram"></i>
+					<i style="padding:0.2em;border-left: 8px solid rgb(1,95,207)" class="fa fa-twitter"></i>
+				</h1>
 
 			</div>
-			<!-- end col-seven -->
-
-			<div class="col-four tab-full contact-info end">
-
-				<h5>Contact Information</h5>
-
-				<div class="cinfo">
-					<h6>Email Us At</h6>
-					<p>
-						contactus@innonitr.com
-						<!-- <br> info@infinitysite.com -->
-					</p>
-				</div>
-				<!-- end cinfo -->
-
-				<div class="cinfo">
-					<h6>Call Us At</h6>
-					<p>
-						Phone: (+63) 555 1212
-						<br> Mobile: (+63) 555 0100
-						<br> Fax: (+63) 555 0101
-					</p>
-				</div>
-
-			</div>
-			<!-- end cinfo -->
-
+			<div class="col-md-5" style="text-align: center;"><h2 style="color: white">Contact us: 99376252767</h2></div>
 		</div>
-		<!-- end row contact-content -->
-
 	</section>
 	<!-- end contact -->
 
