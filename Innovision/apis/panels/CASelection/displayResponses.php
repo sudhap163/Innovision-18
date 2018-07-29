@@ -3,7 +3,7 @@
 	include('../../db.php');
     include('./verifyCAAdmin.php');
 
-	if($_SERVER["REQUEST_METHOD"] === "GET") {
+
 
 		if (isset($status) && $status === "success") {
 
@@ -16,6 +16,6 @@
 
 			echo(json_encode(array('status' => 'success', 'result' => $result)));
 		}
-	}
+	
 
 ?>
