@@ -1,0 +1,71 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<body style="background-color: #FBC02D;padding: 2em;">
+  <br>
+  <div class="container">
+    <center>
+      <div class="row">
+        <h1>
+          <b>Campus Ambassador Admin Panel</b>
+        </h1>
+      </div>
+    </center>
+  </div>
+  <!-- include fetchllevent script get the DATA_ARRAY-->
+  <script src="../js/ajax/fetchingCAResponses.js"></script>
+  <script type="text/javascript">
+    function populate(data_arr)
+    {
+      for (var i = 0; i < data_arr.length; i++) {
+            var str;
+            if(data_arr[i].status == 0) str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox"> </td>';
+            else str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox" checked> </td>';
+            temp = temp + '<tr><td style="display:none" id="ca_id">' + data_arr[i].ca_applicant_id + '</td><td>' + (i + 1) + '</td ><td>' + data_arr[i].q1 + '</td><td>' + data_arr[i].q2 + '</td><td>' + data_arr[i].q3 + '</td><td>' + data_arr[i].q4 + '</td><td>' + data_arr[i].q5 + '</td><td>' + data_arr[i].q6 + '</td><td>' + data_arr[i].q7 + '</td><td>' + data_arr[i].q8 + '</td><td>' + data_arr[i].q9 + '</td><td>' + data_arr[i].q10 + '</td><td>' + data_arr[i].q11 + '</td><td>' + data_arr[i].q12 + '</td><td>' + data_arr[i].q13 + '</td><td>' + data_arr[i].q14 + '</td>' + str + '</tr>';
+            $(tbody).append(temp);
+              
+    }
+  </script>
+  <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
+    <div class="row" style="margin-top: 3em;padding:1em;">
+        <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email Address</th>
+              <th>Phone Number</th>
+              <th>Year of Study</th>
+              <th>Course</th>
+              <th>POR</th>
+              <th>What makes you unique from others that we should select you?</th>
+              <th>Have you ever been to Innovision earlier? When?</th>
+              <th>Write in brief about what you know about Innovision.</th>
+              <th>How many students do you think you can convince into bringing to Innovision this year?</th>
+              <th>Social media platforms that you are active on.</th>
+              <th>What would be your publicity strategy for Innovision?</th>
+              <th>Languages that you are fluent in.</th>
+              <th>CV link</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <div><button type="button" class="btn btn-info logout_button">Sign Out</button></div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script>
+    $(document).on("click",".logout_button",function(){
+        localStorage.remove();
+        location.replace("./CA_admin_login.html");
+    });
+  </script>
+</body>
+</html>
