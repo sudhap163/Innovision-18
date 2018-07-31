@@ -1,11 +1,11 @@
 
 <?php
 
-	include('../../../vendor/autoload.php');
+	include('../../../../vendor/autoload.php');
     use \Firebase\JWT\JWT; 
 
-    include('../config.php');
-    include('../panels/cms/config.php');
+    include('../../config.php');
+    include('./config.php');
 
     $secretKey = base64_decode(SECRET_KEY);
 
@@ -21,7 +21,7 @@
     			array(ALGORITHM)
     		);
 
-    		if ($DecodedDataArray->data->inno_id === INNO_ID && $DecodedDataArray->data->email === EMAIL) {
+            if ($DecodedDataArray->data->inno_id === INNO_ID && $DecodedDataArray->data->email === EMAIL) {
 
                 $status = "success";
             } else {
