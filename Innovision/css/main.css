@@ -9,8 +9,8 @@ html {
 svg {
   position: absolute;
   margin:auto;
-  height:100%;
-  width:100%;
+  height:80%;
+  width:80%;
   overflow:hidden;
 }
 @media only screen and (max-width: 1024px) {
@@ -34,7 +34,7 @@ html, body {
 }
 
 body {
-  background: #111111;
+  background: #14284c;
   font-family: "librebaskerville-regular", serif;
   font-size: 1.6rem;
   line-height: 3rem;
@@ -1971,13 +1971,12 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
  *
  * ------------------------------------------------------------------- */
 #about {
-  background-image: url("../images/2.jpg");
+  background-color: 14284c;
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
   position: relative;
   padding: 4.2rem 0 12rem;
-  background-color: #FFFFFF;
   min-height: 696px;
   text-align: center;
 }
@@ -2102,7 +2101,6 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 #services {
   font-family: "montserrat-regular", monospace;
   background-color: #19191b;
-  background-image: url(../images/services-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: cover;
@@ -2221,7 +2219,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
  *
  * ------------------------------------------------------------------- */
 #portfolio {
-  background-image: url(../images/2.jpg);
+  background-color:#14284c;
   font-family: "montserrat-bold",serif;
   min-height:800px;
   position: relative;
@@ -2722,7 +2720,6 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 #faq {
   background-color: #111111;
-  background-image: url(../images/faq-bg3.jpg);
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: cover;
@@ -2797,8 +2794,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
  * ------------------------------------------------------------------- */
 #contact {
   font-family: "montserrat-bold",serif;
-  background-color: #111111;
-  background-image: url(../images/2.jpg);
+  background-color: #14284c;
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: cover;
@@ -2817,7 +2813,8 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   background-color: #000000;
 }
 #contact .section-intro h1 {
-  color: white;
+  color: white; 
+  font-family: "montserrat-bold",serif;
 }
 #contact .section-intro h3 {
   color: rgba(242, 242, 242, 0.5);
@@ -3341,7 +3338,7 @@ footer h4.h05::after {
   position: relative;
   padding: 90px 0px;
   z-index: 11000;
-  background: url("./../../images/2.jpg");
+  background-color:14284c;
 }
 
  .section-bg {
