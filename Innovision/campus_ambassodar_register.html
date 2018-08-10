@@ -97,14 +97,14 @@
         </li>
         <li>
           <a style="text-decoration: none;" href="./eventFinal.html" title="">Events | Workshops | Exhibitions</a>
-        </li>       
+        </li>
         <li>
           <a href="./faq.html">FAQ | Help</a>
         </li>
         <li class="signed_in signout_opt">
           <a href="./index.html" title="">Sign Out</a>
         </li>
-       <!--  <li class="signed_in">
+        <!--  <li class="signed_in">
           <a style="text-decoration: none;" href="./index.html" title="">Sign Out</a>
         </li> -->
         <li class="current">
@@ -179,7 +179,19 @@
             </div>
           </div>
         </div>
+        <script src="../js/ajax/readCollege.js"></script>
+        <script>
+          function display_college(dataArray) {
+            var temp = '';
+            console.log(dataArray);
+            for (var i = 0; i < dataArray.length; i++) {
 
+              temp = temp + "<option value='" + dataArray[i].college_id + "'>" + dataArray[i].college_name + "," + dataArray[i].city + "</option>";
+
+            }
+            $("#q4").append(temp);
+          }
+        </script>
         <div class="row">
           <div class="col-four tab-full">
             <div>

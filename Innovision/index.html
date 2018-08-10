@@ -63,6 +63,19 @@
 	<link rel="icon" href="images/Innovision_Logo.png" type="image/png">
 
 	<style>
+		.loader1 {
+			position: fixed;
+			background: url('orig2.gif') 50% 50% no-repeat rgb(249, 249, 249);
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999 !important;
+			opacity: 1;
+			background-color: black;
+			display: block;
+		}
+
 		.modal-content p {
 			text-align: justify;
 		}
@@ -114,22 +127,22 @@
 
 		.modal-header button:hover {
 			transform: rotate(-180deg);
+		}
+
+		.parallax {
+			/* The image used */
+			background-image: url("test.jpg");
+
+			/* Set a specific height */
+			min-height: 500px;
+
+			/* Create the parallax scrolling effect */
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
 	</style>
-	<style>
-.parallax {
-    /* The image used */
-    background-image: url("test.jpg");
-
-    /* Set a specific height */
-    min-height: 500px; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-</style>
 
 </head>
 
@@ -172,10 +185,10 @@
 					<a style="text-decoration: none;" href="./index.html" title="">Sign Out</a>
 				</li>
 				<li>
-		          <a style="text-decoration: none;" href="./campus_ambassodar_register.html" title="">Campus Ambassodar Signup</a>
-		        </li>	
-				
-				
+					<a style="text-decoration: none;" href="./campus_ambassodar_register.html" title="">Campus Ambassodar Signup</a>
+				</li>
+
+
 			</ul>
 
 			<!-- <p class="sponsor-text">
@@ -303,10 +316,36 @@
 	<!-- end about -->
 
 	<section style="text-align: center;">
-		<div style="padding-top: 13%;font-family: verdana;color: white;font-size: 3em" class="parallax">Join Over 1000+ People To Serve The Noble Cause
-		<a href="campus_ambassodar_register.html" style="text-decoration: none;"><button type="button" style= "margin-top: 4em;opacity: 0.93;" class="btn btn-default">JOIN US</button></a>
+		<div style="padding-top:5%;font-family: verdana;color: white;font-size: 3em" class="parallax">Join Over 1000+ People To Serve The Noble Cause
+			<!-- <a href="campus_ambassodar_register.html" style="text-decoration: none;">
+				<button type="button" style="margin-top: 4em;opacity: 0.93;" class="btn btn-default">JOIN US</button>
+			</a> -->
+			<div class="row" style="text-align: left;margin-top: 0.8em;">
+				<div class="col-md-10">
+					<h1 style="color:white">Perks</h1>
+					<ul>
+						<h2>
+							<li>Enhance managerial skills and become proficient in communication</li>
+						</h2>
+						<h2>
+							<li>Get to meet a wide diversity of people from various field and enhance your network.</li>
+						</h2>
+						<h2>
+							<li>An oppurtunity to represent college at larger platform</li>
+						</h2>
+					</ul>
+
+				</div>
+				<div class="col-md-2" style="text-align: right">
+					<a href="campus_ambassodar_register.html" style="text-decoration: none;">
+						<button type="button" style="margin-top: 18em;opacity: 0.93;" class="btn btn-default">JOIN US</button>
+					</a>
+				</div>
+			</div>
 		</div>
-		
+
+
+
 	</section>
 
 
@@ -341,72 +380,67 @@
 			</div>
 
 		</div>
-		<div class="row services-content">
-
-			<div class="services-list block-1-2 block-tab-full group">
-
+		<div class="row">
+			<div class="col-md-4">
 				<div class="bgrid service-item animate-this">
 
 					<span class="icon">
-						<i class="icon-paint-brush"></i>
+						<i class="fa fa-desktop" style="font-size:2em;color:#F9A828"></i>
 					</span>
 					<div class="service-content">
-						<h3 class="h05">Digital Excellence</h3>
+						<h1 style="color:white">Digital Excellence</h1>
 
-						<p>
-Since Innovision is among the largest techno-management fests of India, it is natural that the fest uses the best of digital resources available to it.
+						<p style="color:white;font-size:1em">
+							Since Innovision is among the largest techno-management fests of India, it is natural that the fest uses the best of digital
+							resources available to it.
 						</p>
 					</div>
 
 				</div>
-				<!-- end bgrid -->
-
-				<div class="bgrid service-item animate-this">
-
-					<span class="icon">
-						<i class="icon-earth"></i>
-					</span>
-
-					<div class="service-content">
-						<h3 class="h05">Strategy</h3>
-
-						<p>
-A well devised plan of action has been put into place, taking into factor various possible situations, so that the participants have the best experience while at Innovision.
-						</p>
-					</div>
-
-				</div>
-				<!-- end bgrid -->
-
-				<div class="bgrid service-item animate-this">
-
-					<span class="icon">
-						<i class="icon-lego-block"></i>
-					</span>
-
-					<div class="service-content">
-						<h3 class="h05">Social Responsibility</h3>
-
-						<p>
-With the first wave of digitalization almost upon us , it is now more than ever that we need to recognize our responsibilities towards the society, which Team Innovision does.
-						</p>
-					</div>
-
-				</div>
-				<!-- end bgrid -->
-
-				
-				<!-- end bgrid -->
-
 			</div>
-			<!-- end services-list -->
 
+			<div class="col-md-4">
+				<div class="bgrid service-item animate-this">
+
+					<span class="icon">
+						<i class="fa fa-cogs" style="font-size:2em;color:#F9A828"></i>
+					</span>
+					<div class="service-content">
+						<h1 style="color:white">Strategy</h1>
+
+						<p style="color:white;font-size:1em">
+							A well devised plan of action has been put into place, taking into factor various possible situations, so that the participants
+							have the best experience while at Innovision.
+						</p>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="bgrid service-item animate-this">
+
+					<span class="icon">
+						<i class="fa fa-users" style="font-size:2em;color:#F9A828"></i>
+					</span>
+					<div class="service-content">
+						<h1 style="color:white">Social Responsibility</h1>
+
+						<p style="color:white;font-size:1em">
+							With the first wave of digitalization almost upon us , it is now more than ever that we need to recognize our responsibilities
+							towards the society, which Team Innovision does.
+						</p>
+					</div>
+
+				</div>
+			</div>
 		</div>
+
 		<!-- end services-content -->
 
 	</section>
 	<!-- end services -->
-		<section id="portfolio">
+	<section id="portfolio">
 
 		<div class="intro-wrap">
 
@@ -798,55 +832,52 @@ With the first wave of digitalization almost upon us , it is now more than ever 
 				<ul class="slides">
 
 					<li>
-						<div class="row">
-							<div class="col-seven" style="margin-top: -4em">
-								<p>
-									<h3>Innovision 2017 : Amiya Samantray</h3>
-									<h4>CEO and Founder at Phoenix Robotix</h4>
-									It was a great concept that Innovision pulled off with the startup meet. It was a great platform to build network among startups and startups.									
-								</p>
-							</div>
 
-							<div style="display: inline-block" class="col-five">
-								<!-- <video width="100%" height="100%" controls>
+						<div class="col-seven">
+							<p>
+								<h3>Innovision 2017 : Amiya Samantray</h3>
+								This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
+							</p>
+						</div>
+
+						<div style="display: inline-block" class="col-five">
+							<!-- <video width="100%" height="100%" controls>
 									<source src="https://www.youtube.com/embed/rGlEZpOVjGo " type="video/mp4 ">
 									<source src="https://www.youtube.com/embed/rGlEZpOVjGo \" type="video/ogg "> Your browser does not support the video tag.
 								</video> -->
-								<iframe width="100%" height="230em" src="https://www.youtube.com/embed/n88IQIOslGI" frameborder="0" allow="autoplay; encrypted-media"
-								 allowfullscreen></iframe>
-							</div>
+							<iframe width="100%" height="230em" src="https://www.youtube.com/embed/n88IQIOslGI" frameborder="0" allow="autoplay; encrypted-media"
+							 allowfullscreen></iframe>
 						</div>
+
 					</li>
 					<!-- end slide -->
 
 					<li>
-						<div class="row ">
-							<div class="col-seven"  style="margin-top: -4em">
-								<p>
-									<h3>Innovision 2017 :Dr. Priyadarshi Mohapatra</h3>
-									<h4>Country General Manager Consumer Channel Group Microsoft India</h4>
-									We didn’t have a technology festival during our time, it’s a great idea and you guys are doing a great job.
-								</p>
-							</div>
 
-							<div style="display: inline-block " class="col-five ">
-								<!-- <video width="100% " height="100% " controls>
+						<div class="col-seven ">
+							<p>
+								<h3>Innovision 2017 :Dr. Priyadarshi Mohapatra</h3>
+								This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
+							</p>
+						</div>
+
+						<div style="display: inline-block " class="col-five ">
+							<!-- <video width="100% " height="100% " controls>
 									<source src="movie.mp4 " type="video/mp4 ">
 									<source src="movie.ogg " type="video/ogg "> Your browser does not support the video tag.
 								</video> -->
-								<iframe width="100% " height="230em " src="https://www.youtube.com/embed/VMnqz-TeLDg" frameborder="0" allow="autoplay; encrypted-media"
-								 allowfullscreen></iframe>
-							</div>
+							<iframe width="100% " height="230em " src="https://www.youtube.com/embed/VMnqz-TeLDg" frameborder="0" allow="autoplay; encrypted-media"
+							 allowfullscreen></iframe>
 						</div>
+
 					</li>
 					<!-- end slide -->
 					<li>
 						<div class="row ">
-							<div class="col-seven "  style="margin-top: -4em">
+							<div class="col-seven ">
 								<p>
 									<h3>Innovision 2017 : Gaurav Kapoor</h3>
-									<h4>Head - Social Entrepreneurship, IIM Calcutta Innovation Park</h4>
-									It was a wonderful experience getting to know various innovations that people are working on.
+									This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
 								</p>
 							</div>
 
@@ -863,11 +894,10 @@ With the first wave of digitalization almost upon us , it is now more than ever 
 					<!-- end slide -->
 					<li>
 						<div class="row ">
-							<div class="col-seven "  style="margin-top: -4em">
+							<div class="col-seven ">
 								<p>
 									<h3>Innovision 2017 : Vishwajeet Dash</h3>
-									<h4>Travel Blogger and YouTube film-maker</h4>
-									Find your passion and follow it like never before to add value to your life because you just have one life to live.
+									This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
 								</p>
 							</div>
 
@@ -991,7 +1021,7 @@ With the first wave of digitalization almost upon us , it is now more than ever 
 
 		<div class="row narrow section-intro with-bottom-sep">
 			<div class="col-twelve">
-			<!-- 	<h3>Contact</h3> -->
+				<!-- 	<h3>Contact</h3> -->
 				<h1>Get In Touch.</h1>
 
 				<p class="lead">How can we help you? We are always available.</p>
@@ -1000,7 +1030,11 @@ With the first wave of digitalization almost upon us , it is now more than ever 
 		<!-- end section-intro -->
 
 		<div class="row">
-			<div class="col-md-5" style="text-align: center;"><h3 style="color: white">Mail Us:<a href="mailto:innovision.nitrkl@gmail.com">innovision.nitrkl@gmail.com</a></h3></div>
+			<div class="col-md-5" style="text-align: center;">
+				<h3 style="color: white">Mail Us:
+					<a href="mailto:innovision.nitrkl@gmail.com">innovision.nitrkl@gmail.com</a>
+				</h3>
+			</div>
 			<div class="col-md-2">
 				<h1 style="color: white;text-align: center;">
 					<i style="padding:0.2em;border-left: 8px solid rgb(1,95,207)" class="fa fa-facebook-square"></i>
@@ -1009,7 +1043,9 @@ With the first wave of digitalization almost upon us , it is now more than ever 
 				</h1>
 
 			</div>
-			<div class="col-md-5" style="text-align: center;"><h2 style="color: white">Contact us: 99376252767</h2></div>
+			<div class="col-md-5" style="text-align: center;">
+				<h2 style="color: white">Contact us: 99376252767</h2>
+			</div>
 		</div>
 	</section>
 	<!-- end contact -->
@@ -1017,14 +1053,14 @@ With the first wave of digitalization almost upon us , it is now more than ever 
 
 	<!-- footer
    ================================================== -->
-	<footer>		
+	<footer>
 
 		<div class="footer-bottom">
 
 			<div class="row">
 
 				<div class="col-twelve">
-					
+
 					<div class="copyright">
 						<span>© National Institute of Technology, Rourkela 2018</span>
 						<span>Designed by
@@ -1045,10 +1081,17 @@ With the first wave of digitalization almost upon us , it is now more than ever 
 		</div>
 	</footer>
 
-	<div id="preloader">
+	<!-- <div id="preloader">
 		<div id="loader"></div>
-	</div>
+	</div> -->
+	<div class="loader1">
 
+	</div>
+	<script>
+		$(document).ready(function () {
+			$(".loader1").fadeOut(10000);
+		});
+	</script>
 	<!-- Java Script
    ================================================== -->
 	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
@@ -1056,18 +1099,17 @@ With the first wave of digitalization almost upon us , it is now more than ever 
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
 	<script>
-      $(document).ready(function(){
-        if(localStorage.innoID == null || localStorage.innoID == "" || !(localStorage.innoID))
-        {
-          $(".signed_out").css("display", "block");
-          $(".signed_in").css("display", "none");
-        }
-        else{
-          $(".signed_in").css("display", "block");
-          $(".signed_out").css("display", "none"); 
-        }
-      });
-   </script>
+		$(document).ready(function () {
+			if (localStorage.innoID == null || localStorage.innoID == "" || !(localStorage.innoID)) {
+				$(".signed_out").css("display", "block");
+				$(".signed_in").css("display", "none");
+			}
+			else {
+				$(".signed_in").css("display", "block");
+				$(".signed_out").css("display", "none");
+			}
+		});
+	</script>
 
 </body>
 
