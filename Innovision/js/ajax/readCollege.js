@@ -6,6 +6,7 @@ $.ajax({
         var temp = '';
         var dataArray = JSON.parse(data).result;
         console.log(dataArray);
+        display_college(dataArray);
 
     },
     error: function (data) {

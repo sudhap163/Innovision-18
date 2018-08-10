@@ -181,12 +181,16 @@
         </div>
         <script src="../js/ajax/readCollege.js"></script>
         <script>
-          for (var i = 0; i < dataArray.length; i++) {
+          function display_college(dataArray) {
+            var temp = '';
+            console.log(dataArray);
+            for (var i = 0; i < dataArray.length; i++) {
 
-            temp = temp + "<option value='" + dataArray[i].college_id + "'>" + dataArray[i].college_name + "," + dataArray[i].city + "</option>";
+              temp = temp + "<option value='" + dataArray[i].college_id + "'>" + dataArray[i].college_name + "," + dataArray[i].city + "</option>";
 
+            }
+            $("#q4").append(temp);
           }
-          $("#q4").append(temp);
         </script>
         <div class="row">
           <div class="col-four tab-full">
