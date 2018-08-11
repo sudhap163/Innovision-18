@@ -1316,10 +1316,11 @@ header .header-logo a#inno {
   transition: all 0.3s ease-in-out;
 }
 #header-menu-trigger.opaque {
-  background-color: #000000;
+  /*background-color: #000000;*/
 }
 #header-menu-trigger.opaque .header-menu-text {
-  background-color: #000000;
+  /*background-color: #000000;*/
+  color: #f8a728;
 }
 #header-menu-trigger:hover, #header-menu-trigger:focus {
   color: #FFFFFF;
@@ -3062,8 +3063,8 @@ footer h4.h05::after {
   width: 60px;
   line-height: 63px;
   text-align: center;
-  background-color: #000000;
-  color: #888;
+  /*background-color: #000000;*/
+  color: #f8a728;
   text-align: center;
   text-transform: uppercase;
   -moz-transition: all 0.3s ease-in-out;
@@ -3077,8 +3078,8 @@ footer h4.h05::after {
   line-height: inherit;
 }
 #go-top a:visited {
-  background: #000000;
-  color: #888;
+  /*background: #000000;*/
+  color: #f8a728;
 }
 #go-top a:hover, #go-top a:focus {
   background: #000000;
