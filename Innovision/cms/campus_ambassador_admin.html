@@ -18,20 +18,24 @@
   <!-- include fetchllevent script get the DATA_ARRAY-->
   <script src="../js/ajax/fetchingCAResponses.js"></script>
   <script type="text/javascript">
+    
+  </script>
+  <script type="text/javascript">
     function populate(data_arr)
     {
+      var str;
       for (var i = 0; i < data_arr.length; i++) {
-            var str;
-            if(data_arr[i].status == 0) str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox"> </td>';
+            str = "";
+            if(data_arr[i].selected == 0) str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox"> </td>';
             else str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox" checked> </td>';
             temp = temp + '<tr><td style="display:none" id="ca_id">' + data_arr[i].ca_applicant_id + '</td><td>' + (i + 1) + '</td ><td>' + data_arr[i].q1 + '</td><td>' + data_arr[i].q2 + '</td><td>' + data_arr[i].q3 + '</td><td>' + data_arr[i].q4 + '</td><td>' + data_arr[i].q5 + '</td><td>' + data_arr[i].q6 + '</td><td>' + data_arr[i].q7 + '</td><td>' + data_arr[i].q8 + '</td><td>' + data_arr[i].q9 + '</td><td>' + data_arr[i].q10 + '</td><td>' + data_arr[i].q11 + '</td><td>' + data_arr[i].q12 + '</td><td>' + data_arr[i].q13 + '</td><td>' + data_arr[i].q14 + '</td>' + str + '</tr>';
-            $(tbody).append(temp);
-              
+          }
+          $("tbody").append(temp);
     }
   </script>
   <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
-    <div class="row" style="margin-top: 3em;padding:1em;">
-        <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;">
+    <div class="row" style="margin-top: 3em;padding:1em;overflow-x: auto;overflow-y: auto;">
+        <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
           <thead>
             <tr>
               <th>#</th>
@@ -59,13 +63,20 @@
         </table>
     </div>
   </div>
-  <div><button type="button" class="btn btn-info logout_button">Sign Out</button></div>
+  <div class="row">
+    <div class="col-sm-2"><button type="button" class="btn btn-info submit_button" style="margin-top: 2em;">Submit</button>
+  </div>
+    <div class="col-sm-8"></div>
+    <div class="col-sm-2"><button type="button" class="btn btn-info logout_button" style="margin-top: 2em;">Sign Out</button></div>
+  </div>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script>
     $(document).on("click",".logout_button",function(){
-        localStorage.remove();
-        location.replace("./CA_admin_login.html");
+        localStorage.clear();
+        window.location.assign("./CA_admin_login.html");
     });
-  </script>
+  </script> 
+  
+  <script src="../js/ajax/updateCAResponses.js"></script>
 </body>
 </html>
