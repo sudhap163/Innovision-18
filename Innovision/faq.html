@@ -33,58 +33,92 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
+ <style>
+   #menu-nav-wrap{
+      width:25%;
+      background-color: #061115;
+      opacity: 0.95;
+    }
+    @media screen and (max-width: 767px){
+      #menu-nav-wrap{
+        width: 100%
+      }
+ </style>
+
+
 </head>
 
 <body id="top">
-   <header> 
+  <header>
 
-      <div class="header-logo">
-        <a id="nitr" href="javascript:void(0)">Infinity</a>
-        <a id="inno" href="javascript:void(0)">Infinity</a>
-      </div> 
+    <div class="header-logo">
+      <a id="nitr" href="javascript:void(0)">Infinity</a>
+      <a id="inno" href="javascript:void(0)">Infinity</a>
+    </div>
 
-      <a id="header-menu-trigger" href="#0">
-         <span class="header-menu-text">Menu</span>
-         <span class="header-menu-icon"></span>
-      </a> 
+    <a id="header-menu-trigger" href="#0">
+      <span class="header-menu-text" style="color: white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Menu</span>
+      <span class="fa fa-bars" style="font-size: 1.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"></span>
+    </a>
 
-      <nav id="menu-nav-wrap">
+    <nav id="menu-nav-wrap">
+      <a href="#0" class="close-button" title="close">
+        <span>Close</span>
+      </a>
+      <h3>INNOVISION '18</h3>
 
-         <a href="#0" class="close-button" title="close"><span>Close</span></a>  
+      <ul class="nav-list" >
+        <li class="current">
+          <a style="text-decoration: none;" href="./index.html" title="">Home</a>
+        </li>
+        <li>
+          <a style="text-decoration: none;" href="./eventFinal.html" title="">Events | Workshops | Exhibitions</a>
+        </li>
+        <li>
+          <a style="text-decoration: none;color:white" href="javascript:void(0)">FAQ | Help</a>
+        </li>
+        <!-- <li class="signed_out">
+          <a href="./signInOut.html" title="">Sign In | Sign Up</a>
+        </li> -->
+        <li class="signed_in signout_opt">
+          <a style="text-decoration: none;" href="./index.html" title="">Sign Out</a>
+        </li>
+        <li>
+          <a style="text-decoration: none;" href="./campus_ambassador_register.html" title="">Campus Ambassador Signup</a>
+        </li>
 
-         <h3>Innovision-18</h3>  
 
-         <ul class="nav-list">
-            <li><a href="./index.html" title="">Home</a></li>
-            <li><a href="./eventFinal.html" title="">Events | Workshops | Exhibitions</a></li>
-            <li class="current"><a href="javascript:void(0)" title="">FAQ | Help</a></li> 
-           <!--  <li class="signed_out"><a href="./signInOut.html" title="">Sign In | Sign Up</a></li> -->
-            <li class="signed_in signout_opt"><a href="./index.html" title="">Sign Out</a></li>
-            <li >
-              <a href="./campus_ambassodar_register.html" title="">Campus Ambassodar Signup</a>
-            </li>              
-         </ul> 
+      </ul>
 
-         <!-- <p class="sponsor-text">
-            Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
-            Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
-         </p>   -->      
+      <!-- <p class="sponsor-text">
+          Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
+          Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.  -->
+      <!-- Simply type  the promocode in the box labeled “Promo Code” when placing your order. -->
+      <!-- </p>    -->
 
-         <ul class="header-social-list">
-            <li>
-               <a href="#"><i class="fa fa-facebook-square"></i></a>
-            </li>
-            <li>
-               <a href="#"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li>
-               <a href="#"><i class="fa fa-instagram"></i></a>
-            </li>    
-         </ul>    
+      <ul class="header-social-list">
+        <li>
+          <a href="https://www.facebook.com/innonitr/">
+            <i class="fa fa-facebook-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/innonitr">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/inno.nitr/">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
 
-      </nav>  <!-- end #menu-nav-wrap -->
+    </nav>
+    <!-- end #menu-nav-wrap -->
 
-   </header> <!-- end header -->  
+  </header>
+  <!-- end header -->
 
  <section id="ah">
 
@@ -273,11 +307,11 @@
 
       </div> <!-- end footer-bottom -->
 
-      <div id="go-top">
-       <a class="smoothscroll" title="Back to Top" href="#top">
-        <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
-       </a>
-    </div>    
+        <div id="go-top">
+      <a class="smoothscroll" title="Back to Top" href="#top">
+        <i class="fa fa-long-arrow-up" style="font-size: 2.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"  aria-hidden="true"></i>
+      </a>
+    </div>  
    </footer>    
 
    <div id="preloader"> 
