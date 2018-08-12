@@ -10,7 +10,7 @@
         <center>
             <div class="row" style="margin-top: 8em">
                 <h1>
-                    <b>CMS SIGN-IN</b>
+                    <b>CA ADMIN SIGN-IN</b>
                 </h1>
             </div>
 
@@ -51,9 +51,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script>
         $(document).on("click", ".submit", function () {
+        	console.log($("#pwd").val());
             $.ajax({
                 type: "POST",
-                url: "../apis/panels/cms/login.php",
+                url: "../apis/panels/CASelection/login.php",
                 data: {
                     username: $("#id").val().toString(),
                     password: $("#pwd").val().toString()
