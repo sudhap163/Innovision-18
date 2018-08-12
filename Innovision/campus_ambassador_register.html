@@ -152,25 +152,51 @@
       background-size: cover;
       font-size: 3em;
     }
-    #menu-nav-wrap{
-      width:25%;
+
+    #menu-nav-wrap {
+      width: 25%;
       background-color: #061115;
       opacity: 0.95;
     }
-    .join_us{
+
+    .join_us {
       margin-top: 16em;
     }
-    @media screen and (max-width: 767px){
-      #menu-nav-wrap{
+
+    #nitr_logo {
+      width: 5em;
+      left: 0;
+      margin-left: -200px;
+      margin-top: -20px;
+    }
+
+    .copyright {
+      margin-left: -170px;
+    }
+
+    @media screen and (max-width: 767px) {
+      #menu-nav-wrap {
         width: 100%
       }
-      .parallax{
+      .parallax {
         font-size: 2em;
-        text-align: center; 
+        text-align: center;
       }
-      .join_us{
+      .join_us {
         margin-top: 0em;
         margin-bottom: 1em;
+      }
+      #bars {
+        margin-left: 1.5em;
+      }
+      #nitr_logo {
+        width: 6em;
+        margin-left: 0px;
+        padding: 5px;
+
+      }
+      .copyright {
+        margin-left: 0px;
       }
     }
   </style>
@@ -184,24 +210,24 @@
   <header>
 
     <div class="header-logo">
-      <a id="nitr" href="javascript:void(0)">Infinity</a>
+      <!-- <a id="nitr" href="javascript:void(0)">Infinity</a> -->
       <a id="inno" href="javascript:void(0)">Infinity</a>
     </div>
 
     <a id="header-menu-trigger" href="#0">
-      <span class="header-menu-text" style="color: white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Menu</span>
-      <span class="fa fa-bars" style="font-size: 1.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"></span>
+      <span class="header-menu-text" style="color: white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;margin-top: -0.16em">Menu</span>
+      <span class="fa fa-bars" id="bars" style="font-size: 1.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"></span>
     </a>
 
     <nav id="menu-nav-wrap">
       <a href="#0" class="close-button" title="close">
         <span>Close</span>
       </a>
-      <h3 style="color: white;font-family: 'Source Sans Pro', sans-serif;">INNOVISION '18</h3>
+      <h3>INNOVISION '18</h3>
 
-      <ul class="nav-list" >
+      <ul class="nav-list">
         <li class="current">
-          <a style="text-decoration: none;" href="./index.html" title="">Home</a>
+          <a style="text-decoration: none;color:white" href="javascript:void(0)" title="">Home</a>
         </li>
         <li>
           <a style="text-decoration: none;" href="./eventFinal.html" title="">Events | Workshops | Exhibitions</a>
@@ -210,23 +236,17 @@
           <a style="text-decoration: none;" href="./faq.html">FAQ | Help</a>
         </li>
         <!-- <li class="signed_out">
-          <a href="./signInOut.html" title="">Sign In | Sign Up</a>
-        </li> -->
+  	    					<a href="./signInOut.html" title="">Sign In | Sign Up</a>
+  	    				</li> -->
         <li class="signed_in signout_opt">
           <a style="text-decoration: none;" href="./index.html" title="">Sign Out</a>
         </li>
         <li>
-          <a style="text-decoration: none;color: white;" href="javascript:void(0)" title="">Campus Ambassodar Signup</a>
+          <a style="text-decoration: none;" href="./campus_ambassador_register.html" title="">Campus Ambassador Signup</a>
         </li>
 
 
       </ul>
-
-      <!-- <p class="sponsor-text">
-          Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
-          Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.  -->
-      <!-- Simply type  the promocode in the box labeled “Promo Code” when placing your order. -->
-      <!-- </p>    -->
 
       <ul class="header-social-list">
         <li>
@@ -391,33 +411,33 @@
 
       </form>
       <section style="text-align: center;">
-    <div style="padding-top:5%;font-family: 'Source Sans Pro', sans-serif;color: white;">
-      <!-- <a href="campus_ambassodar_register.html" style="text-decoration: none;">
+        <div style="padding-top:5%;font-family: 'Source Sans Pro', sans-serif;color: white;">
+          <!-- <a href="campus_ambassodar_register.html" style="text-decoration: none;">
         <button type="button" style="margin-top: 4em;opacity: 0.93;" class="btn btn-default">JOIN US</button>
       </a> -->
-      <div class="row" style="text-align: left;margin-top: 0.8em;">
-        <div class="col-md-12">
-          <h1 style="color:white;font-family: 'Source Sans Pro', sans-serif;">Perks</h1>
-          <ul>
-            <h2>
-              <li style="font-family: 'Quicksand', sans-serif;color: white">Enhance managerial skills and become proficient in communication</li>
-            </h2>
-            <h2>
-              <li style="font-family: 'Quicksand', sans-serif;color: white">Get to meet a wide diversity of people from various field and enhance your network.</li>
-            </h2>
-            <h2>
-              <li style="font-family: 'Quicksand', sans-serif;color: white">An oppurtunity to represent college at larger platform</li>
-            </h2>
-          </ul>
+          <div class="row" style="text-align: left;margin-top: 0.8em;">
+            <div class="col-md-12">
+              <h1 style="color:white;font-family: 'Source Sans Pro', sans-serif;">Perks</h1>
+              <ul>
+                <h2>
+                  <li style="font-family: 'Quicksand', sans-serif;color: white">Enhance managerial skills and become proficient in communication</li>
+                </h2>
+                <h2>
+                  <li style="font-family: 'Quicksand', sans-serif;color: white">Get to meet a wide diversity of people from various field and enhance your network.</li>
+                </h2>
+                <h2>
+                  <li style="font-family: 'Quicksand', sans-serif;color: white">An oppurtunity to represent college at larger platform</li>
+                </h2>
+              </ul>
 
+            </div>
+
+          </div>
         </div>
-       
-      </div>
-    </div>
 
 
 
-  </section>
+      </section>
 
 
       <!--  </div> -->
@@ -434,18 +454,61 @@
 
   <!-- footer
    ================================================== -->
-  <footer>
+  <section id="contact">
 
-    <!-- end footer-main -->
+    <div class="overlay"></div>
+
+    <div class="row narrow section-intro" style="padding: 1em;">
+      <div class="col-twelve">
+        <!-- 	<h3>Contact</h3> -->
+        <h1 style="font-family: 'Source Sans Pro', sans-serif;">Get In Touch.</h1>
+
+        <p style="font-family: 'Source Sans Pro', sans-serif;" class="lead">How can we help you? We are always available.</p>
+      </div>
+    </div>
+    <!-- end section-intro -->
+
+    <div class="row" style="margin-top: -1.5em;">
+      <div class="col-md-3"></div>
+      <div class="col-md-3" style="text-align: center;">
+        <h2 style="color: white;font-family: 'Source Sans Pro', sans-serif;">Student Activity Center
+          <br>
+          <p style="color: white;font-family: 'Source Sans Pro', sans-serif;font-size: 0.7em">National Institute of Technology
+            <br>Sector 1, Rourkela - 769008</p>
+        </h2>
+        <h3 style="color: white;font-family: 'Source Sans Pro', sans-serif;">
+          <a href="mailto:contactus@innonitr.com" style="color:white;">contactus@innonitr.com</a>
+        </h3>
+      </div>
+      <div class="col-md-4">
+        <h1 style="color: white;text-align: center;">
+          <i style="padding:0.2em;display:block;" class="fa fa-facebook-square"></i>
+          <i style="padding:0.2em;display:block;" class="fa fa-instagram"></i>
+          <i style="padding:0.2em;display:block;" class="fa fa-twitter"></i>
+        </h1>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- end contact -->
+
+
+  <!-- footer
+     ==================	================================ -->
+  <footer>
 
     <div class="footer-bottom">
 
       <div class="row">
+        <div class="col-two">
+          <img src="./images/nitr_logo.png" id="nitr_logo">
+        </div>
+        <div class="col-ten">
 
-        <div class="col-twelve">
           <div class="copyright">
             <span>© National Institute of Technology, Rourkela 2018</span>
-            <span>Designed by
+            <span> Designed by
               <a href="javascript:void(0)">Technical Team, INNOVISION'18</a>
             </span>
           </div>
@@ -458,7 +521,8 @@
 
     <div id="go-top">
       <a class="smoothscroll" title="Back to Top" href="#top">
-        <i class="fa fa-long-arrow-up" style="font-size: 2.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"  aria-hidden="true"></i>
+        <i class="fa fa-long-arrow-up" style="font-size: 2.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"
+          aria-hidden="true"></i>
       </a>
     </div>
   </footer>

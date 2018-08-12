@@ -1519,6 +1519,7 @@ header .header-logo a#inno {
     width: 8.5vh;
     height: 8.5vh;
     background-size: 8.5vh 8.5vh;
+    margin: 0px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -2605,7 +2606,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  padding: 12rem 0 12rem;
+  padding: 2rem 0 2rem;
   position: relative;
 }
 #contact .overlay {
@@ -2629,7 +2630,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 .contact-content {
   max-width: 1024px;
-  margin-top: 3rem;
+  margin-top: 1rem;
   color: #FFFFFF;
   z-index: 600;
   position: relative;
