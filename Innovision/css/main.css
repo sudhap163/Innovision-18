@@ -1245,7 +1245,7 @@ header .row {
  * header logo - (_layout.css) 
  * ------------------------------------------------------------------- */
 header .header-logo {
-  position: absolute;
+  position: fixed;
   left: 32px;
   top: 10px;
   -moz-transition: all 1s ease-in-out;
