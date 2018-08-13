@@ -49,8 +49,11 @@
     </div>
     </center>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script>
+    <!--<script type="text/javascript" src="../js/ajax/cms_login.js"></script>-->
+    <script type="text/javascript">
         $(document).on("click", ".submit", function () {
+            console.log($("#id").val());
+            console.log($("#pwd").val());
             $.ajax({
                 type: "POST",
                 url: "../apis/panels/cms/login.php",
@@ -59,7 +62,16 @@
                     password: $("#pwd").val().toString()
                 },
                 success: function (data) {
-                    console.log(data);
+                    var dataSet = JSON.parse(data);
+                    if(dataSet["status"].localeCompare("success") == 0)
+                    {
+                        localStorage.cms_token = dataSet["result"];
+                        window.location.assign("./cms_events.html");
+                    }
+                    else
+                    {
+                        alert(dataSet["result"]);
+                    }
                 },
                 error: function (data) {
                     console.log(data);
@@ -67,8 +79,11 @@
             });
         });
     </script>
-
-
+    <script>
+        $(document).ready(function(){
+            localStorage.clear();
+        });
+    </script>
 </body>
 
 </html>

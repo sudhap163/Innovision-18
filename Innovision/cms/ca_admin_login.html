@@ -49,7 +49,7 @@
     </div>
     </center>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script>
+<!--     <script>
         $(document).on("click", ".submit", function () {
         	console.log($("#pwd").val());
             $.ajax({
@@ -60,16 +60,29 @@
                     password: $("#pwd").val().toString()
                 },
                 success: function (data) {
-                    console.log(data);
+                    var dataSet = JSON.parse(data);
+                    if(dataSet["status"].localeCompare("success") == 0)
+                    {
+                        localStorage.ca_token = dataSet["result"];
+                        window.location.assign("./campus_ambassador_admin.html");
+                    }
+                    else
+                    {
+                        alert(dataSet["result"]);
+                    }
                 },
                 error: function (data) {
                     console.log(data);
                 }
             });
         });
+    </script> -->
+    <script src="../js/ajax/ca_admin_login.js"></script>
+    <script>
+        $(document).ready(function(){
+            localStorage.clear();
+        });
     </script>
-
-
 </body>
 
 </html>

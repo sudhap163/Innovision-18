@@ -16,6 +16,7 @@ $(document).on("click", ".submitform", function () {
             q11: $("#q11").val().toString(),
             q12: $("#q12").val().toString(),
             q13: $("#q13").val().toString(),
+            q14: $("#q14").val().toString()
         },
         success: function (data) {
             console.log(data);
