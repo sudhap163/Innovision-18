@@ -28,6 +28,12 @@
         <p class="btnText2">GO!</p>
       </div>
     </div>
+    <div class="button" onclick="location.href = 'cms_login.html'">
+      <p class="btnText">LOGOUT</p>
+      <div class="btnTwo">
+        <p class="btnText2">GO!</p>
+      </div>
+    </div>
   </div>
   <!-- Modal for events-->
   <div class="modal fade" id="add_new_event_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -188,10 +194,13 @@
       </div>
     </div>
   </div>
-
   <script src="../js/ajax/createCollege.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
+  <script>
+    $(document).ready(function(){
+      if(!(localStorage.cms_token)) window.location.assign("./cms_login.html");
+    });
+  </script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 $(document).on("click", ".submitform", function () {
     $.ajax({
         type: "POST",
-        url: "http://localhost/Innovision/apis/CASelectionApplication/createCAApplication.php",
+        url: "./apis/CASelectionApplication/createCAApplication.php",
         data: {
             q1: $("#q1").val().toString(),
             q2: $("#q2").val().toString(),
@@ -16,6 +16,7 @@ $(document).on("click", ".submitform", function () {
             q11: $("#q11").val().toString(),
             q12: $("#q12").val().toString(),
             q13: $("#q13").val().toString(),
+            q14: $("#q14").val().toString()
         },
         success: function (data) {
             console.log(data);

@@ -1,18 +1,19 @@
 var temp = '';
-$(document).ready(function () {
+$(document).ready(function(){
   $.ajax({
-    type: "GET",
-    url: "./apis/panels/CASelection/displayResponses.php?id="+localStorage.ca_admin_token,
+    type: "POST",
+    url: "../apis/panels/CASelection/displayResponses.php",
+    data: {
+      token : localStorage.ca_token
+    },
     success: function (data) {
-        console.log(data);
         var data_obj = JSON.parse(data);
+        // console.log(data);
         if(data_obj.status == "success")
         {
-          var dataArray = data_obj.result;
-          populate(dataArray);
+          populate(data_obj.result);
         }
-      }
-    },
+      },
     error: function (data) {
       console.log(data);
     }

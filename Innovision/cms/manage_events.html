@@ -82,6 +82,14 @@
       </div>
     </div>
   </div>
+  <div class="row" style="margin-top: 2em;">
+    <button class="btn btn-info logout-button">Logout</button>
+  </div>
+  <script>
+    $(document).on("click", ".logout-button", function(){
+      window.loaction.assign("./cms_login.html");
+    });
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
   <div class="modal fade" id="update_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -109,5 +117,9 @@
   }
   $("#updateEvents").append(temp);
 </script> -->
-
+ <script>
+    $(document).ready(function(){
+      if(!(localStorage.cms_token)) window.location.assign("./cms_login.html");
+    });
+</script>
 </html>

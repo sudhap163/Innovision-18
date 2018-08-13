@@ -6,15 +6,15 @@
 
 	if($_SERVER["REQUEST_METHOD"] === "POST") {
 
-		echo($id_list[0].'<br>');
-		echo($id_list[1].'<br>');
-		echo($id_list[2].'<br>');
+		// echo($id_list[0].'<br>');
+		// echo($id_list[1].'<br>');
+		// echo($id_list[2].'<br>');
 
-		for ( $i=0; $i<=sizeof($id_list); $i++) {
+		for ( $i=0; $i<sizeof($id_list); $i++) {
 
-			echo ('UPDATE ca_selection_responses SET selected = 1 WHERE ca_applicant_id ='.$id_list[$i]);
+			//echo ('UPDATE ca_selection_responses SET selected = '.$id_list[$i]['selected'].' WHERE ca_applicant_id ='.$id_list[$i]['ca_applicant_id']);
 
-			$query = mysqli_query( $conn, 'UPDATE ca_selection_responses SET selected = 1 WHERE ca_applicant_id ='.$id_list[$i]);
+			$query = mysqli_query( $conn, 'UPDATE ca_selection_responses SET selected = '.$id_list[$i]['selected'].' WHERE ca_applicant_id ='.$id_list[$i]['ca_applicant_id']);
 
 			if (!$query) {
 
