@@ -2620,6 +2620,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   background-size: cover;
   padding: 2rem 0 2rem;
   position: relative;
+
 }
 #contact .overlay {
   position: absolute;
@@ -2632,9 +2633,11 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #contact .section-intro h1 {
   color: white;
+  margin:0
 }
 #contact .section-intro h3 {
   color: rgba(242, 242, 242, 0.5);
+  margin: 0
 }
 #contact .section-intro p.lead {
   color: rgba(242, 242, 242, 0.4);
