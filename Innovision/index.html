@@ -196,9 +196,12 @@
 			.intro-text {
 				margin-top: 24%;
 			}
-			#home{
+			#home {
 				height: 90%;
 			}
+			/* #portfolio {
+				padding-top: -1000em
+			} */
 		}
 	</style>
 
@@ -234,9 +237,7 @@
 				<!-- <li>
 					<a style="text-decoration: none;" href="./eventFinal.html" title="">Events | Workshops | Exhibitions</a>
 				</li> -->
-				<li>
-					<a style="text-decoration: none;" href="./faq.html">FAQ | Help</a>
-				</li>
+
 				<!-- <li class="signed_out">
 					<a href="./signInOut.html" title="">Sign In | Sign Up</a>
 				</li> -->
@@ -245,6 +246,9 @@
 				</li> -->
 				<li>
 					<a style="text-decoration: none;" href="./campus_ambassador_register.html" title="">Campus Ambassador Signup</a>
+				</li>
+				<li>
+					<a style="text-decoration: none;" href="./faq.html">FAQ | Help</a>
 				</li>
 
 			</ul>
@@ -290,6 +294,8 @@
 							<br>
 						</h1>
 						<h3 class="animate-intro">A Sci-Fi Odyssey.</h3>
+						<h3 class="animate-intro">2-4 NOV</h3>
+
 
 						<!-- <div class="more animate-intro">
 				  				<a class="smoothscroll button stroke" href="#about">
@@ -380,7 +386,7 @@
 
 				</div>
 				<div class="col-md-2" style="text-align: right">
-					<a href="campus_ambassodar_register.html" style="text-decoration: none;">
+					<a href="campus_ambassador_register.html" style="text-decoration: none;">
 						<button type="button" style="opacity: 0.93;font-family: 'Source Sans Pro', sans-serif;" class="btn btn-default join_us">JOIN US</button>
 					</a>
 				</div>
@@ -404,7 +410,7 @@
 
 				<h1 style="font-family: 'Source Sans Pro', sans-serif;">About INNOVISION'18</h1>
 
-				<p class="lead" style="font-family: 'Quicksand', sans-serif;text-align: justify;">INNOVISION, a platform celebrating every vision that creates innovations. Staged first in the year 2004, Innovision now
+				<p class="lead" style="font-family: 'Quicksand', sans-serif;text-align: justify;color: white">INNOVISION, a platform celebrating every vision that creates innovations. Staged first in the year 2004, Innovision now
 					stands as the most spectacular techno-management fest of the region. Rising to a higher stratum of science every year,
 					the fest has chronicled its glory all over the country. Events, workshops and exhibitions hosting a convergence of intelligence
 					and technology have witnessed the footfall of thousands of young minds. Innovision 2018 is all set to raise the curtain,
@@ -433,7 +439,7 @@
 					<div class="service-content">
 						<h1 style="color:white;font-family: 'Source Sans Pro', sans-serif;">Science Fiction</h1>
 
-						<p style="color:white;font-size:1em;font-family: 'Quicksand', sans-serif;">
+						<p style="color:white;font-size:1em;font-family: 'Quicksand', sans-serif;text-align:justify">
 							INNOVISION 2018, one of the largest techno-management fests of India, is on an odyssey to stretch out one's imaginations
 							to the far reaches, and extract the technology that one sees in their mind's eye.
 						</p>
@@ -451,7 +457,7 @@
 					<div class="service-content">
 						<h1 style="color:white;font-family: 'Source Sans Pro', sans-serif;">Out-of-box</h1>
 
-						<p style="color:white;font-size:1em;font-family: 'Quicksand', sans-serif;">
+						<p style="color:white;font-size:1em;font-family: 'Quicksand', sans-serif;text-align:justify">
 							Team INNOVISION aims at breaking down boundaries and thinking out of the box. After all, science fiction is all about letting
 							your imagination run wild and capturing them into spectacular inventions.
 						</p>
@@ -469,7 +475,7 @@
 					<div class="service-content">
 						<h1 style="color:white;font-family: 'Source Sans Pro', sans-serif;">Social Responsibility</h1>
 
-						<p style="color:white;font-size:1em;font-family: 'Quicksand', sans-serif;">
+						<p style="color:white;font-size:1em;font-family: 'Quicksand', sans-serif;text-align:justify">
 							With the world moving at a breakneck pace, it is important to ensure that everyone moves together. Team INNOVISION recognizes
 							the need to uphold our social values and virtues to achieve true development.
 						</p>
@@ -488,7 +494,7 @@
 		<div class="intro-wrap">
 
 			<div class="row narrow section-intro with-bottom-sep animate-this">
-				<div class="col-twelve">
+				<div class="col-twelve" style="padding-top: -300em">
 					<h1 style="font-family: 'Source Sans Pro', sans-serif;">Gallery</h1>
 					<h3 style="font-family: 'Source Sans Pro', sans-serif;">Most Featured</h3>
 
@@ -499,172 +505,175 @@
 
 		</div>
 		<!-- end intro-wrap -->
+		<script>
+			$(document).on("click", ".details-link", function () {
+				window.location.assign("https://www.instagram.com/inno.nitr/");
+			});
+		</script>
 
 		<div class="row portfolio-content">
 			<div class="col-twelve">
 				<div id="folio-wrap" class="bricks-wrapper">
 
 					<div class="brick folio-item">
-						<div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-shutterbug.jpg" data-sub-html="#01">
-							<a href="#" class="overlay">
-								<img src="images/portfolio/shutterbug.jpg" alt="Skaterboy">
-								<div class="item-text">
+						<div class="item-wrap animate-this" data-src="images/g1.jpeg" data-sub-html="#01">
+							<a href="javascript:void(0)" class="overlay">
+								<img src="images/g1.jpeg" alt="Skaterboy">
+								<!-- <div class="item-text">
 									<span class="folio-types">
 										Web Development
 									</span>
 									<h3 class="folio-title">Shutterbug</h3>
-								</div>
+								</div> -->
 							</a>
-							<a href="https://www.behance.net/" class='details-link' title="details">
+							<a href="https://www.instagram.com/inno.nitr/" class='details-link' title="Instagram">
 								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
 
-						<div id="01" class='hide'>
+						<!-- <div id="01" class='hide'>
 							<h4>Shutterbug</h4>
 							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
 								velit.
 								<a href="https://www.behance.net/">Details</a>
 							</p>
-						</div>
+						</div> -->
 					</div>
 					<!-- end folio-item -->
 
 					<div class="brick folio-item">
-						<div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-yellowwall.jpg" data-sub-html="#02">
+						<div class="item-wrap animate-this" data-src="images/g2.jpeg" data-sub-html="#01">
 							<a href="#" class="overlay">
-								<img src="images/portfolio/yellowwall.jpg" alt="Shutterbug">
-								<div class="item-text">
-									<span class="folio-types">
-										Marketing
-									</span>
-									<h3 class="folio-title">Yellow Wall</h3>
-								</div>
+								<img src="images/g2.jpeg" alt="Skaterboy">
+								<!-- <div class="item-text">
+														<span class="folio-types">
+															Web Development
+														</span>
+														<h3 class="folio-title">Shutterbug</h3>
+													</div> -->
 							</a>
-							<a href="https://www.behance.net/" class='details-link' title="details">
+							<a href="https://www.instagram.com/inno.nitr/" class='details-link' title="Instagram">
 								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
 
-						<div id="02" class='hide'>
-							<h4>Yellow Wall</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
-								velit.
-								<a href="https://www.behance.net/">Details</a>
-							</p>
-						</div>
+						<!-- <div id="01" class='hide'>
+												<h4>Shutterbug</h4>
+												<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
+													velit.
+													<a href="https://www.behance.net/">Details</a>
+												</p>
+											</div> -->
 					</div>
 					<!-- end folio-item -->
-
 					<div class="brick folio-item">
-						<div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-architecture.jpg" data-sub-html="#03">
+						<div class="item-wrap animate-this" data-src="images/g3.jpeg" data-sub-html="#01">
 							<a href="#" class="overlay">
-								<img src="images/portfolio/architecture.jpg" alt="Explore">
-								<div class="item-text">
-									<span class="folio-types">
-										Web Design
-									</span>
-									<h3 class="folio-title">Architecture</h3>
-								</div>
+								<img src="images/g3.jpeg" alt="Skaterboy">
+								<!-- <div class="item-text">
+														<span class="folio-types">
+															Web Development
+														</span>
+														<h3 class="folio-title">Shutterbug</h3>
+													</div> -->
 							</a>
-							<a href="https://www.behance.net/" class='details-link' title="details">
+							<a href="https://www.instagram.com/inno.nitr/" class='details-link' title="Instagram">
 								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
 
-						<div id="03" class='hide'>
-							<h4>Architecture</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
-								velit.
-								<a href="https://www.behance.net/">Details</a>
-							</p>
-						</div>
+						<!-- <div id="01" class='hide'>
+												<h4>Shutterbug</h4>
+												<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
+													velit.
+													<a href="https://www.behance.net/">Details</a>
+												</p>
+											</div> -->
 					</div>
 					<!-- end folio-item -->
-
 					<div class="brick folio-item">
-						<div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-minimalismo.jpg" data-sub-html="#04">
+						<div class="item-wrap animate-this" data-src="images/g6.jpeg" data-sub-html="#01">
 							<a href="#" class="overlay">
-								<img src="images/portfolio/minimalismo.jpg" alt="Minimalismo">
-								<div class="item-text">
-									<span class="folio-types">
-										Web Design
-									</span>
-									<h3 class="folio-title">Minimalismo</h3>
-								</div>
+								<img src="images/g6.jpeg" alt="Skaterboy">
+								<!-- <div class="item-text">
+														<span class="folio-types">
+															Web Development
+														</span>
+														<h3 class="folio-title">Shutterbug</h3>
+													</div> -->
 							</a>
-							<a href="https://www.behance.net/" class='details-link' title="details">
+							<a href="https://www.instagram.com/inno.nitr/" class='details-link' title="Instagram">
 								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
 
-						<div id="04" class='hide'>
-							<h4>Minimalismo</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
-								velit.
-								<a href="https://www.behance.net/">Details</a>
-							</p>
-						</div>
+						<!-- <div id="01" class='hide'>
+												<h4>Shutterbug</h4>
+												<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
+													velit.
+													<a href="https://www.behance.net/">Details</a>
+												</p>
+											</div> -->
 					</div>
 					<!-- end folio-item -->
-
 					<div class="brick folio-item">
-						<div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-skaterboy.jpg" data-sub-html="#05">
+						<div class="item-wrap animate-this" data-src="images/g5.jpeg" data-sub-html="#01">
 							<a href="#" class="overlay">
-								<img src="images/portfolio/skaterboy.jpg" alt="Bicycle">
-								<div class="item-text">
-									<span class="folio-types">
-										Branding
-									</span>
-									<h3 class="folio-title">Skaterboy</h3>
-								</div>
+								<img src="images/g5.jpeg" alt="Skaterboy">
+								<!-- <div class="item-text">
+														<span class="folio-types">
+															Web Development
+														</span>
+														<h3 class="folio-title">Shutterbug</h3>
+													</div> -->
 							</a>
-							<a href="https://www.behance.net/" class='details-link' title="details">
+							<a href="https://www.instagram.com/inno.nitr/" class='details-link' title="Instagram">
 								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
 
-						<div id="05" class='hide'>
-							<h4>Skaterboy</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
-								velit.
-								<a href="https://www.behance.net/">Details</a>
-							</p>
-						</div>
+						<!-- <div id="01" class='hide'>
+												<h4>Shutterbug</h4>
+												<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
+													velit.
+													<a href="https://www.behance.net/">Details</a>
+												</p>
+											</div> -->
 					</div>
 					<!-- end folio-item -->
-
 					<div class="brick folio-item">
-						<div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-salad.jpg" data-sub-html="#06">
+						<div class="item-wrap animate-this" data-src="images/g4.jpeg" data-sub-html="#01">
 							<a href="#" class="overlay">
-								<img src="images/portfolio/salad.jpg" alt="Salad">
-								<div class="item-text">
-									<span class="folio-types">
-										Branding
-									</span>
-									<h3 class="folio-title">Salad</h3>
-								</div>
+								<img src="images/g4.jpeg" alt="Skaterboy">
+								<!-- <div class="item-text">
+														<span class="folio-types">
+															Web Development
+														</span>
+														<h3 class="folio-title">Shutterbug</h3>
+													</div> -->
 							</a>
-							<a href="https://www.behance.net/" class='details-link' title="details">
+							<a href="https://www.instagram.com/inno.nitr/" class='details-link' title="Instagram">
 								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 						<!-- end item-wrap -->
 
-						<div id="06" class='hide'>
-							<h4>Salad</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
-								velit.
-								<a href="www.behance.net">Details</a>
-							</p>
-						</div>
+						<!-- <div id="01" class='hide'>
+												<h4>Shutterbug</h4>
+												<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat
+													velit.
+													<a href="https://www.behance.net/">Details</a>
+												</p>
+											</div> -->
 					</div>
 					<!-- end folio-item -->
+
+
 
 				</div>
 				<!-- end folio-wrap -->
@@ -875,13 +884,13 @@
 
 					<li>
 						<div class="row">
-							<div class="col-seven" style="margin-top: -4em">
-								<p>
-									<h3>Innovision 2017 : Amiya Samantray</h3>
-									<h4>CEO and Founder at Phoenix Robotix</h4>
-									It was a great concept that Innovision pulled off with the startup meet. It was a great platform to build network among startups
-									and startups.
-								</p>
+							<div class="col-seven" style="font-family: 'Quicksand', sans-serif;">
+
+								<h3 style="font-family: 'Source Sans Pro', sans-serif;">Innovision 2017 : Amiya Samantray</h3>
+								<h4 style="font-family: 'Source Sans Pro', sans-serif;">CEO and Founder at Phoenix Robotix</h4>
+								"It was a great concept that Innovision pulled off with the startup meet. It was a great platform to build network among
+								startups."
+
 							</div>
 
 							<div style="display: inline-block" class="col-five">
@@ -898,12 +907,12 @@
 
 					<li>
 						<div class="row ">
-							<div class="col-seven" style="margin-top: -4em">
-								<p>
-									<h3>Innovision 2017 :Dr. Priyadarshi Mohapatra</h3>
-									<h4>Country General Manager Consumer Channel Group Microsoft India</h4>
-									We didn’t have a technology festival during our time, it’s a great idea and you guys are doing a great job.
-								</p>
+							<div class="col-seven" style="font-family: 'Quicksand', sans-serif;">
+
+								<h3 style="font-family: 'Source Sans Pro', sans-serif;">Innovision 2017 :Dr. Priyadarshi Mohapatra</h3>
+								<h4 style="font-family: 'Source Sans Pro', sans-serif;">Country General Manager Consumer Channel Group Microsoft India</h4>
+								"We didn’t have a technology festival during our time, it’s a great idea and you guys are doing a great job."
+
 							</div>
 
 							<div style="display: inline-block " class="col-five ">
@@ -919,12 +928,12 @@
 					<!-- end slide -->
 					<li>
 						<div class="row ">
-							<div class="col-seven " style="margin-top: -4em">
-								<p>
-									<h3>Innovision 2017 : Gaurav Kapoor</h3>
-									<h4>Head - Social Entrepreneurship, IIM Calcutta Innovation Park</h4>
-									It was a wonderful experience getting to know various innovations that people are working on.
-								</p>
+							<div class="col-seven " style="font-family: 'Quicksand', sans-serif;">
+
+								<h3 style="font-family: 'Source Sans Pro', sans-serif;">Innovision 2017 : Gaurav Kapoor</h3>
+								<h4 style="font-family: 'Source Sans Pro', sans-serif;">Head - Social Entrepreneurship, IIM Calcutta Innovation Park</h4>
+								"It was a wonderful experience getting to know various innovations that people are working on."
+
 							</div>
 
 							<div style="display: inline-block " class="col-five ">
@@ -940,12 +949,12 @@
 					<!-- end slide -->
 					<li>
 						<div class="row ">
-							<div class="col-seven " style="margin-top: -4em">
-								<p>
-									<h3>Innovision 2017 : Vishwajeet Dash</h3>
-									<h4>Travel Blogger and YouTube film-maker</h4>
-									Find your passion and follow it like never before to add value to your life because you just have one life to live.
-								</p>
+							<div class="col-seven " style="font-family: 'Quicksand', sans-serif;">
+
+								<h3 style="font-family: 'Source Sans Pro', sans-serif;">Innovision 2017 : Vishwajeet Dash</h3>
+								<h4 style="font-family: 'Source Sans Pro', sans-serif;">Travel Blogger and YouTube film-maker</h4>
+								"Find your passion and follow it like never before to add value to your life because you just have one life to live."
+
 							</div>
 
 							<div style="display: inline-block " class="col-five ">
@@ -1122,7 +1131,7 @@
 					<div class="copyright">
 						<span>© National Institute of Technology, Rourkela 2018</span>
 						<span> Designed by
-							<a href="javascript:void(0)">Technical Team, INNOVISION'18</a>
+							<a style="text-decoration: none">Technical Team, INNOVISION'18</a>
 						</span>
 					</div>
 				</div>
