@@ -1,4 +1,5 @@
 $(document).on("click", ".submitform", function () {
+    console.log($("#q4").val());
     $.ajax({
         type: "POST",
         url: "./apis/CASelectionApplication/createCAApplication.php",
@@ -19,10 +20,12 @@ $(document).on("click", ".submitform", function () {
             q14: $("#q14").val().toString()
         },
         success: function (data) {
-            console.log(data);
+            swal(JSON.parse(data).status, JSON.parse(data).result);
+            //console.log(data);
         },
-        error: function () {
-            console.log(data);
+        error: function (data) {
+            swal("Failure", "Could not process request! Try again later.", "error");
+            //console.log(data);
         }
 
     });
