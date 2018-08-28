@@ -4,10 +4,9 @@
 
 	if($_SERVER["REQUEST_METHOD"] === "GET") {
 
-		$query = mysqli_query($conn, "SELECT * FROM list_of_colleges");
-
+		$query = mysqli_query($conn, "SELECT * FROM college");
 		$result = array();
-		while($res = mysqli_fetch_array($query, MYSQL_ASSOC)) {
+		while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
     		$result[] = $res;
 		}
 

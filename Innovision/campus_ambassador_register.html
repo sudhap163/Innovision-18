@@ -57,6 +57,7 @@
   <script src="js/modernizr.js"></script>
   <script src="js/pace.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/sweetalert.min.js"></script>
 
   <!-- favicons
   ================================================== -->
@@ -487,14 +488,13 @@
             </div>
           </div>
         </div>
-        <script src="../js/ajax/readCollege.js"></script>
+        <script src="js/ajax/readCollege.js"></script>
         <script>
           function display_college(dataArray) {
             var temp = '';
-            console.log(dataArray);
             for (var i = 0; i < dataArray.length; i++) {
 
-              temp = temp + "<option value='" + dataArray[i].college_id + "'>" + dataArray[i].college_name + "," + dataArray[i].city + "</option>";
+              temp = temp + "<option value='" + dataArray[i].college + "'>" + dataArray[i].college + "</option>";
 
             }
             $("#q4").append(temp);
@@ -507,9 +507,9 @@
 
               <div class="ss-custom-select" style="background-color: rgba(30,39,43,0.7);">
                 <select class="full-width" id="q4">
-                  <option value="Option 1">Clg 1</option>
+                  <!-- <option value="Option 1">Clg 1</option>
                   <option value="Option 2">Clg 2</option>
-                  <option value="Option 3">Others</option>
+                  <option value="Option 3">Others</option> -->
                 </select>
               </div>
             </div>
@@ -521,10 +521,12 @@
 
               <div class="ss-custom-select" style="background-color:rgba(30,39,43,0.7) ;">
                 <select class="full-width" id="q6">
-                  <option value="Option 1">First</option>
-                  <option value="Option 2">Second</option>
-                  <option value="Option 3">Pre-Final</option>
-                  <option value="Option 3">Final</option>
+                  <option value="1st Yr">First</option>
+                  <option value="2nd Yr">Second</option>
+                  <option value="3rd Yr">Third</option>
+                  <option value="4th Yr">Fourth</option>
+                  <option value="5th Yr">Fifth</option>
+                  <option value="others">Others</option>
                 </select>
               </div>
             </div>
@@ -629,7 +631,7 @@
     </div>
     <!-- end row contact-content -->
 
-    <script src="../js/ajax/createCAapp.js"></script>
+    <script src="js/ajax/createCAapp.js"></script>
 
 
   </section>
