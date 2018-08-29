@@ -1,6 +1,6 @@
 $.ajax({
     type: "GET",
-    url: "apis/CollegeList/readCollege.php",
+    url: "../apis/CollegeList/readCollege.php",
     success: function (data) {
 
         var temp = '';

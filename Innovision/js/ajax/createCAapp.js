@@ -1,8 +1,8 @@
 $(document).on("click", ".submitform", function () {
-    console.log($("#q4").val());
+    // console.log($("#q4").val());
     $.ajax({
         type: "POST",
-        url: "./apis/CASelectionApplication/createCAApplication.php",
+        url: "../apis/CASelectionApplication/createCAApplication.php",
         data: {
             q1: $("#q1").val().toString(),
             q2: $("#q2").val().toString(),
