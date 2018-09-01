@@ -44,13 +44,118 @@
 </head>
 
 <body>
+    <script>
+        //READ
+        $(document).ready(function(){
+            read();
+        });
 
+        function read(){
+            $.ajax({
+                type:"POST",
+                url:"../apis/CollegeList/Others/read.php",
+                data:{
+                    token:localStorage.ca_token
+                },
+                success:function(data){
+                    var clg_arr = JSON.parse(data).result;
+                    populate(clg_arr);
+                },
+                error:function(data){
+                    console.log(JSON.parse(data));
+                }
+            });
+        }
+        function populate(clg_arr)
+        {
+            console.log(clg_arr);
+            $(".all_new_colleges").html("");
+            var temp = '';
+            for(var i=0; i < clg_arr.length;i++)
+            {
+                temp = temp + ' <div class="row box"><div class="col-md-10 display"><b>COLLEGE NAME:</b><h4>'+clg_arr[i].college+'</h4><br/></div><div class="col-md-10 edit_it" style="display:none"><label>COLLEGE NAME</label><input type="text" class="form-control edit_clg" name="edit_clg" placeholder="Enter edited name of college" value="'+clg_arr[i].college+'"></div><div class="col-md-1"><a type="button" class="btn btn-info edit" value="'+clg_arr[i].college_id+'">EDIT</a></div><div class="col-md-1"><a type="button" class="btn btn-danger remove" value="'+clg_arr[i].college_id+'">REMOVE</a></div></div>';
+            }
+            $(".all_new_colleges").append(temp);
+
+        }
+    
+
+    //DELETE
+      $(document).on("click", ".remove", function () {
+            swal({
+                icon: "warning",
+                title: "Are you sure?",
+                text: "You can't recover it afterwards!",
+                buttons: {
+                    cancel: "Cancel",
+                    sure: "Sure"
+                },
+            })
+                .then((value) => {
+                    switch (value) {
+
+                        case "sure":
+                            //ajax
+                           $.ajax({
+                                    type:"POST",
+                                    url:"../apis/CollegeList/Others/delete.php",
+                                    data:{
+                                        id:$(this)[0].attributes[2].value
+                                    },
+                                    success:function(data){
+                                        
+                                        read();
+                                    },
+                                    error:function(data){
+                                        
+                                    }
+                                });
+                            break;
+
+                        case "cancel":
+                            break;
+                    }
+                });
+        });
+
+      //UPDATE
+       $(document).on("click", ".update", function () {
+            // alert("by");
+            console.log($(this)[0].attributes[2].value);
+            
+            $.ajax({
+                type:"POST",
+                url:"../apis/CollegeList/Others/update.php",
+                data:{
+                    id:$(this)[0].attributes[2].value,
+                    name:$(this).parents(".row").find(".edit_clg")[0].value
+                },
+                success:function(data)
+                {
+                    
+                    swal("College Name Updated",":)","success");
+                    read();
+                },
+                error:function(data)
+                {
+                    
+                }
+            });
+        });
+
+    </script>
+     <script>
+    $(document).on("click",".logout_button",function(){
+        localStorage.clear();
+        window.location.assign("./CA_admin_login.html");
+    });
+  </script> 
     <div class="row" style="width:100%">
         <div class="col-md-1" style="padding-top: 20px;padding-left: 20px">
-            <a href="#" type="button" class="btn-success btn-sm">Home</a>
+            <a href="./campus_ambassador_admin.html" type="button" class="btn-success btn-sm">CA PANEL</a>
         </div>
         <div class="col-md-1" style="padding-top: 20px;padding-left: 20px">
-            <a href="#" type="button" class="btn-danger btn-sm">LogOut</a>
+            <a href="javascript:void(0)"  type="button" class="logout_button btn-danger btn-sm">LogOut</a>
         </div>
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -60,7 +165,7 @@
 
     <div class="continer-fluid all_new_colleges">
 
-        <div class="row box">
+       <!--  <div class="row box">
             <div class="col-md-10 display">
                 <b>COLLEGE NAME:</b>
                 <h4>NIT ROURKELA </h4>
@@ -76,25 +181,9 @@
             <div class="col-md-1">
                 <a type="button" class="btn btn-danger remove">REMOVE</a>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row box">
-            <div class="col-md-10 display">
-                <b>COLLEGE NAME:</b>
-                <h4>NIT ROURKELA </h4>
-                <br/>
-            </div>
-            <div class="col-md-10 edit_it" style="display:none">
-                <label>COLLEGE NAME</label>
-                <input type="text" class="form-control" name="edit_clg" placeholder="Enter edited name of college" value="NIT ROURKELA">
-            </div>
-            <div class="col-md-1">
-                <a type="button" class="btn btn-info edit">EDIT</a>
-            </div>
-            <div class="col-md-1">
-                <a type="button" class="btn btn-danger remove">REMOVE</a>
-            </div>
-        </div>
+       
 
 
 
@@ -114,40 +203,7 @@
             //hii
         });
 
-        $(document).on("click", ".update", function () {
-            // alert("by");
-            $.ajax({
-
-            });
-        });
-
-        $(document).on("click", ".remove", function () {
-            swal({
-                icon: "warning",
-                title: "Are you sure?",
-                text: "You can't recover it afterwards!",
-                buttons: {
-                    cancel: "Cancel",
-                    sure: "Sure"
-                },
-            })
-                .then((value) => {
-                    switch (value) {
-
-                        case "sure":
-                            //ajax
-                            $.ajax({
-
-                                //delete ajax here
-                            });
-                            break;
-
-                        case "cancel":
-                            break;
-                    }
-                });
-        });
-    </script>
+</script>
 </body>
 
 </html>
