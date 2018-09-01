@@ -1,9 +1,10 @@
 <?php
 
 	include('../../db.php');
+    include('./verifyCAAdmin.php');
 
-	if($_SERVER["REQUEST_METHOD"] === "GET") {
-
+	
+	if (isset($status) && $status === "success") {
 		$query = mysqli_query($conn, "SELECT * FROM other_college");
 		$result = array();
 		while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -12,5 +13,4 @@
 
 		echo(json_encode(array('status' => 'success', 'result' => $result)));
 	}
-
 ?>
