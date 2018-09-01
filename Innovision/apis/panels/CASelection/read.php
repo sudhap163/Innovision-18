@@ -1,7 +1,7 @@
 <?php
 
 	include('../../db.php');
-    include('./verifyCAAdmin.php');
+    include('../../panels/CASelection/verifyCAAdmin.php');
 
 	
 	if (isset($status) && $status === "success") {
