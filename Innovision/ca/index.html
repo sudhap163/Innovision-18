@@ -195,6 +195,9 @@
     	color: #F89E0F;
     	text-decoration: none;
     }
+    .college-input-field{
+    	display: none;
+    }
 
     @media screen and (max-width: 767px) {
       #menu-nav-wrap {
@@ -505,28 +508,45 @@
               temp = temp + "<option value='" + dataArray[i].college + "'>" + dataArray[i].college + "</option>";
 
             }
-            $("#q4").append(temp);
-            $("#q4").append("<option value='Others'>Others</option>");
+            $("#q4s").append(temp);
+            $("#q4s").append("<option value='Others'>Others</option>");
           }
         </script>
         <div class="row">
           <div class="col-four tab-full">
-            <div>
-              <label for="sampleRecipientInput" style="color: white;font-family: 'Quiucksand', sans-serif;">Choose College</label>
+            <div class="college-select-field">
+              <label for="sampleRecipientInput" style="color: white;font-family: 'Quicksand', sans-serif;">Choose College</label>
 
               <div class="ss-custom-select" style="background-color: rgba(30,39,43,0.7);color:white;">
-                <select class="full-width" id="q4" style="color:white;background-color:#272F34;">
-                  <!-- <option value="Option 1">Clg 1</option>
-                  <option value="Option 2">Clg 2</option>
-                  <option value="Option 3">Others</option> -->
+                <select class="full-width" id="q4s" style="color:white;background-color:#272F34;">
+
                 </select>
               </div>
+            </div>
+            <div class="college-input-field">
+            	<label for="sampleRecipientInput" style="color: white;font-family: 'Quicksand', sans-serif;">Enter College Name</label>
+            	<div class="form-field">
+              		<input name="course" type="text" id="q4i" placeholder="College Name Here" value="">
+                </div>
             </div>
           </div>
           <div class="col-three tab-full">
             <div>
-              <label for="sampleRecipientInput" style="color: white;font-family: 'Quiucksand', sans-serif;">Year of study</label>
-
+              <label for="sampleRecipientInput" style="color: white;font-family: 'Quicksand', sans-serif;">Year of study</label>
+              <script>
+              	$(document).on("change", "#q4s", function(){
+              		if($(this).val().localeCompare("Others") == 0)
+              		{
+              			$(".college-select-field").css("display", "none");
+              			$(".college-input-field").css("display", "block");
+              		}
+              		else
+              		{
+              			$(".college-select-field").css("display", "block");
+              			$(".college-input-field").css("display", "none");
+              		}
+              	});
+              </script>
 
               <div class="ss-custom-select" style="background-color:rgba(30,39,43,0.7);color:white;">
                 <select class="full-width" id="q6" style="color:white;background-color:#272F34; ">
@@ -542,7 +562,7 @@
           </div>
           <div class="col-five tab-full">
 
-            <label style="color: white;font-family: 'Quiucksand', sans-serif;">Course</label>
+            <label style="color: white;font-family: 'Quicksand', sans-serif;">Course</label>
 
 
             <div class="form-field">
@@ -553,7 +573,7 @@
 
         <div class="form-field">
 
-          <h4 style="color: white;font-family: 'Quiucksand', sans-serif;">Have you ever held or are currently holding a position of responsibility in your college?</h4>
+          <h4 style="color: white;font-family: 'Quicksand', sans-serif;">Have you ever held or are currently holding a position of responsibility in your college?</h4>
 
 
 
@@ -562,7 +582,7 @@
 
         <div class="form-field">
 
-          <h4 style="color: white;font-family: 'Quiucksand', sans-serif;">Have you ever been to Innovision earlier? If yes, when?</h4>
+          <h4 style="color: white;font-family: 'Quicksand', sans-serif;">Have you ever been to Innovision earlier? If yes, when?</h4>
 
 
           <textarea name="contactMessage" id="q8" placeholder="Your answer here" rows="4" cols="50" required=""></textarea>
@@ -570,7 +590,7 @@
 
         <div class="form-field">
 
-          <h4 style="color: white;font-family: 'Quiucksand', sans-serif;">What do know about Innovision? Write in brief. </h4>
+          <h4 style="color: white;font-family: 'Quicksand', sans-serif;">What do know about Innovision? Write in brief. </h4>
 
 
 
@@ -579,48 +599,40 @@
 
         <div class="form-field">
 
-          <h4 style="color: white;font-family: 'Quiucksand', sans-serif;">How many students from your college do you think you can convince to participate in Innovision ‘18? What will be your strategy to promote Innovision ’18 in your college?</h4>
+          <h4 style="color: white;font-family: 'Quicksand', sans-serif;">How many students from your college do you think you can convince to participate in Innovision ‘18? What will be your strategy to promote Innovision ’18 in your college?</h4>
           <textarea name="contactMessage" id="q10" placeholder="Your answer here" rows="4" cols="50" required=""></textarea>
         </div>
 
         <div class="form-field">
 
-          <h4 style="color: white;font-family: 'Quiucksand', sans-serif;">Which social media platforms are you active on?</h4>
+          <h4 style="color: white;font-family: 'Quicksand', sans-serif;">Which social media platforms are you active on?</h4>
 
           <textarea name="contactMessage" id="q11" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
         </div>
 
         <div class="form-field">
 
-          <h4 style="color: white;font-family: 'Quiucksand', sans-serif;">Which languages are you fluent in?</h4>
+          <h4 style="color: white;font-family: 'Quicksand', sans-serif;">Which languages are you fluent in?</h4>
 
           <textarea name="contactMessage" id="q12" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
         </div>
 
         <div class="form-field">
 
-          <h4 style="color: white;font-family: 'Quiucksand', sans-serif;">What makes you unique?</h4>
+          <h4 style="color: white;font-family: 'Quicksand', sans-serif;">What makes you unique?</h4>
 
 
           <textarea name="contactMessage" id="q13" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
         </div>
 
         <div class="form-field">
-          <h4 style="color: white;font-family: 'Quiucksand', sans-serif;">Paste the link to your CV folder below.</h4>
+          <h4 style="color: white;font-family: 'Quicksand', sans-serif;">Paste the link to your CV folder below.</h4>
           <textarea name="contactMessage" id="q14" placeholder="Your answer here" rows="7" cols="50" required=""></textarea>
         </div>
 
         <div class="form-field">
           <button class="submitform">Register</button>
 
-          <!-- <div id="submit-loader">
-              <div class="text-loader">Sending...</div>
-              <div class="s-loader">
-                <div class="bounce1"></div>
-                <div class="bounce2"></div>
-                <div class="bounce3"></div>
-              </div>
-            </div> -->
         </div>
 
       </form>
@@ -629,12 +641,6 @@
 
 
       </section>
-
-
-
-      <!--  </div> -->
-
-      <!-- end cinfo -->
 
     </div>
     <!-- end row contact-content -->
