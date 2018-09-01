@@ -744,6 +744,56 @@
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script src="../js/plugins.js"></script>
   <script src="../js/main.js"></script>
+  <script type="text/javascript">
+    function errorAlert()
+    {
+      swal({icon: "error", 
+                    title: "Failure",
+                    text: "Could not process request! Try again later.",
+                    buttons: {
+                        sure : "Okay"
+                    },
+                }).then((value) => {
+                    switch(value){
+                        case "sure":
+                        location.reload(true);
+                        break;
+                    }
+                });
+    }
+    function failureAlert(Data)
+    {
+      swal({icon: "error", 
+                    title: Data.status,
+                    text: Data.result,
+                    buttons: {
+                        sure : "Okay"
+                    },
+                }).then((value) => {
+                    switch(value){
+                        case "sure":
+                        location.reload(true);
+                        break;
+                    }
+                });
+    }
+    function successAlert()
+    {
+      swal({icon: "success", 
+                    title: "Successfully registered",
+                    text: ":)",
+                    buttons: {
+                        sure : "Okay"
+                    },
+                }).then((value) => {
+                    switch(value){
+                        case "sure":
+                        location.reload(true);
+                        break;
+                    }
+                });
+    }
+  </script>
 
 </body>
 

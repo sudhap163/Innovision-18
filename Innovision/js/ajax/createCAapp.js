@@ -44,52 +44,56 @@ $(document).on("click", ".submitform", function () {
                         }
                     });
                 }
-                swal({icon: "success", 
-                    title: "Successfully registered",
-                    buttons: {
-                        ok : "Okay"
-                    },
-                }).then((value) => {
-                    switch(value){
-                        case "ok":
-                        location.reload(true);
-                        break;
-                    }
-                });
+                successAlert();
+                // swal({icon: "success", 
+                //     title: "Successfully registered",
+                //     text: ":)",
+                //     buttons: {
+                //         sure : "Okay"
+                //     },
+                // }).then((value) => {
+                //     switch(value){
+                //         case "sure":
+                //         location.reload(true);
+                //         break;
+                //     }
+                // });
                 //location.reload(true);
             }
             else
             {
-                swal({icon: "error", 
-                    title: JSON.parse(data).status,
-                    text: JSON.parse(data).result,
-                    buttons: {
-                        ok : "Okay"
-                    },
-                }).then((value) => {
-                    switch(value){
-                        case "ok":
-                        location.reload(true);
-                        break;
-                    }
-                });
+                failureAlert(JSON.parse(data));
+                // swal({icon: "error", 
+                //     title: JSON.parse(data).status,
+                //     text: JSON.parse(data).result,
+                //     buttons: {
+                //         sure : "Okay"
+                //     },
+                // }).then((value) => {
+                //     switch(value){
+                //         case "sure":
+                //         location.reload(true);
+                //         break;
+                //     }
+                // });
                 //swal(JSON.parse(data).status, JSON.parse(data).result, "error"); 
             }
         },
         error: function (data) {
-             swal({icon: "error", 
-                    title: "Failure",
-                    text: "Could not process request! Try again later.",
-                    buttons: {
-                        ok : "Okay"
-                    },
-                }).then((value) => {
-                    switch(value){
-                        case "ok":
-                        location.reload(true);
-                        break;
-                    }
-                });
+            errorAlert();
+             // swal({icon: "error", 
+             //        title: "Failure",
+             //        text: "Could not process request! Try again later.",
+             //        buttons: {
+             //            sure : "Okay"
+             //        },
+             //    }).then((value) => {
+             //        switch(value){
+             //            case "sure":
+             //            location.reload(true);
+             //            break;
+             //        }
+             //    });
             //swal("Failure", "Could not process request! Try again later.", "error");
         }
 

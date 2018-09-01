@@ -53,7 +53,7 @@
         function read(){
             $.ajax({
                 type:"POST",
-                url:"../apis/CollegeList/Others/read.php",
+                url:"../apis/panels/CASelection/read.php",
                 data:{
                     token:localStorage.ca_token
                 },
@@ -98,7 +98,7 @@
                             //ajax
                            $.ajax({
                                     type:"POST",
-                                    url:"../apis/CollegeList/Others/delete.php",
+                                    url:"../apis/panels/CASelection/delete.php",
                                     data:{
                                         id:$(this)[0].attributes[2].value
                                     },
@@ -125,7 +125,7 @@
             
             $.ajax({
                 type:"POST",
-                url:"../apis/CollegeList/Others/update.php",
+                url:"../apis/panels/CASelection/update.php",
                 data:{
                     id:$(this)[0].attributes[2].value,
                     name:$(this).parents(".row").find(".edit_clg")[0].value
