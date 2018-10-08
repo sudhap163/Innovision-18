@@ -133,8 +133,40 @@
 		validateEmail($email);
 		validatePassword($password);
 		validateAccomodation($accomodation);
+		//PAYMENT CHECK WILL BE DONE HERE
+		$ch = curl_init();
 
-		$query = mysqli_query($conn, "INSERT INTO users ( name, gender, phone, college, address, email, password, accomodation) VALUES ('".mysqli_real_escape_string($conn, $name)."', '".mysqli_real_escape_string($conn, $gender)."', '".mysqli_real_escape_string($conn, $phone)."', '".mysqli_real_escape_string($conn, $college)."', '".mysqli_real_escape_string($conn, $address)."', '".mysqli_real_escape_string($conn, $email)."', '".mysqli_real_escape_string($conn, md5($password))."', '".mysqli_real_escape_string($conn, $accomodation)."')");
+		curl_setopt($ch, CURLOPT_URL, 'https://www.instamojo.com/api/1.1/payment-requests/');
+		curl_setopt($ch, CURLOPT_HEADER, FALSE);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+		curl_setopt($ch, CURLOPT_HTTPHEADER,
+					array("X-Api-Key:d82016f839e13cd0a79afc0ef5b288b3",
+						"X-Auth-Token:3827881f669c11e8dad8a023fd1108c2"));
+		$payload = Array(
+			'purpose' => 'INNOVISION REGISTRATION FEES',
+			'amount' => '500',
+			'phone' => $phone,
+			'buyer_name' => $name,
+			'redirect_url' => 'https://57c4ec59.ngrok.io/Innovision-18/Innovision/',
+			'send_email' => true,
+			'webhook' => 'https://57c4ec59.ngrok.io/Innovision-18/Innovision/apis/participantRegistration/webhook.php',
+			'send_sms' => true,
+			'email' => $email,
+			'allow_repeated_payments' => false
+		);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+		$response = curl_exec($ch);
+		
+		curl_close($ch); 
+		//EXTRACT PAYMENT ID AND LONGURL FROM $ch
+		$payment_id = '110UYDGUY32IUGBBBDISA';
+		// echo(json_encode(array('status' => 'success', 'message' => 'I am in webhook')));
+		//PAYMENT ENDS HERE
+
+		$query = mysqli_query($conn, "INSERT INTO users ( name, gender, phone, college, address, email, password, accomodation,payment_status,payment_id,payment_detail,longurl) VALUES ('".mysqli_real_escape_string($conn, $name)."', '".mysqli_real_escape_string($conn, $gender)."', '".mysqli_real_escape_string($conn, $phone)."', '".mysqli_real_escape_string($conn, $college)."', '".mysqli_real_escape_string($conn, $address)."', '".mysqli_real_escape_string($conn, $email)."', '".mysqli_real_escape_string($conn, md5($password))."', '".mysqli_real_escape_string($conn, $accomodation)."',
+		'N','".$payment_id."')");
 
 		if ($query) {
 
