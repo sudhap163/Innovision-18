@@ -141,16 +141,16 @@
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
 		curl_setopt($ch, CURLOPT_HTTPHEADER,
-					array("X-Api-Key:d82016f839e13cd0a79afc0ef5b288b3",
-						"X-Auth-Token:3827881f669c11e8dad8a023fd1108c2"));
+					array("X-Api-Key:76c7b3743040493f8505ef6f2067f07c",
+						"X-Auth-Token:fbe5f65cce4cf44f9b8438b62e8fa7fa"));
 		$payload = Array(
 			'purpose' => 'INNOVISION REGISTRATION FEES',
 			'amount' => '500',
 			'phone' => $phone,
 			'buyer_name' => $name,
-			'redirect_url' => 'https://57c4ec59.ngrok.io/Innovision-18/Innovision/',
+			'redirect_url' => 'https://f4a0a7d6.ngrok.io/Innovision-18/Innovision/',
 			'send_email' => true,
-			'webhook' => 'https://57c4ec59.ngrok.io/Innovision-18/Innovision/apis/participantRegistration/webhook.php',
+			'webhook' => 'https://f4a0a7d6.ngrok.io/Innovision-18/Innovision/apis/participantRegistration/webhook.php',
 			'send_sms' => true,
 			'email' => $email,
 			'allow_repeated_payments' => false
@@ -161,12 +161,13 @@
 		
 		curl_close($ch); 
 		//EXTRACT PAYMENT ID AND LONGURL FROM $ch
-		$payment_id = '110UYDGUY32IUGBBBDISA';
+		$payment_id = $ch->payment_id;
+		$long_url = $ch->longurl;
 		// echo(json_encode(array('status' => 'success', 'message' => 'I am in webhook')));
 		//PAYMENT ENDS HERE
 
 		$query = mysqli_query($conn, "INSERT INTO users ( name, gender, phone, college, address, email, password, accomodation,payment_status,payment_id,payment_detail,longurl) VALUES ('".mysqli_real_escape_string($conn, $name)."', '".mysqli_real_escape_string($conn, $gender)."', '".mysqli_real_escape_string($conn, $phone)."', '".mysqli_real_escape_string($conn, $college)."', '".mysqli_real_escape_string($conn, $address)."', '".mysqli_real_escape_string($conn, $email)."', '".mysqli_real_escape_string($conn, md5($password))."', '".mysqli_real_escape_string($conn, $accomodation)."',
-		'N','".$payment_id."')");
+		'N','".$payment_id."','{}','".$long_url."')");
 
 		if ($query) {
 
