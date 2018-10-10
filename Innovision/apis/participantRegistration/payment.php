@@ -21,12 +21,12 @@
 
 		if ($name == '') {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'Name is required')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'name is required')));
 		} else {
 
 			if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
 
-				echo(json_encode(array('status' => 'failure', 'result' => 'Name should only contain letters and spaces')));
+				echo(json_encode(array('status' => 'failure', 'result' => 'name should only contain letters and spaces')));
 			}
 		}
 	}
@@ -35,7 +35,7 @@
 
 		if ($gender != 'male' && $gender != 'female' && $gender != 'others') {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'Invalid gender')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'invalid gender')));
 		}
 	}
 
@@ -43,7 +43,7 @@
 
 		if (!preg_match("/^[789]\d{9}$/", $phone)) {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'Phone number should have 10 digits and should start with 7,8, or 9')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'phone number should have 10 digits and should start with 7,8, or 9')));
 		}
 	}
 
@@ -61,12 +61,12 @@
 
 		if ($college == '') {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'College is required')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'college is required')));
 		} else {
 
 			if (!checkExistingCollege($college)) {
 
-				echo(json_encode(array('status' => 'failure', 'result' => 'College not found in our records')));
+				echo(json_encode(array('status' => 'failure', 'result' => 'college not found in our records')));
 			}
 		}
 	}
@@ -75,7 +75,7 @@
 
 		if ($address == '') {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'Address is required')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'address is required')));
 		}
 	}
 
@@ -91,25 +91,19 @@
 
 		if ($email == '') {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'Email is required')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'email is required')));
 		} else {
 
 			if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-				echo(json_encode(array('status' => 'failure', 'result' => 'Valid email is required')));
+				echo(json_encode(array('status' => 'failure', 'result' => 'valid email is required')));
 			} else {
 
 				if (checkExistingEmail($email)) {
-					
-					echo(json_encode(array('status' => 'failure', 'result' => 'Email is already registered')));
-					
-				}
-				else
-				{
-					return 1;
+
+					echo(json_encode(array('status' => 'failure', 'result' => 'email is already registered')));
 				}
 			}
-			return 0;
 		}
 	}
 
@@ -117,7 +111,7 @@
 
 		if (strlen($password) < 7) {
 
-			echo (json_encode(array('status' => 'failure', 'result' => 'Password needs to have 8-32 characters')));
+			echo (json_encode(array('status' => 'failure', 'result' => 'password needs to have 8-32 characters')));
 		}
 	}
 	
@@ -125,22 +119,74 @@
 
 		if ($accomodation != 'yes' && $accomodation != 'no') {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'Valid accomodation details required')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'valid accomodation details required')));
 		}
 	}
 
 	if ( isset($name) && isset($gender) && isset($phone) && isset($college) && isset($address) && isset($email) && isset($password) && isset($accomodation)) {
-		// /echo'<script>HIIIIIII</script>';
+		echo'<script>HIIIIIII</script>';
 		validateName($name);
 		validateGender($gender);
 		validatePhone($phone);
 		validateCollege($college);
 		validateAddress($address);
-		//validateEmail($email);
+		validateEmail($email);
 		validatePassword($password);
 		validateAccomodation($accomodation);
-		if(validateEmail($email))
+		
+		//PAYMENT CHECK WILL BE DONE HERE
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, 'https://www.instamojo.com/api/1.1/payment-requests/');
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_HTTPHEADER,
+					array("X-Api-Key:76c7b3743040493f8505ef6f2067f07c",
+						"X-Auth-Token:fbe5f65cce4cf44f9b8438b62e8fa7fa"));
+		$payload = Array(
+			'purpose' => 'INNOVISION REGISTRATION FEES',
+			'amount' => '9',
+			'phone' => $phone,
+			'buyer_name' => $name,
+			'redirect_url' => 'https://224f0b82.ngrok.io/Innovision-18/Innovision/',
+			'send_email' => true,
+			'webhook' => 'https://224f0b82.ngrok.io/Innovision-18/Innovision/apis/participantRegistration/webhook.php',
+			'send_sms' => true,
+			'email' => $email,
+			'allow_repeated_payments' => false
+		);
+		
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+		$response = curl_exec($ch);
+		
+		 
+		if($response == false)
 		{
+		print "Curl Error ".curl_error($ch);
+		}
+		$var =  json_decode($response);
+		// $v = json_decode($var,true);
+		//echo gettype($var);
+		//echo $response;
+		$temp = $var->payment_request->longurl;
+		//echo $temp;
+		
+		
+		
+		
+		
+		
+		
+		curl_close($ch);
+		//EXTRACT PAYMENT ID AND LONGURL FROM $ch
+		$payment_id = $var->payment_request->id;
+		//echo $payment_id;
+		$long_url = $var->payment_request->longurl;
+		// echo(json_encode(array('status' => 'success', 'message' => 'I am in webhook')));
+		//PAYMENT ENDS HERE
 		$name = mysqli_real_escape_string($conn, $name);
 		$gender = mysqli_real_escape_string($conn, $gender);
 		$phone = mysqli_real_escape_string($conn, $phone);
@@ -150,7 +196,7 @@
 		$accomodation = mysqli_real_escape_string($conn, $accomodation);
 		$password = mysqli_real_escape_string($conn, md5($password));
 
-		$q = "INSERT INTO users (name, gender, phone, college, address, email, user_password, accomodation) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$password."','".$accomodation."')";
+		$q = "INSERT INTO users (name, gender, phone, college, address, email, user_password, accomodation,payment_status,payment_id,long_url) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$password."','".$accomodation."','N','".$payment_id."','".$long_url."')";
 
 		$query = mysqli_query($conn, $q);
 
@@ -191,7 +237,7 @@
 				$filepath = '../../images/qrcodes/'.$inno_id.'.png';				
 				$qrcode->writeFile($filepath);
 				$query = mysqli_query($conn, "UPDATE users SET qr_code_path = '".$filepath."' WHERE inno_id = ".$inno_id);
-				echo(json_encode(array('status' => 'success', 'message' => 'Successfully Registered')));
+				echo(json_encode(array('status' => 'success', 'longurl' => $long_url)));
 			} else{
 
 				echo(json_encode(array('status' => 'failure', 'message' => 'token not set')));
@@ -200,8 +246,6 @@
 
 			echo(json_encode(array('status' => 'failure', 'message' => 'DB operation failed')));
 		}
-		}
-		
 	}
 
 ?>

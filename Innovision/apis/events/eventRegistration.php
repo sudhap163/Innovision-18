@@ -1,6 +1,6 @@
 <?php
 	include('../db.php');
-	if(isset($_POST("innoID")) && isset($_POST("eid")))
+	if(isset($_POST["innoID"]) && isset($_POST["eid"]))
 	{
 		$sql1 = "SELECT * FROM event_registration WHERE inno_id=".$_POST("innoID")." and event_id=".$_POST("eid");
 		$res1 = mysqli_query($conn, $sql1);

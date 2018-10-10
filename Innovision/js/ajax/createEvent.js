@@ -1,4 +1,3 @@
-
 $(document).on("click", "#add", function () {
     alert("Hii");
     var formObj = new FormData();
@@ -39,21 +38,21 @@ $(document).on("click", "#add", function () {
         contentType: false,
         processData: false,
         data: formObj
-        // title: $("#title").val().toString(),
-        // description: $("#desc").val().toString(),
-        // rules: $("#rules").val().toString(),
-        // judging_criteria: $("#jc").val().toString(),
-        // date: $("#date").val().toString(),
-        // venue: $("#venue").val().toString(),
-        // time: $("#time").val().toString(),
-        // category: $("#category").val().toString(),
-        // max_par: $("#max_participants").val().toString(),
-        // coordinatorName1: $("#full_name_1").val().toString(),
-        // coordinatorContact1: $("#contact_1").val().toString(),
-        // coordinatorName2: $("#full_name_2").val().toString(),
-        // coordinatorContact2: $("#contact_2").val().toString(),
+            // title: $("#title").val().toString(),
+            // description: $("#desc").val().toString(),
+            // rules: $("#rules").val().toString(),
+            // judging_criteria: $("#jc").val().toString(),
+            // date: $("#date").val().toString(),
+            // venue: $("#venue").val().toString(),
+            // time: $("#time").val().toString(),
+            // category: $("#category").val().toString(),
+            // max_par: $("#max_participants").val().toString(),
+            // coordinatorName1: $("#full_name_1").val().toString(),
+            // coordinatorContact1: $("#contact_1").val().toString(),
+            // coordinatorName2: $("#full_name_2").val().toString(),
+            // coordinatorContact2: $("#contact_2").val().toString(),
 
-        ,
+            ,
         success: function (data) {
             console.log(data);
         },
