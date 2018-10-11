@@ -298,7 +298,7 @@
                     </li>
 
                     <li class="signed_out">
-                        <a style="text-decoration: none;" href="./signInOut.html" title="">Sign In | Sign Up</a>
+                        <a style="text-decoration: none;" href="./registration.html" title="">Sign In | Sign Up</a>
                     </li>
 
                     <li class="ca">
@@ -318,7 +318,7 @@
                 <script>
                     $(document).ready(function () {
                         if (localStorage.token == null || localStorage.token == "" || !(localStorage.token)) {
-                            location.href = './signInOut.html';
+                            location.href = './registration.html';
                         } else {
                             $(".signed_in").css("display", "block");
                             $(".signed_out").css("display", "none");
