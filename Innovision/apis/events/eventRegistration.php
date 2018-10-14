@@ -2,13 +2,13 @@
 	include('../db.php');
 	if(isset($_POST["innoID"]) && isset($_POST["eid"]))
 	{
-		$sql1 = "SELECT * FROM event_registration WHERE inno_id=".$_POST("innoID")." and event_id=".$_POST("eid");
+		$sql1 = "SELECT * FROM events_registration WHERE inno_id='".$_POST["innoID"]."' and event_id='".$_POST["eid"]."'";
 		$res1 = mysqli_query($conn, $sql1);
 		if(mysqli_num_rows($res1) == 0)
 		{
-			$sql2 = "INSERT INTO events_registration (inno_id, event_id) VALUES (".$_POST("innoID").", ".$_POST("eid").")";
+			$sql2 = "INSERT INTO events_registration (inno_id, event_id) VALUES (".$_POST["innoID"].", ".$_POST["eid"].")";
 			$res2 = mysqli_query($conn, $sql2);
-			if($res)
+			if($res2)
 			{
 				echo(json_encode(array("status"=>"registration done")));
 			}

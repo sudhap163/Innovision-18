@@ -332,6 +332,7 @@
                 <script>
                     $(document).on("click", ".signout", function () {
                         localStorage.removeItem('token');
+                        localStorage.removeItem('innoID');
                         location.href = './index.html';
                     });
 
@@ -363,8 +364,24 @@
 
         <script src="./js/ajax/user_profile_read.js"></script>
         <script>
+            //window.Data;
+
             function display_profile(Data) {
-                console.log(Data);
+                localStorage.innoID = Data.result.inno_id;
+                if (Data.result.payment_status.localeCompare("N") == 0) {
+                    localStorage.name = Data.result.name;
+                    localStorage.email = Data.result.email;
+                    localStorage.phone = Data.result.phone;
+
+                    //$("#pay").css("display", "block");
+                    //$("#paid").css("display", "none");
+                } else
+                if (Data.result.payment_status.localeCompare("Y") == 0) {
+                    //$("#paid").css("display", "block");
+                    //$("#pay").css("display", "none");
+                }
+
+
                 $("#pname").html(Data.result.name);
                 $("#pinno_id").html("Inno ID: " + Data.result['0']);
                 $("#qr").attr("src", "Innovision-18/innovision/" +
@@ -372,6 +389,18 @@
                 $("#pinsti").html(Data.result.college);
                 $("#pmail").html(Data.result.email);
                 $("#pphone").html(Data.result.phone);
+
+                $.ajax({
+                    type: "GET",
+                    url: "./apis/events/fetchRegisteredEvents.php?q=" + localStorage.innoID,
+                    success: function (data) {
+                        var data = JSON.parse(data).result;
+                        registeredEvents(data);
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                })
             }
 
         </script>
@@ -389,6 +418,10 @@
                     </div>
                 </div> <!-- end row section-intro -->
                 <center class="basic_info">
+                    <!-- <h1>PAYMENT STATUS</h1>
+                    <p class="lead" id="pay" style="display:none"><button class="btn btn-lg btn-warning pay_now" style="color:black">PAY
+                            NOW</button></p>
+                    <p style="color:cyan;font-size:2em;display:none;font-weight:bold" id="paid">YOU HAVE PAID : )</p> -->
                     <h1>Basic Information</h1>
                     <p class="lead">Institute</p>
                     <h3 id="pinsti"></h3>
@@ -397,7 +430,8 @@
                     <p class="lead">Contact No</p>
                     <h3 id="pphone"></h3>
                 </center>
-                <!-- <center class="events_button">
+                <!-- <script src="./js/ajax/payment.js"></script> -->
+                <center class="events_button">
                     <h1>Events Registration</h1>
                     <ul id="menu">
                         <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#reg_events">Registered</a></li>
@@ -405,7 +439,41 @@
                     </ul>
                 </center> -->
             </div> <!-- end intro-wrap -->
-            <!-- <div class="container-fluid">
+            <script>
+                function registeredEvents(dataArr) {
+                    //console.log(dataArr.length);
+                    for (var i = 0; i < dataArr.length; i++) {
+                        $.ajax({
+                            type: "GET",
+                            url: "./apis/events/fetchIndividualEvent.php?q=" + dataArr[i][1],
+                            success: function (data) {
+                                var dataArray = JSON.parse(data);
+                                if (dataArray["status"] == "success") {
+                                    var eventObj = dataArray["result"];
+                                    populate(eventObj);
+                                    //console.log(dataArray);
+                                }
+                            }
+                        });
+                    }
+
+                }
+
+                function populate(eventObj) {
+                    //console.log(eventObj);
+                    var temp = '<a href="javascript:void(0)" class="reg_event" value="' + eventObj.eid +
+                        '" target="_blank"> <div class = "card wow fadeInLeft hvr-grow-rotate-right"><img class = "img-responsive" src = "' +
+                        eventObj.image_path.slice(4, ) + '"></div></a>';
+                    $("#event_reg").append(temp);
+
+                }
+                $(document).on("click", ".reg_event", function () {
+                    localStorage.eid = $(this)[0].attributes[2].value;
+                    location.href = './event_individual.html';
+                });
+
+            </script>
+            <div class="container-fluid">
                 <div class="wow">
 
 
@@ -414,90 +482,15 @@
                         <h1 class="title" data-aos="fade-left">Registered Events</h1>
 
 
-                        <center>
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInLeft hvr-grow-rotate-right">
-
-                                    <h1>Event Poster</h1>
-
-                                </div>
-                            </a>
-
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInUp hvr-grow">
-
-                                    <h1>Event Poster</h1>
-
-                                </div>
-                            </a>
-
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInRight hvr-grow-rotate-left">
-                                    <h1>Event Poster</h1>
-                                </div>
-                            </a>
-
-
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInLeft hvr-grow-rotate-right">
-
-                                    <h1>Event Poster</h1>
-
-                                </div>
-                            </a>
-
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInUp hvr-grow">
-
-                                    <h1>Event Poster</h1>
-
-                                </div>
-                            </a>
-
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInRight hvr-grow-rotate-left">
-                                    <h1>Event Poster</h1>
-                                </div>
-                            </a>
-                        </center>
-
-                    </section>
-
-
-                    <section id="events">
-                        <hr />
-
-                        <h1 class="title" data-aos="fade-left">Events</h1>
-
-                        <center>
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInLeft hvr-grow-rotate-right">
-
-                                    <h1>Event Poster</h1>
-
-                                </div>
-                            </a>
-
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInUp hvr-grow">
-
-                                    <h1>Event Poster</h1>
-
-                                </div>
-                            </a>
-
-                            <a href="event1.html" target="_blank">
-                                <div class="card wow fadeInRight hvr-grow-rotate-left">
-                                    <h1>Event Poster</h1>
-                                </div>
-                            </a>
+                        <center id="event_reg">
 
                         </center>
+
                     </section>
                 </div>
-            </div> -->
+            </div>
 
-            </div> <!-- end folio-wrap -->
+            </div>
             <!-- </div> -->
             <!-- end twelve -->
             <!-- </div> -->
@@ -516,9 +509,9 @@
                 </a>
             </div> -->
 
-            <div id="preloader">
+            <!-- <div id="preloader">
                 <div id="loader"></div>
-            </div>
+            </div> -->
 
             <div class="footer-bottom" style="background-color: #111111;margin-bottom:-3.8em;margin-top:0em">
                 <!-- contact
