@@ -1,15 +1,13 @@
-$(document).ready(function(){
-	if(localStorage.eid == null || localStorage.eid == "" || !(localStorage.eid)){
+$(document).ready(function () {
+	if (localStorage.eid == null || localStorage.eid == "" || !(localStorage.eid)) {
 		alert("Problem fetching the event details!");
-	}
-	else{
+	} else {
 		$.ajax({
-			type : "GET",
-			url : "./apis/events/fetchIndividualEvent.php?q="+localStorage.eid ,
-			success : function(data){
+			type: "GET",
+			url: "./apis/events/fetchIndividualEvent.php?q=" + localStorage.eid,
+			success: function (data) {
 				var dataArray = JSON.parse(data);
-				if(dataArray["status"] == "success")
-				{
+				if (dataArray["status"] == "success") {
 					var eventArr = dataArray["result"];
 					populate(eventArr);
 				}
@@ -18,33 +16,29 @@ $(document).ready(function(){
 	}
 });
 
-$(document).on("click", ".register", function(){
-	if(localStorage.innoID == null || localStorage.innoID == "" || !(localStorage.innoID))
-	{
-		alert("Please Login First to register.");
-	}
-	else
-	{
+$(document).on("click", ".register", function () {
+	if (localStorage.innoID == null || localStorage.innoID == "" || !(localStorage.innoID)) {
+		swal("Please Login First to register.", ": [", "warning");
+	} else {
 		$.ajax({
-			type : "POST",
-			url : "./apis/events/eventRegistration.php" ,
-			data : {
-				innoID : localStorage.innoID,
-				eid : localStorage.eid
+			type: "POST",
+			url: "./apis/events/eventRegistration.php",
+			data: {
+				innoID: localStorage.innoID,
+				eid: localStorage.eid
 			},
-			success : function(data){
+			success: function (data) {
+				//console.log(data);
 				dataArr = JSON.parse(data);
-				if(dataArr["status"] == "already registered")
-				{
-					alert("You have already registered for the event.");
-				}
-				else if(dataArr["status"] == "registration done")
-				{
-					alert("Registration Successful !");
-				}
-				else if(dataArr["status"] == "failure")
-				{
-					alert("Registration failed! Please try again.");
+				if (dataArr["status"] == "already registered") {
+					swal("You have already registered for the event.", ":)", "warning");
+
+				} else if (dataArr["status"] == "registration done") {
+					swal("Registration Successful !", ": )", "success");
+
+				} else if (dataArr["status"] == "failure") {
+					swal("Registration failed! Please try again.", ":(", "error");
+
 				}
 			}
 		});

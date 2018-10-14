@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+  <script src="../js/sweetalert.min.js"></script>
 
   <body>
 
@@ -16,25 +17,31 @@
           <p class="btnText2">GO!</p>
         </div>
       </div>
-      <div class="button" onclick="location.href = 'manage_events.html'">
+      <!-- <div class="button" onclick="location.href = 'manage_events.html'">
         <p class="btnText">MANAGE EVENTS</p>
         <div class="btnTwo">
           <p class="btnText2">GO!</p>
         </div>
-      </div>
+      </div> -->
       <!-- <div class="button" data-toggle="modal" data-target="#add_new_college_modal">
       <p class="btnText">ADD COLLEGES</p>
       <div class="btnTwo">
         <p class="btnText2">GO!</p>
       </div>
     </div> -->
-      <div class="button" onclick="location.href = 'cms_login.html'">
+      <div class="button logout">
         <p class="btnText">LOGOUT</p>
         <div class="btnTwo">
           <p class="btnText2">GO!</p>
         </div>
       </div>
     </div>
+    <script>
+      $(document).on("click",".logout",function(){
+        localStorage.removeItem("cms_token");
+        location.href = './index.html';
+      });
+    </script>
     <!-- Modal for events-->
     <div class="modal fade" id="add_new_event_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -74,6 +81,17 @@
             </div>
 
             <div class="form-group">
+              <label for="date">Date1:(Fill this field if it is 2 days event)</label>
+              <br>
+              <input type="date" id="date1" name="event_date" value="">
+            </div>
+
+            <div class="form-group">
+              <label for="time">Time1(Fill this field if it is 2 days event)</label>
+              <input type="time" id="time1" class="form-control" value="">
+            </div>
+
+            <div class="form-group">
               <label for="venue">Venue</label>
               <input type="text" id="venue" class="form-control" />
             </div>
@@ -85,13 +103,13 @@
 
             <div class="form-group">
               <label for="image-path">Image Path</label>
-              <input type="file" id="img_path" name="image" class="form-control" />
+              <input type="file" id="fileToUpload" name="fileToUpload" class="form-control" />
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="max-participants">Maximum Participants</label>
               <input type="number" id="max_participants" class="form-control" />
-            </div>
+            </div> -->
 
             <h4>Coordinator one</h4>
             <div class="form-group">
@@ -198,7 +216,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script>
       $(document).ready(function () {
-        if (!(localStorage.cms_token)) window.location.assign("./cms_login.html");
+        if (!(localStorage.cms_token)) window.location.assign("./index.html");
       });
 
     </script>

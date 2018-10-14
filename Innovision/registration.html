@@ -218,6 +218,7 @@
         <script>
           $(document).on("click", ".signout", function () {
             localStorage.removeItem('token');
+            localStorage.removeItem('innoID');
             location.href = './index.html';
           });
 
@@ -314,10 +315,12 @@
                   },
                   success: function (data) {
                     var Data = JSON.parse(data);
+                    console.log(Data);
                     if(Data.status.localeCompare("success") == 0)
                     {
                       //alert("Logged In");
                       localStorage.token = Data.result;
+                      //localStorage.innoID = Data.inno_id;
                       location.href = './profile.html';
                     }
                     else{
@@ -421,7 +424,7 @@
             </div>
 
             <div class="row">
-              <div class="col-six tab-full">
+              <div class="col-twelve tab-full">
                 <div class="form-field">
                   <div class="ss-custom-select" style="background-color:rgba(30,39,43,0.7);color:white;">
                     <select class="full-width" name="contactGender" id="contactGender" style="color:white;background-color:#272F34;">
@@ -434,7 +437,7 @@
                   <!--<input name="contactGender" type="email" id="contactEmail" placeholder="Email" value="" required="">-->
                 </div>
               </div>
-              <div class="col-six tab-full">
+              <!-- <div class="col-six tab-full">
                 <div class="form-field">
                   <div class="ss-custom-select" style="background-color:rgba(30,39,43,0.7);color:white;">
                     <select class="full-width" name="contactAccmd" id="contactAccmd" style="color:white;background-color:#272F34;">
@@ -443,9 +446,9 @@
                       <option value="no">No</option>
                     </select>
                   </div>
-                  <!--<input name="contactGender" type="email" id="contactEmail" placeholder="Email" value="" required="">-->
+                
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="row">
@@ -501,7 +504,7 @@
         var uemail = $("#contactEmail").val();
         var uphone = $("#contactNumber").val();
         var ugender = $("#contactGender").val();
-        var uaccomodation = $("#contactAccmd").val();
+        //var uaccomodation = $("#contactAccmd").val();
         //var ucollege = $("#contactCollege").val();
         var uaddress = $("#contactAddress").val();
         var upwd = $("#pwd").val();
@@ -519,7 +522,7 @@
           }
         }
         if (uname.localeCompare("") == 0 || uemail.localeCompare("") == 0 || uphone.localeCompare("") == 0 ||
-          ugender.localeCompare("") == 0 || uaccomodation.localeCompare("") == 0 || upwd.localeCompare("") == 0 ||
+          ugender.localeCompare("") == 0 || upwd.localeCompare("") == 0 ||
           ucollege.localeCompare("") == 0 || uaddress.localeCompare("") == 0 || cpwd.localeCompare("") == 0) {
           swal("Warning!", "Please fill in all the fields.", "warning");
         } else {
@@ -539,7 +542,6 @@
                 email: uemail,
                 phone: uphone,
                 gender: ugender,
-                accomodation: uaccomodation,
                 password: upwd,
                 college: ucollege,
                 address: uaddress

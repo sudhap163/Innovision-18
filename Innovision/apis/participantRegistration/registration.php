@@ -15,7 +15,7 @@
 	$address = $_POST["address"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
-	$accomodation = $_POST["accomodation"];
+	//$accomodation = $_POST["accomodation"];
 
 	function validateName($name) {
 
@@ -121,15 +121,15 @@
 		}
 	}
 	
-	function validateAccomodation($accomodation) {
+	// function validateAccomodation($accomodation) {
 
-		if ($accomodation != 'yes' && $accomodation != 'no') {
+	// 	if ($accomodation != 'yes' && $accomodation != 'no') {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'Valid accomodation details required')));
-		}
-	}
+	// 		echo(json_encode(array('status' => 'failure', 'result' => 'Valid accomodation details required')));
+	// 	}
+	// }
 
-	if ( isset($name) && isset($gender) && isset($phone) && isset($college) && isset($address) && isset($email) && isset($password) && isset($accomodation)) {
+	if ( isset($name) && isset($gender) && isset($phone) && isset($college) && isset($address) && isset($email) && isset($password)) {
 		// /echo'<script>HIIIIIII</script>';
 		validateName($name);
 		validateGender($gender);
@@ -138,7 +138,7 @@
 		validateAddress($address);
 		//validateEmail($email);
 		validatePassword($password);
-		validateAccomodation($accomodation);
+		//validateAccomodation($accomodation);
 		if(validateEmail($email))
 		{
 		$name = mysqli_real_escape_string($conn, $name);
@@ -147,10 +147,10 @@
 		$address = mysqli_real_escape_string($conn, $address);
 		$email = mysqli_real_escape_string($conn, $email);
 		$college = mysqli_real_escape_string($conn, $college);
-		$accomodation = mysqli_real_escape_string($conn, $accomodation);
+		//$accomodation = mysqli_real_escape_string($conn, $accomodation);
 		$password = mysqli_real_escape_string($conn, md5($password));
 
-		$q = "INSERT INTO users (name, gender, phone, college, address, email, user_password, accomodation) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$password."','".$accomodation."')";
+		$q = "INSERT INTO users (name, gender, phone, college, address, email, user_password) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$password."')";
 
 		$query = mysqli_query($conn, $q);
 

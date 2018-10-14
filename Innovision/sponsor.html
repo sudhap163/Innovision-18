@@ -389,6 +389,7 @@
                 <script>
                     $(document).on("click", ".signout", function () {
                         localStorage.removeItem('token');
+                        localStorage.removeItem('innoID');
                         location.href = './index.html';
                     });
 
