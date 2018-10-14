@@ -1,20 +1,41 @@
 $(document).on("click", "#add", function () {
     alert("Hii");
+    var title = $("#title").val().toString();
+    var desc = $("#desc").val().toString();
+    var rules = $("#rules").val().toString();
+    var jc = $("#jc").val().toString();
+    var dat = $("#date").val().toString();
+    var time = $("#time").val().toString();
+    var dat1 = $("#date1").val().toString();
+    var time1 = $("#time1").val().toString();
+    var venue = $("#venue").val().toString();
+    var category = $("#category").val().toString();
+    //var max_par = $("#max_participants").val().toString();
+    var full_name1 = $("#full_name_1").val().toString();
+    var cont1 = $("#contact_1").val().toString();
+    var full_name2 = $("#full_name_2").val().toString();
+    var cont2 = $("#contact_2").val().toString();
+    var imge = $("#fileToUpload").prop("files")[0];
+
+
     var formObj = new FormData();
-    formObj.append("title", $("#title").val().toString());
-    formObj.append("description", $("#desc").val().toString());
-    formObj.append("rules", $("#rules").val().toString());
-    formObj.append("judging_criteria", $("#jc").val());
-    formObj.append("date", $("#date").val().toString());
-    formObj.append("venue", $("#venue").val().toString());
-    formObj.append("time", $("#time").val().toString());
-    formObj.append("category", $("#category").val().toString());
-    formObj.append("max_par", $("#max_participants").val().toString());
-    formObj.append("coordinatorName1", $("#full_name_1").val().toString());
-    formObj.append("coordinatorContact1", $("#contact_1").val().toString());
-    formObj.append("coordinatorName2", $("#full_name_2").val().toString());
-    formObj.append("coordinatorContact2", $("#contact_2").val().toString());
-    formObj.append("image", $("#img_path").prop("files")[0]);
+    formObj.append("title", title);
+    formObj.append("description", desc);
+    formObj.append("rules", rules);
+    formObj.append("judging_criteria", jc);
+    formObj.append("date", dat);
+    formObj.append("date1", dat1);
+    formObj.append("venue", venue);
+    formObj.append("time", time);
+    formObj.append("time1", time1);
+    formObj.append("category", category);
+    //formObj.append("max_par", max_par);
+    formObj.append("coordinatorName1", full_name1);
+    formObj.append("coordinatorContact1", cont1);
+    formObj.append("coordinatorName2", full_name2);
+    formObj.append("coordinatorContact2", cont2);
+    formObj.append("token", localStorage.cms_token);
+    formObj.append("fileToUpload", imge);
 
     // console.log($("#title").val().toString());
     // console.log($("#desc").val().toString());
@@ -26,14 +47,17 @@ $(document).on("click", "#add", function () {
     // console.log($("#category").val().toString());
     // console.log($("#max_participants").val().toString());
     // console.log($("#full_name_1").val().toString());
-    // console.log( $("#contact_1").val().toString());
+    // console.log($("#contact_1").val().toString());
     // console.log($("#full_name_2").val().toString());
-    // console.log( $("#contact_2").val().toString());
+    // console.log($("#contact_2").val().toString());
+    //console.log(($("#img_path").prop("files"))[0]);
 
-    console.log(formObj);
+    // for (var key of form_data.entries()) {
+    //     console.log(key[0] + ', ' + key[1]);
+    // }
     $.ajax({
         type: "POST",
-        url: "http://localhost/Innovision/apis/events/createEvent.php",
+        url: "../apis/events/createEvent.php",
         cache: false,
         contentType: false,
         processData: false,
@@ -54,10 +78,13 @@ $(document).on("click", "#add", function () {
 
             ,
         success: function (data) {
+            if ((JSON.parse(data)).status == "success") {
+                swal("Event Updated Successfully", ": )", "success");
+            }
             console.log(data);
         },
         error: function (data) {
-            console.log(data);
+            alert("Error");
         }
     });
 });

@@ -66,6 +66,29 @@
 	===============================================-->
 		<link href="https://fonts.googleapis.com/css?family=Quicksand|Source+Sans+Pro" rel="stylesheet">
 		<style>
+			.glow {
+				border: 1px solid white;
+				display: inline-block;
+				border-radius: 5px;
+				font-size: 1.8em !important;
+				padding:5px;
+				color: #fff;
+				text-align: center;
+				-webkit-animation: glow 2s ease-in-out infinite alternate;
+				-moz-animation: glow 2s ease-in-out infinite alternate;
+				animation: glow 2s ease-in-out infinite alternate;
+				}
+
+				@-webkit-keyframes glow {
+				from {
+				text-shadow: 0 0 0px #fff, 0 0 20px #fff, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0
+				70px black;
+				}
+				to {
+				text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc, 0 0 60px #0dcfdc, 0 0 70px #0dcfdc, 0
+				0 80px #0dcfdc;
+				}
+				}
 			.loader1 {
 			position: fixed;
 			background: url('./images/orig2.gif') 50% 50% no-repeat rgb(249, 249, 249);
@@ -178,6 +201,9 @@
 	        text-decoration: none;
 	    }
 		@media screen and (max-width: 767px) {
+			.glow{
+				font-size: 1.3em !important;
+			}
 			#menu-nav-wrap {
 				width: 100%
 			}
@@ -287,6 +313,7 @@
 				<script>
 					$(document).on("click",".signout",function(){
 						localStorage.removeItem('token');
+						localStorage.removeItem('innoID');
 						location.href='./index.html';
 					});
 				</script>
@@ -332,6 +359,9 @@
 							</h1>
 							<h3 class="animate-intro">A Sci-Fi Odyssey.</h3>
 							<h3 class="animate-intro">2-4 NOV</h3>
+							<a href="./registration.html">
+								<p class="glow">REGISTRATION OPEN</p>
+							</a>
 
 
 							<!-- <div class="more animate-intro">
