@@ -52,7 +52,7 @@ $(document).on("click", "#add", function () {
     console.log($("#contact_1").val().toString());
     console.log($("#full_name_2").val().toString());
     console.log($("#contact_2").val().toString());
-    console.log(($("#img_path").prop("files"))[0]);
+    console.log(($("#fileToUpload").prop("files"))[0]);
 
     // for (var key of form_data.entries()) {
     //     console.log(key[0] + ', ' + key[1]);
