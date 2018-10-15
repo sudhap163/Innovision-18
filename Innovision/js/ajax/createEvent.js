@@ -1,5 +1,5 @@
 $(document).on("click", "#add", function () {
-    alert("Hii");
+    //alert("Hii");
     var title = $("#title").val().toString();
     var desc = $("#desc").val().toString();
     var rules = $("#rules").val().toString();
@@ -37,20 +37,22 @@ $(document).on("click", "#add", function () {
     formObj.append("token", localStorage.cms_token);
     formObj.append("fileToUpload", imge);
 
-    // console.log($("#title").val().toString());
-    // console.log($("#desc").val().toString());
-    // console.log($("#rules").val().toString());
-    // console.log($("#jc").val().toString());
-    // console.log($("#date").val().toString());
-    // console.log($("#time").val().toString());
-    // console.log($("#venue").val().toString());
-    // console.log($("#category").val().toString());
-    // console.log($("#max_participants").val().toString());
-    // console.log($("#full_name_1").val().toString());
-    // console.log($("#contact_1").val().toString());
-    // console.log($("#full_name_2").val().toString());
-    // console.log($("#contact_2").val().toString());
-    //console.log(($("#img_path").prop("files"))[0]);
+    console.log($("#title").val().toString());
+    console.log($("#desc").val().toString());
+    console.log($("#rules").val().toString());
+    console.log($("#jc").val().toString());
+    console.log($("#date").val().toString());
+    console.log($("#time").val().toString());
+    console.log($("#date1").val().toString());
+    console.log($("#time1").val().toString());
+    console.log($("#venue").val().toString());
+    console.log($("#category").val().toString());
+    console.log($("#max_participants").val().toString());
+    console.log($("#full_name_1").val().toString());
+    console.log($("#contact_1").val().toString());
+    console.log($("#full_name_2").val().toString());
+    console.log($("#contact_2").val().toString());
+    console.log(($("#img_path").prop("files"))[0]);
 
     // for (var key of form_data.entries()) {
     //     console.log(key[0] + ', ' + key[1]);
