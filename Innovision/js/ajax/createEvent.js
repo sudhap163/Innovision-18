@@ -78,10 +78,14 @@ $(document).on("click", "#add", function () {
 
             ,
         success: function (data) {
-            if ((JSON.parse(data)).status == "success") {
-                swal("Event Updated Successfully", ": )", "success");
-            }
+
             console.log(data);
+            var d = JSON.parse(data);
+            if (d.status == "success") {
+                swal("Event Updated Successfully", ": )", "success");
+            } else {
+                swal("Unable to upload", ": )", "error");
+            }
         },
         error: function (data) {
             alert("Error");
