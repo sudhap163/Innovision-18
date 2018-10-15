@@ -54,9 +54,9 @@ $(document).on("click", "#add", function () {
     console.log($("#contact_2").val().toString());
     console.log(($("#fileToUpload").prop("files"))[0]);
 
-    // for (var key of form_data.entries()) {
-    //     console.log(key[0] + ', ' + key[1]);
-    // }
+    for (var key of formObj.entries()) {
+        console.log(key[0] + ', ' + key[1]);
+    }
     $.ajax({
         type: "POST",
         url: "../apis/events/createEvent.php",
