@@ -47,7 +47,7 @@ $(document).on("click", "#add", function () {
     console.log($("#time1").val().toString());
     console.log($("#venue").val().toString());
     console.log($("#category").val().toString());
-    console.log($("#max_participants").val().toString());
+    //console.log($("#max_participants").val().toString());
     console.log($("#full_name_1").val().toString());
     console.log($("#contact_1").val().toString());
     console.log($("#full_name_2").val().toString());
