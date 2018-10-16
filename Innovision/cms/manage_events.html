@@ -27,7 +27,7 @@
           var data_obj = JSON.parse(data);
           var data_arr = data_obj.result;
           for (var i = 0; i < data_arr.length; i++) {
-            temp = temp + '<tr><td style="display:none" id="eid">' + data_arr[i].eid + '</td><td>' + (i + 1) + '</td ><td>' + data_arr[i].title + '</td><td>' + data_arr[i].date + '</td><td>' + data_arr[i].time + '</td><td><button onclick="" class="btn btn-danger" id="delete">Delete</button></td></tr> ';
+            temp = temp + '<tr><td style="display:none" id="eid">' + data_arr[i].eid + '</td><td>' + (i + 1) + '</td ><td><img class="img-responsive" src="'+data_arr[i].image_path+'" height="120px" width="auto"></td><td>' + data_arr[i].title + '</td><td>' + data_arr[i].venue + '</td><td>' + data_arr[i].date + '</td><td>' + data_arr[i].time + '</td><td>' + data_arr[i].date1 + '</td><td>' + data_arr[i].time1 + '</td><td><button onclick="" class="btn btn-danger" id="delete">Delete</button></td></tr> ';
             $('tbody').append(temp);
           }
         },
@@ -46,10 +46,13 @@
           <thead>
             <tr>
               <th>#</th>
+              <th>Poster</th>
               <th>Name</th>
-              <th>Date</th>
               <th>Venue</th>
-              <th>Time</th>
+              <th>Date1</th>
+              <th>Time1</th>
+              <th>Date2</th>
+              <th>Time2</th>
               <th>Action</th>
             </tr>
           </thead>
