@@ -1,5 +1,5 @@
 $(document).on("click", "#add", function () {
-    alert("Hii");
+    //alert("Hii");
     var title = $("#title").val().toString();
     var desc = $("#desc").val().toString();
     var rules = $("#rules").val().toString();
