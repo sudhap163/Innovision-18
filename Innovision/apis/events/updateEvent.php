@@ -3,13 +3,15 @@
     include('../db.php');
     include('../panels/cms/verifyCMSAdmin.php');
 
+    
+    if (isset($status) && $status === "success") {
     $eid = $_POST["eid"];
     $query = mysqli_query($conn, "SELECT * FROM events WHERE eid =".$eid);
     if (mysqli_num_rows($query) == 0) {
         echo(json_encode(array('status' => 'failure', 'result' => 'eid not found')));
     }
     else {
-        $query = "UPDATE events SET title ='".mysqli_real_escape_string($conn,$_POST['title'])."', description ='".mysqli_real_escape_string($conn,$_POST['description'])."', rules ='".mysqli_real_escape_string($conn,$_POST['rules'])."', judging_criteria ='".mysqli_real_escape_string($conn,$_POST['judging_criteria'])."', date ='".mysqli_real_escape_string($conn,$_POST['date'])."', venue ='".mysqli_real_escape_string($conn,$_POST['venue'])."', time ='".mysqli_real_escape_string($conn,$_POST['time'])."', category ='".mysqli_real_escape_string($conn,$_POST['category'])."', coordinatorName1 ='".mysqli_real_escape_string($conn,$_POST['coordinatorName1'])."', coordinatorContact1 ='".mysqli_real_escape_string($conn,$_POST['coordinatorContact1'])."', coordinatorName2 ='".mysqli_real_escape_string($conn,$_POST['coordinatorName2'])."', coordinatorContact2 ='".mysqli_real_escape_string($conn,$_POST['coordinatorContact2'])."' WHERE eid =".$eid;
+        $query = "UPDATE events SET title ='".mysqli_real_escape_string($conn,$_POST['title'])."', description ='".mysqli_real_escape_string($conn,$_POST['description'])."', rules ='".mysqli_real_escape_string($conn,$_POST['rules'])."', judging_criteria ='".mysqli_real_escape_string($conn,$_POST['judging_criteria'])."', date ='".mysqli_real_escape_string($conn,$_POST['date'])."', date1 ='".mysqli_real_escape_string($conn,$_POST['date1'])."', venue ='".mysqli_real_escape_string($conn,$_POST['venue'])."', time ='".mysqli_real_escape_string($conn,$_POST['time'])."', time1 ='".mysqli_real_escape_string($conn,$_POST['time1'])."', category ='".mysqli_real_escape_string($conn,$_POST['category'])."', coordinatorName1 ='".mysqli_real_escape_string($conn,$_POST['coordinatorName1'])."', coordinatorContact1 ='".mysqli_real_escape_string($conn,$_POST['coordinatorContact1'])."', coordinatorName2 ='".mysqli_real_escape_string($conn,$_POST['coordinatorName2'])."', coordinatorContact2 ='".mysqli_real_escape_string($conn,$_POST['coordinatorContact2'])."' WHERE eid =".$eid;
         if (mysqli_query($conn, $query)) {
         
             // if(is_uploaded_file($_FILES["image"]["name"])) {
@@ -37,4 +39,5 @@
             echo(json_encode(array('status' => 'failure', 'result' => 'DB operations failed')));
         }
     }
+}
 ?>

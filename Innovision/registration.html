@@ -118,6 +118,24 @@
     margin-left: -170px;
   }
 
+  a.forgot_password{
+    color: #4D4D4D;
+  }
+  a.forgot_password:hover{
+    cursor: pointer;
+    color: #0EBCF1;
+  }
+  .modal{
+    z-index:9999;
+  }
+  .modal-content{
+    background-color :white;
+    color :black;
+  }
+  .modal-backdrop {
+		position: static;
+	}
+
   @media screen and (max-width: 767px) {
     #menu-nav-wrap {
       width: 100%
@@ -302,7 +320,7 @@
             </div>
 
           </form>
-
+          <a class="forgot_password" data-toggle="modal" data-target="#forgot_password_request">Forgot Password?</a>
         </div>
 
         <script>
@@ -337,6 +355,29 @@
           });
         </script>
         <!-- end col-seven -->
+        <div class="modal fade" id="forgot_password_request" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Forgot Password?</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="event_name">Enter Your Registered Email:</label>
+                  <input type="email" id="forgot_password_email_id" class="form-control" style="box-shadow: 0px 0px 2px #4d4d4d;color :black;"/>
+                </div>
+                <div class="mail_status">
+                 
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="send_reset_request">Proceed</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="js/ajax/resetPassword.js"></script>
         <!-- RGISTER -->
 
         <div class="col-twelve tab-full" style="text-align: center;display: none" id="reg">
