@@ -373,12 +373,12 @@
                     localStorage.email = Data.result.email;
                     localStorage.phone = Data.result.phone;
 
-                    //$("#pay").css("display", "block");
-                    //$("#paid").css("display", "none");
+                    $("#pay").css("display", "block");
+                    $("#paid").css("display", "none");
                 } else
                 if (Data.result.payment_status.localeCompare("Y") == 0) {
-                    //$("#paid").css("display", "block");
-                    //$("#pay").css("display", "none");
+                    $("#paid").css("display", "block");
+                    $("#pay").css("display", "none");
                 }
 
 
@@ -417,10 +417,10 @@
                     </div>
                 </div> <!-- end row section-intro -->
                 <center class="basic_info">
-                    <!-- <h1>PAYMENT STATUS</h1>
+                    <h1>PAYMENT STATUS</h1>
                     <p class="lead" id="pay" style="display:none"><button class="btn btn-lg btn-warning pay_now" style="color:black">PAY
                             NOW</button></p>
-                    <p style="color:cyan;font-size:2em;display:none;font-weight:bold" id="paid">YOU HAVE PAID : )</p> -->
+                    <p style="color:cyan;font-size:2em;display:none;font-weight:bold" id="paid">YOU HAVE PAID : )</p>
                     <h1>Basic Information</h1>
                     <p class="lead">Institute</p>
                     <h3 id="pinsti"></h3>
@@ -429,7 +429,7 @@
                     <p class="lead">Contact No</p>
                     <h3 id="pphone"></h3>
                 </center>
-                <!-- <script src="./js/ajax/payment.js"></script> -->
+                <script src="./js/ajax/payment.js"></script>
 
             </div> <!-- end intro-wrap -->
             <script>
