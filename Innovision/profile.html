@@ -51,7 +51,7 @@
                 margin: 20px 15px;
                 height: 300px;
                 width: 300px;
-                border: 1px solid;
+                border: 1px solid white;
                 border-radius: 15px;
                 text-align: center;
                 padding-top: 25px;
@@ -384,8 +384,7 @@
 
                 $("#pname").html(Data.result.name);
                 $("#pinno_id").html("Inno ID: " + Data.result['0']);
-                $("#qr").attr("src", "Innovision-18/innovision/" +
-                    Data.result.qr_code_path);
+                $("#qr").attr("src", Data.result.qr_code_path);
                 $("#pinsti").html(Data.result.college);
                 $("#pmail").html(Data.result.email);
                 $("#pphone").html(Data.result.phone);
@@ -431,13 +430,7 @@
                     <h3 id="pphone"></h3>
                 </center>
                 <!-- <script src="./js/ajax/payment.js"></script> -->
-                <center class="events_button">
-                    <h1>Events Registration</h1>
-                    <ul id="menu">
-                        <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#reg_events">Registered</a></li>
-                        <li><a class="animated bounceInLeft hvr-bounce-to-right scroll" href="#events">Unregistered</a></li>
-                    </ul>
-                </center> -->
+
             </div> <!-- end intro-wrap -->
             <script>
                 function registeredEvents(dataArr) {
@@ -445,7 +438,7 @@
                     for (var i = 0; i < dataArr.length; i++) {
                         $.ajax({
                             type: "GET",
-                            url: "./apis/events/fetchIndividualEvent.php?q=" + dataArr[i][1],
+                            url: "./apis/events/fetchIndividualEvent.php?q=" + dataArr[i][2],
                             success: function (data) {
                                 var dataArray = JSON.parse(data);
                                 if (dataArray["status"] == "success") {
