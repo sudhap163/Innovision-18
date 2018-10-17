@@ -59,7 +59,7 @@ $email = $_POST['email'];
                             }
                         } else {
 
-                            echo(json_encode(array('status' => 'failure', 'result' => 'DB operation failed')));
+                             echo(json_encode(array('status' => 'failure', 'result' => 'This email is not registered with us')));
                         }
                     } else {
 
