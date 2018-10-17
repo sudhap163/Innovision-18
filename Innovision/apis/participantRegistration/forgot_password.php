@@ -40,7 +40,7 @@ $email = $_POST['email'];
                     //Content
                     $mail->isHTML(true);                                  // Set email format to HTML
                     $mail->Subject = "Inno'18 Password reset link";
-                    $mail->Body    = 'Your password change link is <a href="http://localhost/innovision-18/Innovision/forgot_password.html?q='.mysqli_fetch_array($query)["user_password"].'&mail='.$email.'">HERE</a>';
+                    $mail->Body    = 'Your password change link is <a href="https://innonitr.com/forgot_password.html?q='.mysqli_fetch_array($query)["user_password"].'&mail='.$email.'">HERE</a>';
                     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                     $mail->send();
