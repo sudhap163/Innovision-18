@@ -2,7 +2,7 @@ $(document).on("click", "#send_reset_request", function(){
     $(".mail_status").html("<p style='font-size: 13px; color: blue'> Processing... </p>");
     var send_link_email = $("#forgot_password_email_id").val();
     //check if empty
-    console.log(send_link_email);
+    //console.log(send_link_email);
     if(send_link_email.localeCompare("") == 0)
     {
         $(".mail_status").html("<p style='font-size: 13px; color: red'> Please enter your Registered Email Id to proceed. </p>");
