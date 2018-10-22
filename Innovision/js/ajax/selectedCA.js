@@ -6,6 +6,7 @@ $(document).ready(function () {
             var d = JSON.parse(data);
             console.log(d.result);
             show_ca(d.result);
+            //
         },
         error: function (data) {
 
