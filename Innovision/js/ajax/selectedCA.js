@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "../../apis/panels/CAselection/selectedCA.php",
+        url: "../../apis/panels/CASelection/selectedCA.php",
         success: function (data) {
             var d = JSON.parse(data);
             console.log(d.result);

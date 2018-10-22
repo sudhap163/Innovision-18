@@ -391,10 +391,10 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
             });
 
             $(document).on("click", "#reg_ca", function () {
-                console.log($("#ca").val());
+
                 $.ajax({
                     type: "POST",
-                    url: "./apis/panels/CAselection/submitCA.php",
+                    url: "./apis/panels/CASelection/submitCA.php",
                     data: {
                         ca_id: $("#ca").val(),
                         token: localStorage.token
@@ -403,7 +403,32 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                         console.log(data);
                         var d = JSON.parse(data);
                         if (d.status == "success") {
-                            swal(d.result, ":)", "success");
+                            //swal(d.result, ":)", "success");
+                            swal({
+                                    icon: "success",
+                                    title: d.result,
+                                    text: ":)",
+                                    buttons: {
+                                        //cancel: "Cancel",
+                                        sure: "Sure"
+                                    },
+                                })
+                                .then((value) => {
+                                    switch (value) {
+
+                                        case "sure":
+                                            //ajax
+                                            location.reload(true);
+                                            break;
+                                        default:
+                                            location.reload(true);
+                                            break;
+
+
+                                    }
+                                });
+
+
                         } else {
                             swal(d.result, ":(", "error");
                         }
@@ -418,13 +443,15 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
             function show_ca(dataArray) {
                 var temp = '<option value="0">--Select Name Below --</option>';
                 for (var i = 0; i < dataArray.length; i++) {
-                    temp = temp + '<option value="' + dataArray[i].ca_applicant_id + '">' + dataArray[i].q1 +
-                        '</option>'
+                    temp = temp + '<option value="' + dataArray[i].ca_applicant_id + '">' + dataArray[i].ca_applicant_id +
+                        ". " + dataArray[i].q1 +
+                        '</option>';
                 }
                 $("#ca").append(temp);
             }
 
             function display_profile(Data) {
+                console.log(Data.result);
                 localStorage.innoID = Data.result.inno_id;
                 if (Data.result.payment_status.localeCompare("N") == 0) {
                     localStorage.name = Data.result.name;
@@ -439,7 +466,27 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     $("#pay").css("display", "none");
                 }
 
+                if (Data.result.through_ca_id == "0") {
+                    $("#find_ca").css("display", "block");
+                } else {
+                    $.ajax({
+                        type: "GET",
+                        url: "./apis/panels/CASelection/CAdetail.php?q=" + Data.result.through_ca_id,
+                        success: function (data) {
+                            var d = JSON.parse(data);
+                            $("#your_ca").html("You are registered thorough " + d.result[0].q1.toUpperCase());
+                            $("#find_ca").html(
+                                'Wanna edit choice? <a href = "javascript:void(0)" style = "color:white;font-weight:bold" id = "yes"> Click here </a>'
+                            );
+                            $("#find_ca").css("display", "block");
+                            console.log(data);
+                        },
+                        error: function (data) {
 
+                        }
+                    });
+                    $("#your_ca").css("display", "block");
+                }
                 $("#pname").html(Data.result.name);
                 $("#pinno_id").html("Inno ID: " + Data.result['0']);
                 $("#qr").attr("src", Data.result.qr_code_path);
@@ -475,8 +522,9 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     </div>
                 </div> <!-- end row section-intro -->
                 <center class="basic_info">
-                    <h3 class="glow" style="color:white">Are You Registered Through a CA ? <a href="javascript:void(0)"
-                            style="color:white;font-weight:bold" id="yes">Click here</a></h3>
+                    <h3 class="glow" style="color:white;display:none" id="your_ca"></h3>
+                    <h3 class="glow" style="color:white;display:none" id="find_ca">Are You Registered Through a CA ? <a
+                            href="javascript:void(0)" style="color:white;font-weight:bold" id="yes">Click here</a></h3>
                     <select name="ca_id" id="ca" style="color:white;font-size:1em;font-weight:bold;background-color:black;display:none">
 
                     </select>
@@ -521,7 +569,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     //console.log(eventObj);
                     var temp = '<a href="javascript:void(0)" class="reg_event" value="' + eventObj.eid +
                         '" target="_blank"> <div class = "card wow fadeInLeft hvr-grow-rotate-right"><img class = "img-responsive" src = "' +
-                        eventObj.image_path.slice(4, ) + '"></div></a>';
+                        eventObj.image_path.slice(4) + '"></div></a>';
                     $("#event_reg").append(temp);
 
                 }
