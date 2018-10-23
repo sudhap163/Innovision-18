@@ -441,7 +441,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
             });
 
             function show_ca(dataArray) {
-                var temp = '<option value="0">--Select Name Below --</option>';
+                var temp = '';
                 for (var i = 0; i < dataArray.length; i++) {
                     temp = temp + '<option value="' + dataArray[i].ca_applicant_id + '">' + dataArray[i].ca_applicant_id +
                         ". " + dataArray[i].q1 +
@@ -451,7 +451,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
             }
 
             function display_profile(Data) {
-                console.log(Data.result);
+                //console.log(Data.result);
                 localStorage.innoID = Data.result.inno_id;
                 if (Data.result.payment_status.localeCompare("N") == 0) {
                     localStorage.name = Data.result.name;
@@ -465,7 +465,15 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     $("#paid").css("display", "block");
                     $("#pay").css("display", "none");
                 }
-
+                //FEEDBACK
+                /*if (Data.result.feedback_status == "0") {
+                    $("#feedback").css("display", "block");
+                } else {
+                    $("#download").html('Download Your Certificate <a style="color:white" href="./images/certificates/' +
+                        localStorage.innoID + '.png" download>Here</a>')
+                    $("#download").css("display", "block");
+                }*/
+                //THROUGH CA REGISTRATION
                 if (Data.result.through_ca_id == "0") {
                     $("#find_ca").css("display", "block");
                 } else {
@@ -474,12 +482,12 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                         url: "./apis/panels/CASelection/CAdetail.php?q=" + Data.result.through_ca_id,
                         success: function (data) {
                             var d = JSON.parse(data);
-                            $("#your_ca").html("You are registered thorough " + d.result[0].q1.toUpperCase());
+                            $("#your_ca").html("You are registered through " + d.result[0].q1.toUpperCase());
                             $("#find_ca").html(
                                 'Wanna edit choice? <a href = "javascript:void(0)" style = "color:white;font-weight:bold" id = "yes"> Click here </a>'
                             );
                             $("#find_ca").css("display", "block");
-                            console.log(data);
+                            //console.log(data);
                         },
                         error: function (data) {
 
@@ -522,11 +530,16 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     </div>
                 </div> <!-- end row section-intro -->
                 <center class="basic_info">
+                    <h3 id="download" style="display:none"></h3>
+                    <h3 id="feedback" style="display:none">Fill in the
+                        feedback form to get
+                        your innovision'18 certificate <a style="color: white" href="feedback.html">Here</a></h3>
                     <h3 class="glow" style="color:white;display:none" id="your_ca"></h3>
                     <h3 class="glow" style="color:white;display:none" id="find_ca">Are You Registered Through a CA ? <a
                             href="javascript:void(0)" style="color:white;font-weight:bold" id="yes">Click here</a></h3>
                     <select name="ca_id" id="ca" style="color:white;font-size:1em;font-weight:bold;background-color:black;display:none">
-
+                        <option value="0">--Select Name Below --</option>
+                        <option value="0">--NONE--</option>
                     </select>
                     <p id="reg_ca" style="display:none"><button class="btn btn-sm btn-info" style="color:black">Submit</button></p>
                     <h1>PAYMENT STATUS</h1>
@@ -547,7 +560,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
             </div> <!-- end intro-wrap -->
             <script>
                 function registeredEvents(dataArr) {
-                    console.log(dataArr);
+                    //console.log(dataArr);
                     for (var i = 0; i < dataArr.length; i++) {
                         $.ajax({
                             type: "GET",

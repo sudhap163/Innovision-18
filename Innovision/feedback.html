@@ -216,21 +216,19 @@
 
         </ul>
         <script>
+
           $(document).ready(function () {
-            $(document).ready(function () {
               if (localStorage.token == null || localStorage.token == "" || !(localStorage.token)) {
                 $(".signed_out").css("display", "block");
                 $(".signout").css("display", "none");
                 $(".profile").css("display", "none");
                 $(".ca").css("display", "block");
-              } else {
-                //location.href = './profile.html';
-                window.location.assign("./profile.html");
-              }
+                window.location.assign("./registration.html");
+              } 
 
             });
 
-          });
+         
 
         </script>
         <script>
@@ -263,7 +261,7 @@
       <!-- end #menu-nav-wrap -->
 
     </header>
-    <!-- end header --> 
+    <!-- end header -->
 
     <section id="contact" style="background-color:#03090C;padding-bottom:100px">
 
@@ -289,9 +287,9 @@
               <input type="text" id="disliked_event" placeholder="Event that you didn't like" value="" required="">
             </div>
 
-            <div class="form-field">
+            <!-- <div class="form-field">
               <input type="text" id="disliked_event" placeholder="Event that you didn't like" value="" required="">
-            </div>
+            </div> -->
 
             <div class="form-field" style="text-align: left;">
               <div class="container-fluid" id="your_ratings">
@@ -316,24 +314,25 @@
             </script>
 
             <div class="form-field">
-              <textarea type="text" id="suggest_improve" placeholder="If there is anywhere you'd like us to improve" value="" required=""></textarea>
+              <textarea type="text" id="suggest_improve" placeholder="If there is anywhere you'd like us to improve"
+                value="" required=""></textarea>
             </div>
-            
+
             <div class="form-field">
               <span></span>
-              
+
 
             </div>
             <div class="form-field" style="text-align: left;">
               <div class="container-fluid" id="your_ratings">
                 <h6>Will you like to come back next year?</h6>
                 <input type="radio" value="y"><span>Yes</span>
-                <br/>
+                <br />
                 <input type="radio" value="n"><span>No </span>
                 <br /><br />
               </div>
             </div>
-  
+
             <div class="signin">
               <a href="javascript:void(0)" style="text-decoration: none">
                 <div style="width:100%;color:black;font-family: 'Quicksand', sans-serif;background-color:#F89E0F;font-weight:bolder;padding:1em;letter-spacing:3px">SUBMIT</div>
@@ -343,7 +342,7 @@
           </form>
         </div>
 
-        
+
         <!-- end col-seven -->
         <!-- <div class="modal fade" id="forgot_password_request" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
