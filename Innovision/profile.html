@@ -34,6 +34,7 @@
         <script src="js/modernizr.js"></script>
         <script src="js/pace.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <script src="./js/sweetalert.min.js"></script>
 
         <!-- favicons
 	================================================== -->
@@ -44,7 +45,26 @@
         <link href="https://fonts.googleapis.com/css?family=Quicksand|Source+Sans+Pro" rel="stylesheet">
 
         <style>
+            .glow {
+display: inline-block;
+border-radius: 5px;
+color: #fff;
+text-align: center;
+-webkit-animation: glow 2s ease-in-out infinite alternate;
+-moz-animation: glow 2s ease-in-out infinite alternate;
+animation: glow 2s ease-in-out infinite alternate;
+}
 
+@-webkit-keyframes glow {
+from {
+text-shadow: 0 0 0px #fff, 0 0 20px #fff, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0
+70px black;
+}
+to {
+text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc, 0 0 60px #0dcfdc, 0 0 70px #0dcfdc, 0
+0 80px #0dcfdc;
+}
+}
             *{box-sizing: border-box; font-family: 'Quicksand';}
             
             .card{
@@ -361,12 +381,77 @@
         </header>
         <!-- end header -->
 
-
+        <script src="./js/ajax/selectedCA.js"></script>
         <script src="./js/ajax/user_profile_read.js"></script>
         <script>
             //window.Data;
+            $(document).on("click", "#yes", function () {
+                $("#ca").css("display", "block");
+                $("#reg_ca").css("display", "block");
+            });
+
+            $(document).on("click", "#reg_ca", function () {
+
+                $.ajax({
+                    type: "POST",
+                    url: "./apis/panels/CASelection/submitCA.php",
+                    data: {
+                        ca_id: $("#ca").val(),
+                        token: localStorage.token
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        var d = JSON.parse(data);
+                        if (d.status == "success") {
+                            //swal(d.result, ":)", "success");
+                            swal({
+                                    icon: "success",
+                                    title: d.result,
+                                    text: ":)",
+                                    buttons: {
+                                        //cancel: "Cancel",
+                                        sure: "Sure"
+                                    },
+                                })
+                                .then((value) => {
+                                    switch (value) {
+
+                                        case "sure":
+                                            //ajax
+                                            location.reload(true);
+                                            break;
+                                        default:
+                                            location.reload(true);
+                                            break;
+
+
+                                    }
+                                });
+
+
+                        } else {
+                            swal(d.result, ":(", "error");
+                        }
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+
+                });
+            });
+
+            function show_ca(dataArray) {
+                var temp = '<option value="0">--Select Name Below --</option>';
+                for (var i = 0; i < dataArray.length; i++) {
+                    temp = temp + '<option value="' + dataArray[i].ca_applicant_id + '">' + dataArray[i].ca_applicant_id +
+                        ". " + dataArray[i].q1 +
+                        '</option>';
+                }
+                $("#ca").append(temp);
+            }
 
             function display_profile(Data) {
+                console.log(Data.result);
                 localStorage.innoID = Data.result.inno_id;
                 if (Data.result.payment_status.localeCompare("N") == 0) {
                     localStorage.name = Data.result.name;
@@ -381,7 +466,27 @@
                     $("#pay").css("display", "none");
                 }
 
+                if (Data.result.through_ca_id == "0") {
+                    $("#find_ca").css("display", "block");
+                } else {
+                    $.ajax({
+                        type: "GET",
+                        url: "./apis/panels/CASelection/CAdetail.php?q=" + Data.result.through_ca_id,
+                        success: function (data) {
+                            var d = JSON.parse(data);
+                            $("#your_ca").html("You are registered thorough " + d.result[0].q1.toUpperCase());
+                            $("#find_ca").html(
+                                'Wanna edit choice? <a href = "javascript:void(0)" style = "color:white;font-weight:bold" id = "yes"> Click here </a>'
+                            );
+                            $("#find_ca").css("display", "block");
+                            console.log(data);
+                        },
+                        error: function (data) {
 
+                        }
+                    });
+                    $("#your_ca").css("display", "block");
+                }
                 $("#pname").html(Data.result.name);
                 $("#pinno_id").html("Inno ID: " + Data.result['0']);
                 $("#qr").attr("src", Data.result.qr_code_path);
@@ -417,6 +522,13 @@
                     </div>
                 </div> <!-- end row section-intro -->
                 <center class="basic_info">
+                    <h3 class="glow" style="color:white;display:none" id="your_ca"></h3>
+                    <h3 class="glow" style="color:white;display:none" id="find_ca">Are You Registered Through a CA ? <a
+                            href="javascript:void(0)" style="color:white;font-weight:bold" id="yes">Click here</a></h3>
+                    <select name="ca_id" id="ca" style="color:white;font-size:1em;font-weight:bold;background-color:black;display:none">
+
+                    </select>
+                    <p id="reg_ca" style="display:none"><button class="btn btn-sm btn-info" style="color:black">Submit</button></p>
                     <h1>PAYMENT STATUS</h1>
                     <p class="lead" id="pay" style="display:none"><button class="btn btn-lg btn-warning pay_now" style="color:black">PAY
                             NOW</button></p>
@@ -431,10 +543,11 @@
                 </center>
                 <script src="./js/ajax/payment.js"></script>
 
+
             </div> <!-- end intro-wrap -->
             <script>
                 function registeredEvents(dataArr) {
-                    //console.log(dataArr.length);
+                    console.log(dataArr);
                     for (var i = 0; i < dataArr.length; i++) {
                         $.ajax({
                             type: "GET",
@@ -456,7 +569,7 @@
                     //console.log(eventObj);
                     var temp = '<a href="javascript:void(0)" class="reg_event" value="' + eventObj.eid +
                         '" target="_blank"> <div class = "card wow fadeInLeft hvr-grow-rotate-right"><img class = "img-responsive" src = "' +
-                        eventObj.image_path.slice(4, ) + '"></div></a>';
+                        eventObj.image_path.slice(4) + '"></div></a>';
                     $("#event_reg").append(temp);
 
                 }
