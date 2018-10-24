@@ -215,7 +215,7 @@
           </li>
 
         </ul>
-        <script>
+        <!-- <script>
 
           $(document).ready(function () {
               if (localStorage.token == null || localStorage.token == "" || !(localStorage.token)) {
@@ -230,7 +230,7 @@
 
          
 
-        </script>
+        </script> -->
         <script>
           $(document).on("click", ".signout", function () {
             localStorage.removeItem('token');
@@ -287,60 +287,44 @@
               <input type="text" id="disliked_event" placeholder="Event that you didn't like" value="" required="">
             </div>
 
-            <!-- <div class="form-field">
-              <input type="text" id="disliked_event" placeholder="Event that you didn't like" value="" required="">
-            </div> -->
-
-            <div class="form-field" style="text-align: left;">
-              <div class="container-fluid" id="your_ratings">
-                <h6>Overall quality of events:</h6>
-                <span class="fa fa-star editable-rating all-star" value="1" style="font-size:2em"></span>
-                <span class="fa fa-star editable-rating all-star" value="2" style="font-size:2em"></span>
-                <span class="fa fa-star editable-rating all-star" value="3" style="font-size:2em"></span>
-                <span class="fa fa-star editable-rating all-star" value="4" style="font-size:2em"></span>
-                <span class="fa fa-star editable-rating all-star" value="5" style="font-size:2em"></span>
-                <br /><br />
+            <div class="form-field"  style="text-align: left;">
+              <div class="container-fluid">
+                  <h6>Overall Quality of Events(out of 10):</h6>
+                  <input type="number" id="ratings" min="1" max="10" step="1" value="" required="" style="color:#bbbbbb;background:rgba(100,100,100,0.3);">
               </div>
             </div>
-
-            <script>
-              $(document).on("click", ".all_star", function () {
-              //$(this).nextAll().css("color", "black");
-              $(this).css("color", "orange");
-              $(this).prevAll().css("color", "orange");
-              console.log($(this)[0].attributes[1].value);
-              $(".ratings-submit").val($(this)[0].attributes[1].value);
-            });
-            </script>
 
             <div class="form-field">
               <textarea type="text" id="suggest_improve" placeholder="If there is anywhere you'd like us to improve"
                 value="" required=""></textarea>
             </div>
 
-            <div class="form-field">
-              <span></span>
-
-
-            </div>
             <div class="form-field" style="text-align: left;">
-              <div class="container-fluid" id="your_ratings">
+              <div class="container-fluid">
                 <h6>Will you like to come back next year?</h6>
-                <input type="radio" value="y"><span>Yes</span>
+                <input type="radio" value="Yes" id="inv"><span style="font-size: 13px;">Yes</span>
                 <br />
-                <input type="radio" value="n"><span>No </span>
+                <input type="radio" value="No" id="inv"><span style="font-size: 13px;">No</span>
+                <br />
+                <input type="radio" value="Maybe" id="inv"><span style="font-size: 13px;">Maybe</span>
                 <br /><br />
               </div>
             </div>
 
             <div class="signin">
               <a href="javascript:void(0)" style="text-decoration: none">
-                <div style="width:100%;color:black;font-family: 'Quicksand', sans-serif;background-color:#F89E0F;font-weight:bolder;padding:1em;letter-spacing:3px">SUBMIT</div>
+                <div class="submit_feedback" style="width:100%;color:black;font-family: 'Quicksand', sans-serif;background-color:#F89E0F;font-weight:bolder;padding:1em;letter-spacing:3px">SUBMIT</div>
               </a>
             </div>
 
           </form>
         </div>
+        <script>
+          $(document).on("click" , "#inv" ,function(){
+            $(this).attr('checked','checked');
+            $(this).siblings("#inv").removeAttr("checked");
+          });
+        </script>
 
 
         <!-- end col-seven -->
@@ -470,6 +454,7 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/ajax/submit_feedback.js"></script>
 
   </body>
 
