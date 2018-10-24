@@ -18,7 +18,7 @@
         {
             if($row['checked_in'] == 1){
                 $innoid = $row['inno_id'];
-                $name = $row['name'];
+                $name = strtoupper($row['name']);
                 $college = $row['college'];
 
                 $query = "INSERT INTO feedback(innoid,liked_event,disliked_event,ratings,suggestion,next_year) VALUES('".$innoid."','".$liked."','".$unliked."','".$ratings."','".$suggestion."','".$next_yr."')";
@@ -41,7 +41,7 @@
                         }
                     }
                     else{
-                        echo(json_encode(array('status' => 'failure', 'message' => 'Certificate couldnot be recieved')));
+                        echo(json_encode(array('status' => 'failure', 'message' => 'Certificate couldnot be Processed')));
                     }
                         
                 }
@@ -50,7 +50,7 @@
             }
         }
         else{
-            echo(json_encode(array('status' => 'failure', 'message' => 'You did not participate in inno')));
+            echo(json_encode(array('status' => 'failure', 'message' => 'You did not participate in inno,hence feedback cannot be recieved')));
          }
     }
         else{
