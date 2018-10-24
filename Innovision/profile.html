@@ -453,10 +453,12 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
             function display_profile(Data) {
                 //console.log(Data.result);
                 localStorage.innoID = Data.result.inno_id;
+                localStorage.name = Data.result.name;
+                localStorage.email = Data.result.email;
+                localStorage.phone = Data.result.phone;
+                localStorage.college = Data.result.college;
                 if (Data.result.payment_status.localeCompare("N") == 0) {
-                    localStorage.name = Data.result.name;
-                    localStorage.email = Data.result.email;
-                    localStorage.phone = Data.result.phone;
+
 
                     $("#pay").css("display", "block");
                     $("#paid").css("display", "none");
@@ -470,7 +472,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     $("#feedback").css("display", "block");
                 } else {
                     $("#download").html('Download Your Certificate <a style="color:white" href="./images/certificates/' +
-                        localStorage.innoID + '.png" download>Here</a>')
+                        localStorage.innoID + '.jpg" download>Here</a>')
                     $("#download").css("display", "block");
                 }*/
                 //THROUGH CA REGISTRATION
