@@ -15,7 +15,7 @@
 
 		else {
 
-			$query = mysqli_query($conn, "SELECT * FROM events_registration where event_id=".$eid);
+			$query = mysqli_query($conn, "SELECT * FROM events_registration where event_id='".$eid."' AND checked_in = 1");
 
 			if ($query) {
 
