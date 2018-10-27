@@ -11,7 +11,7 @@
             }
             else
             {
-                echo json_encode(array('status'=>'success'));
+                echo json_encode(array('status'=>'success','result'=>mysqli_fetch_assoc($query)));
             }
         }
             

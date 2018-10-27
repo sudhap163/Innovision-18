@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-</head>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    </head>
 
-<body style="background-color: #FBC02D;padding: 2em;">
-  <br>
-  <!-- include fetchllevent script get the DATA_ARRAY-->
-  <!-- <script src="../js/ajax/fetchingParticipantsList.js"></script> -->
-  <!-- <script type="text/javascript">
+    <body style="background-color: #FBC02D;padding: 2em;">
+        <br>
+        <!-- include fetchllevent script get the DATA_ARRAY-->
+        <!-- <script src="../js/ajax/fetchingParticipantsList.js"></script> -->
+        <!-- <script type="text/javascript">
     function populate(data_arr)
     {
       var str;
@@ -25,22 +25,22 @@
           $("tbody").append(temp);
     }
   </script> -->
-  <div class="container" style="width:40%;padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
-      <div class="row" style="margin-top: 1em">
-          <form class="form-horizontal">
-              <div class="form-group">
-                  <label class="control-label col-sm-2" for="winners">Winners</label>
-                  <div class="col-sm-10">
-                      <input type="text" name="winners" class="form-control" id="winners" placeholder="Enter InnoID of winners separated by commas">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label class="control-label col-sm-2" for="runners_up">Runners Up:</label>
-                  <div class="col-sm-10">
-                      <input type="text" name="runners" class="form-control" id="runners" placeholder="Enter InnoID of runners up separated by commas">
-                  </div>
-              </div>
-              <!-- <div class="form-group">
+        <div class="container" style="width:40%;padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
+            <div class="row" style="margin-top: 1em">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="winners">Winners</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="winners" class="form-control" id="winners" placeholder="Enter InnoID of winners separated by commas">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="runners_up">Runners Up:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="runners" class="form-control" id="runners" placeholder="Enter InnoID of runners up separated by commas">
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                       <div class="checkbox">
                           <label>
@@ -48,34 +48,89 @@
                       </div>
                   </div>
               </div> -->
-              <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                      <button type="button" class="btn btn-default submit_button" style="background-color: black;color: aliceblue">Submit</button>
-                  </div>
-              </div>
-          </form>
-      </div>
-  </div>
-  <div class="row">
-  <div class="col-sm-10"></div>
-    <div class="col-sm-2"><button type="button" class="btn btn-default logout_button" style="margin-top: 2em;">Sign Out</button></div>
-  </div>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script>
-    $(document).on("click",".logout_button",function(){
-        localStorage.clear();
-        window.location.assign("./index.html");
-    });
-    $(document).ready(function(){
-      if(!(localStorage.loginid) || !(localStorage.password))
-      {
-        window.location.assign("./index.html");
-      }
-    });
-  </script> 
-  
-  <script src="../js/ajax/update_event_winners.js"></script>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-default submit_button" style="background-color: black;color: aliceblue">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-</body>
+
+        <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);margin-top:2em">
+            <div class="row" style="padding:1em;overflow-x: auto;overflow-y: auto;">
+                <center>
+                    <h1>All Registration</h1>
+                </center>
+                <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Inno ID</th>
+                            <th>Name</th>
+                            <th>Phone Number</th>
+                            <th>Email Address</th>
+                            <th>Institution</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dp">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);margin-top:2em">
+            <div class="row" style="padding:1em;overflow-x: auto;overflow-y: auto;">
+                <center>
+                    <h1>Checked In List</h1>
+                </center>
+                <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Inno ID</th>
+                            <th>Name</th>
+                            <th>Phone Number</th>
+                            <th>Email Address</th>
+                            <th>Institution</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cil">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-sm-10"></div>
+            <div class="col-sm-2"><button type="button" class="btn btn-default logout_button" style="margin-top: 2em;">Sign
+                    Out</button></div>
+        </div>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script>
+            $(document).on("click", ".logout_button", function () {
+                localStorage.clear();
+                window.location.assign("./index.html");
+            });
+            $(document).ready(function () {
+                if (!(localStorage.loginid) || !(localStorage.password)) {
+                    window.location.assign("./index.html");
+                }
+            });
+
+        </script>
+
+        <script src="../js/ajax/update_event_winners.js"></script>
+        <script src="../js/ajax/displayParticipants.js"></script>
+        <script src="../js/ajax/checkedInList.js"></script>
+
+    </body>
 
 </html>

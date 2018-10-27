@@ -467,13 +467,13 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     $("#pay").css("display", "none");
                 }
                 //FEEDBACK
-                /*if (Data.result.feedback_status == "0") {
+                if (Data.result.feedback_status == "0") {
                     $("#feedback").css("display", "block");
                 } else {
                     $("#download").html('Download Your Certificate <a style="color:white" href="./images/certificates/' +
                         localStorage.innoID + '.jpg" download>Here</a>')
                     $("#download").css("display", "block");
-                }*/
+                }
                 //THROUGH CA REGISTRATION
                 if (Data.result.through_ca_id == "0") {
                     $("#find_ca").css("display", "block");
