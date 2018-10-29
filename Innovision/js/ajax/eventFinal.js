@@ -12,7 +12,7 @@ $(document).ready(function () {
 				var event_workshops = [];
 				var event_exhibitions = [];
 				var event_cultural = [];
-				var event_preinno = [];
+				var event_paidworkshops = [];
 				for (var i = 0; i < eventArray.length; i++) {
 
 					if (eventArray[i]["category"] == "flagships") {
@@ -25,35 +25,35 @@ $(document).ready(function () {
 						event_exhibitions.push(eventArray[i]);
 					} else if (eventArray[i]["category"] == "cultural") {
 						event_cultural.push(eventArray[i]);
-					} else if (eventArray[i]["category"] == "preinno") {
-						event_preinno.push(eventArray[i]);
+					} else if (eventArray[i]["category"] == "paidworkshops") {
+						event_paidworkshops.push(eventArray[i]);
 					}
 				}
-				//preinno
-				if (event_preinno.length == 0) {
+				//paidworkshops
+				if (event_paidworkshops.length == 0) {
 					var str = "<p>No events to display.</p>";
-					$("#preinno").children("center").append(str);
+					$("#paidworkshops").children("center").append(str);
 				} else {
-					if ((event_preinno.length) % 3 == 0) {
+					if ((event_paidworkshops.length) % 3 == 0) {
 						var index = 0;
-						while (index < (event_preinno.length) / 3) {
-							var str = '<a href="javascript:void(0)" value="' + event_preinno[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_preinno[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_preinno[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_preinno[3 * index + 1]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_preinno[3 * index + 2]["eid"] + '"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="' + event_preinno[3 * index + 2]["image_path"].slice(4, ) + '"></div></a>';
-							$("#preinno").children("center").append(str);
+						while (index < (event_paidworkshops.length) / 3) {
+							var str = '<a href="javascript:void(0)" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_paidworkshops[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_paidworkshops[3 * index + 1]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_paidworkshops[3 * index + 2]["eid"] + '"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="' + event_paidworkshops[3 * index + 2]["image_path"].slice(4, ) + '"></div></a>';
+							$("#paidworkshops").children("center").append(str);
 							index = index + 1;
 						}
 					} else {
 						var index = 0;
-						while (index < (event_preinno.length - (event_preinno.length) % 3) / 3) {
-							var str = '<a href="javascript:void(0)" value="' + event_preinno[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_preinno[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_preinno[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_preinno[3 * index + 1]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_preinno[3 * index + 2]["eid"] + '"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="' + event_preinno[3 * index + 2]["image_path"].slice(4, ) + '"></div></a>';
-							$("#preinno").children("center").append(str);
+						while (index < (event_paidworkshops.length - (event_paidworkshops.length) % 3) / 3) {
+							var str = '<a href="javascript:void(0)" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_paidworkshops[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_paidworkshops[3 * index + 1]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_paidworkshops[3 * index + 2]["eid"] + '"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="' + event_paidworkshops[3 * index + 2]["image_path"].slice(4, ) + '"></div></a>';
+							$("#paidworkshops").children("center").append(str);
 							index = index + 1;
 						}
-						if ((event_preinno.length) % 3 == 1) {
-							var str2 = '<a href="javascript:void(0)" value="' + event_preinno[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_preinno[3 * index]["image_path"].slice(4, ) + '"></div></a>';
-						} else if ((event_preinno.length) % 3 == 2) {
-							var str2 = '<a href="javascript:void(0)" value="' + event_preinno[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_preinno[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_preinno[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_preinno[3 * index + 1]["image_path"].slice(4, ) + '"></div></a>';
+						if ((event_paidworkshops.length) % 3 == 1) {
+							var str2 = '<a href="javascript:void(0)" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_paidworkshops[3 * index]["image_path"].slice(4, ) + '"></div></a>';
+						} else if ((event_paidworkshops.length) % 3 == 2) {
+							var str2 = '<a href="javascript:void(0)" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_paidworkshops[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_paidworkshops[3 * index + 1]["image_path"].slice(4, ) + '"></div></a>';
 						}
-						$("#preinno").children("center").append(str2);
+						$("#paidworkshops").children("center").append(str2);
 					}
 				}
 				//flagship
