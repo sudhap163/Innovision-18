@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+    <!--<![endif]-->
+
+    <head>
+
+        <!--- basic page needs
+   ================================================== -->
+        <meta charset="utf-8">
+        <title>Innovision'18</title>
+        <meta name="author" content="Innovision Tech Team">
+        <meta name="subject" content="Educational Fest, Technical Fest">
+        <meta name="Description" content="Innovision is the annual techno-management fest of NIT Rourkela, and the largest of its kind in eastern India. It is organised in association with Technical Society of Student Activity Centre, NIT Rourkela.">
+        <meta name="Classification" content="Innovision is the annual techno-management fest of NIT Rourkela, and the largest of its kind in eastern India. It is organised in association with Technical Society of Student Activity Centre, NIT Rourkela. Every year the fest continues to draw up larger crowds than before with the last year having witnessed a footfall of 6000 students. The fest, distributed over 3 days consists of a multitude of fun events, workshops, exhibitions and games. So this November, get set and be prepared to log in to the amazing world of INNOVISION.">
+        <meta name="Keywords" content="Innovision, NIT Rourkela, Tech fest, technical fest, technical, technology, November, techno-management, Grand event, event">
+        <meta name="Geography" content="NIT Rourkela, Sundargarh, Odisha, India, 769008">
+        <meta name="Language" content="English">
+        <META HTTP-EQUIV="Expires" content="05 November 2018">
+        <meta name="Copyright" content="NIT Rourkela">
+        <meta name="Designer" content="Innovision Tech Team">
+        <meta name="Publisher" content="Innovision ">
+        <meta name="distribution" content="Global">
+        <meta name="Robots" content="INDEX,FOLLOW">
+        <meta name="zipcode" content="769008">
+        <meta name="city" content="Rourkela">
+        <meta name="country" content="India">
+
+        <!-- mobile specific metas
+   ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- og tags for SEO
+   ================================================== -->
+        <meta property="og:title" content="Innovision 2018" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://innonitr.com" />
+        <meta property="og:image:url" content="http://innonitr.com/images/Innovision_Logo_og.png" />
+        <meta property="og:image:secure_url" content="https://innonitr.com/images/Innovision_Logo_og.png" />
+        <meta property="og:description" content="Innovision is the largest techno-management fest across eastern India. This year being organized from 2nd-4th Nov 2018 at NIT Rourkela. Come and be the part of an amazing ride to the world of science fiction." />
+
+
+        <!-- CSS
+   ================================================== -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+
+
+
+        <!-- script
+   ================================================== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/pace.min.js"></script>
+
+        <!-- favicons
+	================================================== -->
+        <link rel="shortcut icon" href="images/Innovision_Logo_og.png" type="image/png">
+        <link rel="icon" href="images/Innovision_Logo_og.png" type="image/png">
+
+        <!-- fonts 
+	===============================================-->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand|Source+Sans+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d-float" rel="stylesheet">
+
+        <style>
+            /*.loader1 {
+            position: fixed;
+            background: url('orig2.gif') 50% 50% no-repeat rgb(249, 249, 249);
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999 !important;
+            opacity: 1;
+            background-color: black;
+            display: block;
+        }*/
+            .f-links {
+                padding: 0.2em;
+                display: block;
+                color: white;
+                outline: none;
+            }
+
+            .f-links:hover {
+                color: #F89E0F;
+                text-decoration: none;
+            }
+
+            .modal-content p {
+                text-align: justify;
+            }
+
+            .container p {
+                text-align: center;
+            }
+
+            .card {
+                width: 260px;
+                height: 330px;
+                border: 1px solid rgb(196, 190, 190);
+                background-color: white;
+                border-radius: 15px;
+                box-shadow: 0;
+                position: relative;
+                margin: 10px;
+                bottom: 0px;
+                transition: bottom, box-shadow, 0.5s;
+            }
+            
+
+            .card:hover {
+                bottom: 7px;
+
+            }
+
+            .card:active {
+                transform: translateY(10px);
+            }
+
+
+            .modal-title {
+                font-size: 25px;
+            }
+
+            .upper {
+                position: relative;
+                top: 10px;
+            }
+
+            .cross {
+                font-size: 30px;
+            }
+
+            .modal-header button {
+
+                transition: transform 1s;
+            }
+
+            .modal-header button:hover {
+                transform: rotate(-180deg);
+            }
+
+            .parallax {
+                /* The image used */
+                background-image: url("test.jpg");
+
+                /* Set a specific height */
+                min-height: 500px;
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-size: 3em;
+            }
+
+            #menu-nav-wrap {
+                width: 25%;
+                background-color: #061115;
+                opacity: 0.95;
+            }
+
+            .join_us {
+                margin-top: 13em;
+            }
+
+            #nitr_logo {
+                width: 5em;
+                left: 0;
+                margin-left: -200px;
+                margin-top: -20px;
+            }
+
+            .copyright {
+                margin-left: -170px;
+            }
+
+            @media screen and (max-width: 767px) {
+                #menu-nav-wrap {
+                    width: 100%
+                }
+
+                .parallax {
+                    font-size: 2em;
+                    text-align: center;
+                }
+
+                .join_us {
+                    margin-top: 0em;
+                    margin-bottom: 1em;
+                }
+
+                #bars {
+                    margin-left: 1.5em;
+                }
+
+                #nitr_logo {
+                    width: 6em;
+                    margin-left: 0px;
+                    padding: 5px;
+
+                }
+
+                .copyright {
+                    margin-left: 0px;
+                }
+
+            }
+            ::-webkit-scrollbar {
+            display: none;
+            }
+        </style>
+
+    </head>
+
+    <body id="top">
+        <!-- header 
+	       ================================================== -->
+        <header>
+
+            <div class="header-logo">
+                <!-- <a id="nitr" href="javascript:void(0)">Infinity</a> -->
+                <a href="https://innonitr.com"><img align="right" src="images/Innovision_Logo_og.png" style="height:5em; width:auto;"
+                        class="i1  img-responsive" /></a>
+            </div>
+
+            <a id="header-menu-trigger" href="#0">
+                <span class="header-menu-text" style="color: white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;margin-top: -0.16em">Menu</span>
+                <span class="fa fa-bars" id="bars" style="font-size: 1.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"></span>
+            </a>
+
+            <nav id="menu-nav-wrap">
+                <a href="#0" class="close-button" title="close">
+                    <span>Close</span>
+                </a>
+
+                <h3>INNOVISION '18</h3>
+
+
+                <ul class="nav-list">
+                    <li class="current">
+                        <a style="text-decoration: none;" href="./" title="">Home</a>
+                    </li>
+                    <li class="profile">
+                        <a style="text-decoration: none;" href="./profile.html" title="">Profile</a>
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;" href="./eventFinal.html" title="">Events |
+                            Workshops |
+                            Exhibitions</a>
+                    </li>
+
+                    <li class="signed_out">
+                        <a style="text-decoration: none;" href="./registration.html" title="">Sign In | Sign Up</a>
+                    </li>
+
+                    <li class="ca">
+                        <a style="text-decoration: none;" href="./ca/index.html" title="">Campus Ambassador Signup</a>
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;" href="./sponsor.html">Sponsors</a>
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;color:white" href="./isr.html">Innovision Social Regime</a>
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;" href="./faq.html">FAQ | Help</a>
+                    </li>
+                    <li class="signed_in signout_opt signout">
+                        <a style="text-decoration: none;" href="javascript:void(0)" title="">Sign Out</a>
+                    </li>
+
+                </ul>
+                <script>
+                    $(document).ready(function () {
+                        if (localStorage.token == null || localStorage.token == "" || !(localStorage.token)) {
+                            $(".signed_out").css("display", "block");
+                            $(".signed_in").css("display", "none");
+                            $(".profile").css("display", "none");
+                            $(".ca").css("display", "block");
+                        } else {
+                            $(".signed_in").css("display", "block");
+                            $(".signed_out").css("display", "none");
+                            $(".profile").css("display", "block");
+                            $(".ca").css("display", "none");
+                        }
+
+                    });
+
+                </script>
+                <script>
+                    $(document).on("click", ".signout", function () {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('innoID');
+                        location.href = './index.html';
+                    });
+
+                </script>
+                <ul class="header-social-list">
+                    <li>
+                        <a href="https://www.facebook.com/innonitr/">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/innonitr">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/inno.nitr/">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+            <!-- end #menu-nav-wrap -->
+
+        </header>
+        <!-- end header -->
+        <!--  -->
+        <section id="about">
+
+            <div class="overlay"></div>
+
+            <div class="row narrow section-intro" style="padding: 1em;">
+                <div class="col-twelve">
+                    <!-- 	<h3>Contact</h3> -->
+
+                    <h1 class="font-effect-shadow-multiple" style=" margin-top: 1em; font-size: 2.2em;">INNOVISION
+                        SOCIAL REGIME</h1>
+
+
+                </div>
+            </div>
+            <div class="row container-fluid isr_content">
+
+
+                <div class="col-md-4 col-sm-12 single-service">
+                    <img class="d-block mx-auto img-fluid" style="padding:1em;" src="images/qq.jpg" alt="">
+                    <div class="desc">
+                        <h2 class="text-uppercase" style="padding:1em;">Kerela Flood</h2>
+                        <p style="font-family: 'Source Sans Pro', sans-serif;text-align: justify;">
+                            Time flows by, oscillating between the good and the bad. As we live, God's own country is
+                            suffering God's wrath. The beautiful palm-lined beaches, the soul stirring network of
+                            canals and the eye-catching mountain slopes lie crying, as Kerala is hit with one of the
+                            most destructive.....................
+                        </p>
+                        <button class="btn"> <a class="text-uppercase view-details" data-toggle="modal" style="text-decoration: none"
+                                data-target=".bd-example-modal-lg" href="#">View Details</a></button>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-md-4 single-service" id="example2">
+                    <img class="d-block mx-auto img-fluid" style="padding:1em;text-align: justify;" src="images/q.gif"
+                        alt="">
+                    <div class="desc">
+                        <h2 class="text-uppercase" style="padding:1em;">Aasra Diya Project</h2>
+                        <p style="font-family: 'Source Sans Pro', sans-serif;text-align: justify;">
+                            Decorated with colors and love by the underprivileged children from AASRA workplaces, AASRA
+                            diyas shine like true gems in the night. AASRA provides the diyas and raw material, and the
+                            delicate hands of the children make their fire...........
+                            <br>
+
+
+
+
+                        </p>
+
+                        <button class="btn"> <a class="text-uppercase view-details" data-toggle="modal" style="text-decoration: none"
+                                data-target=".bd-example-modal-lg2" href="#">View Details</a></button>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 single-service">
+                    <img class="d-block mx-auto img-fluid" style="padding:1em;" src="images/b.gif" alt="">
+                    <div class="desc">
+                        <h2 class="text-uppercase" style="padding:1em;">As the Earth needs organs more than heaven.</h2>
+                        <p style="font-family: 'Source Sans Pro', sans-serif;text-align: justify;">
+                            The world's riches and beauty can be witnessed or savored to the fullest only with the help
+                            of our vital organs. Unfortunately, not each and every mortal being on the face of this
+                            globe is blessed..............
+                        </p>
+
+                        <button class="btn"> <a class="text-uppercase view-details" data-toggle="modal" style="text-decoration: none"
+                                data-target=".bd-example-modal-lg3" href="#">View Details</a></button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </section>
+        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Kereal Flood</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-2"></div>
+                        <div class="col-md-8 col-8">
+                            <img class="d-block mx-auto img-fluid" src="images/qq.jpg" style="width: 150%; height:auto; "
+                                alt="">
+                        </div>
+                        <div class="col-md-2 col-2"></div>
+                    </div>
+
+                    <br>
+
+
+                    <br>
+                    <p style="padding:2em">
+                        Time flows by, oscillating between the good and the bad. As we live, God's own country is
+                        suffering God's wrath. The beautiful palm-lined beaches, the soul stirring network of canals
+                        and the eye-catching mountain slopes lie crying, as Kerala is hit with one of the most
+                        destructive floods of recent times.<br>
+
+                        To save God's own country from this unexpected wrath of God, we, as God's own creation, should
+                        come forward in this hour of peril and need. For saving millions, we billions must open our
+                        arms and uphold the Incredibility of India.
+
+                    </p>
+
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+        </div>
+        <div class="modal fade bd-example-modal-lg2" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Aasra Diya Project</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-2"></div>
+                        <div class="col-md-8 col-8">
+                            <img class="d-block mx-auto img-fluid" src="images/q.gif" style="width: 150%; height:auto; "
+                                alt="">
+                        </div>
+                        <div class="col-md-2 col-2"></div>
+                    </div>
+                    <br>
+
+                    <br>
+                    <br>
+                    <p style="padding:2em">Decorated with colors and love by the underprivileged children from AASRA
+                        workplaces, AASRA diyas shine like true gems in the night. AASRA provides the diyas and raw
+                        material, and the delicate hands of the children make their fire shine brighter.
+
+                        With each diya you buy, you award their creativity and help them towards a better future. So,
+                        come, light a dream this Diwali and wash away the hazy shade of winter.</p>
+
+
+                    <br>
+
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+        </div>
+        <div class="modal fade bd-example-modal-lg3" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">As the Earth needs organs more than heaven.</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-2"></div>
+                        <div class="col-md-8 col-8">
+                            <img class="d-block mx-auto img-fluid" src="images/b.gif" style="width: 150%; height:auto; "
+                                alt="">
+                        </div>
+                        <div class="col-md-2 col-2"></div>
+                    </div>
+
+                    <br>
+
+                    <br>
+                    <br>
+                    <hr>
+                    <p style="padding:2em">
+                        The world's riches and beauty can be witnessed or savored to the fullest only with the help of
+                        our vital organs. Unfortunately, not each and every mortal being on the face of this globe is
+                        blessed with all of them. Organ donation to help the needy is like bringing light into
+                        darkness, variety into monotony and euphoria into tediousness. Innovision'18 requests you to
+                        promote and take part in such activities in order to spread warm fuzzies and make the world a
+                        better place!
+                    </p>
+
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+        </div>
+
+        <!--  -->
+
+
+        <!-- contact
+   ================================================== -->
+        <section id="contact">
+
+            <div class="overlay"></div>
+
+            <div class="row narrow section-intro" style="padding: 1em;">
+                <div class="col-twelve">
+                    <!-- 	<h3>Contact</h3> -->
+                    <h1 style="font-family: 'Source Sans Pro', sans-serif;">Get In Touch.</h1>
+
+                    <p style="font-family: 'Source Sans Pro', sans-serif;" class="lead">How can we help you? We are
+                        always available.</p>
+                </div>
+            </div>
+            <!-- end section-intro -->
+
+
+
+            <div class="row" style="margin-top: -1.5em;">
+                <div class="col-md-3"></div>
+                <div class="col-md-3" style="text-align: center;">
+                    <h2 style="color: white;font-family: 'Source Sans Pro', sans-serif;">Student Activity Center
+                        <br>
+                        <p style="color: white;font-family: 'Source Sans Pro', sans-serif;font-size: 0.7em">National
+                            Institute of Technology
+                            <br>Sector 1, Rourkela - 769008</p>
+                    </h2>
+                    <h3 style="color: white;font-family: 'Source Sans Pro', sans-serif;">
+                        <a href="mailto:contactus@innonitr.com" style="color:white;">contactus@innonitr.com</a>
+                    </h3>
+                </div>
+                <div class="col-md-4">
+                    <h1 style="color: white;text-align: center;">
+                        <a style="text-decoration: none;" href="https://www.facebook.com/innonitr/">
+                            <i class="fa fa-facebook-square f-links"></i>
+                        </a>
+                        <a style="text-decoration: none;" href="https://twitter.com/innonitr">
+                            <i class="fa fa-instagram f-links"></i>
+                        </a>
+                        <a style="text-decoration: none;" href="https://www.instagram.com/inno.nitr/">
+                            <i class="fa fa-twitter f-links"></i>
+                        </a>
+                    </h1>
+
+                </div>
+            </div>
+        </section>
+        <!-- end contact -->
+
+
+        <!-- footer
+   ==================	================================ -->
+        <footer>
+
+            <div class="footer-bottom">
+
+                <div class="row">
+                    <div class="col-two">
+                        <img src="./images/nitr_logo.png" id="nitr_logo">
+                    </div>
+                    <div class="col-ten">
+
+                        <div class="copyright">
+                            <span>© National Institute of Technology, Rourkela 2018</span>
+                            <span> Designed by
+                                <a style="text-decoration: none">Technical Team, INNOVISION'18</a>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- end footer-bottom -->
+
+            <div id="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <i class="fa fa-long-arrow-up" style="font-size: 2.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"
+                        aria-hidden="true"></i>
+                </a>
+            </div>
+        </footer>
+
+        <!-- <div id="preloader">
+		<div id="loader"></div>
+	</div> -->
+        <!-- <div class="loader1">
+
+    </div> -->
+        <!-- <script>
+        $(document).ready(function () {
+            $(".loader1").fadeOut(400);
+        });
+    </script> -->
+        <!-- Java Script
+   ================================================== -->
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/isr.js"></script>
+
+
+    </body>
+
+</html>

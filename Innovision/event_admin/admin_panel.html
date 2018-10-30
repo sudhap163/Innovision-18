@@ -25,7 +25,7 @@
           $("tbody").append(temp);
     }
   </script> -->
-        <div class="container" style="width:40%;padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
+        <!-- <div class="container" style="width:40%;padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
             <div class="row" style="margin-top: 1em">
                 <form class="form-horizontal">
                     <div class="form-group">
@@ -48,20 +48,24 @@
                       </div>
                   </div>
               </div> -->
-                    <div class="form-group">
+        <!-- <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="button" class="btn btn-default submit_button" style="background-color: black;color: aliceblue">Submit</button>
                         </div>
                     </div>
                 </form>
             </div>
-        </div>
+        </div>  -->
 
-
+        <script>
+            $(document).ready(function(){
+$("#checkit").html('All Registration for event_ = '+localStorage.name);
+           });
+        </script>
         <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);margin-top:2em">
             <div class="row" style="padding:1em;overflow-x: auto;overflow-y: auto;">
                 <center>
-                    <h1>All Registration</h1>
+                    <h1 id="checkit"></h1>
                 </center>
                 <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
                     <thead>
