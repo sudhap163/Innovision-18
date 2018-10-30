@@ -1,4 +1,4 @@
-$(document).on("click", ".submit_feedback", function(){
+$(document).on("click", ".submit_feedback", function () {
     // var _id = localStorage.inno_id;
     // var Name = localStorage.name;
     // var clg = localStorage.college;
@@ -12,24 +12,22 @@ $(document).on("click", ".submit_feedback", function(){
         type: "POST",
         url: "./apis/participantRegistration/feedback.php",
         data: {
-            token : tkn,
-            liked : liked_event,
-            disliked : disliked_event,
-            rating : rtg,
-            suggestion : sg,
-            next_yr : last
+            token: tkn,
+            liked: liked_event,
+            disliked: disliked_event,
+            rating: rtg,
+            suggestion: sg,
+            next_yr: last
         },
-        success : function(data){
-            if(JSON.parse(data).status == "success")
-            {
-                swal("Success!", JSON.parse(data).message , "success");
-            }
-            else
-            {
-                swal("Sorry!", JSON.parse(data).message, "failure");
+        success: function (data) {
+            if (JSON.parse(data).status == "success") {
+                swal("Success!", JSON.parse(data).message, "success");
+                location.href = "./profile.html";
+            } else {
+                swal("Sorry!", JSON.parse(data).message, "error");
             }
         },
-        error: function(data){
+        error: function (data) {
             console.log("Couldn't process request");
         }
     });

@@ -44,7 +44,7 @@
             }
         }
         if($flag1 == 0 || $flag2 == 0){
-            echo(json_encode(array('status' => 'failure', 'message' => 'Wrong Data. Entered inno_ids are not checked into your event or inno_id not found')));
+            echo(json_encode(array('status' => 'failure', 'message' => 'Wrong Data. Entered inno_ids are not in checked into your event or inno_id not found')));
         }
         else{
              //UPDATE THE EVENT ROW WITH WINNER AND RUNNER
@@ -65,13 +65,21 @@
                     $row5 = mysqli_fetch_assoc($result5);
 
                     if(mysqli_num_rows($result4) > 0){
-                          $query3 = "INSERT INTO certificate (inno_id,img_path) VALUES(".mysqli_real_escape_string($conn,$runner_arr[$x]).",'./images/event_results/".mysqli_real_escape_string($conn,$runner_arr[$x])."A".mysqli_real_escape_string($conn,$e_id).".jpg')";
+
+                            $query6 = "SELECT * FROM certificate WHERE img_path = 'images/event_results/".$runner_arr[$x]."A".$e_id.".jpg'";
+                            $result6 = mysqli_query($conn,$query6);
+    
+                            $row6 = mysqli_fetch_all($result6);
+                            //echo sizeof($row6);
+
+                    if(sizeof($row6) <= 0){
+                          $query3 = "INSERT INTO certificate (inno_id,img_path) VALUES(".mysqli_real_escape_string($conn,$runner_arr[$x]).",'images/event_results/".mysqli_real_escape_string($conn,$runner_arr[$x])."A".mysqli_real_escape_string($conn,$e_id).".jpg')";
 
                         if(mysqli_query($conn,$query3)){
                             $output = '../../images/event_results/'.$runner_arr[$x].'A'.$e_id.'.jpg';
                             $image = imagecreatefromjpeg('../../images/certificates/original.jpg');
                             $font_color = imagecolorallocate($image, 0, 0, 0);
-                            $text = imagettftext($image,15,0,80,180,$font_color,"../../fonts/Charmonman/Charmonman-Bold.ttf",$row4['name']);
+                            $text = imagettftext($image,15,0,80,180,$font_color,"../../fonts/Charmonman/Charmonman-Bold.ttf",strtoupper($row4['name']));
                             $text1 = imagettftext($image,15,0,80,200,$font_color,"../../fonts/Charmonman/Charmonman-Bold.ttf",$row5['title']);
                             imagejpeg($image,$output);
 
@@ -84,6 +92,10 @@
                             break;
                         
                         }
+                    }
+
+                            
+                        
                     }
                     // else{
                     //     $flag1 = 0;
@@ -106,13 +118,18 @@
                     $row5 = mysqli_fetch_assoc($result5);
                     if(mysqli_num_rows($result4) > 0){
 
-                         $query3 = "INSERT INTO certificate (inno_id,img_path) VALUES(".mysqli_real_escape_string($conn,$winner_arr[$x]).",'./images/event_results/".mysqli_real_escape_string($conn,$winner_arr[$x])."A".mysqli_real_escape_string($conn,$e_id).".jpg')";
+                        $query6 = "SELECT * FROM certificate WHERE img_path = 'images/event_results/".$winner_arr[$x]."A".$e_id.".jpg'";
+                        $result6 = mysqli_query($conn,$query6);
+                        $row6 = mysqli_fetch_row($result6);
+
+                    if(sizeof($row6) <= 0){
+                            $query3 = "INSERT INTO certificate (inno_id,img_path) VALUES(".mysqli_real_escape_string($conn,$winner_arr[$x]).",'images/event_results/".mysqli_real_escape_string($conn,$winner_arr[$x])."A".mysqli_real_escape_string($conn,$e_id).".jpg')";
 
                         if(mysqli_query($conn,$query3)){
                             $output = '../../images/event_results/'.$winner_arr[$x].'A'.$e_id.'.jpg';
                             $image = imagecreatefromjpeg('../../images/certificates/original.jpg');
                             $font_color = imagecolorallocate($image, 0, 0, 0);
-                            $text = imagettftext($image,15,0,80,180,$font_color,"../../fonts/Charmonman/Charmonman-Bold.ttf",$row4['name']);
+                            $text = imagettftext($image,15,0,80,180,$font_color,"../../fonts/Charmonman/Charmonman-Bold.ttf",strtoupper($row4['name']));
                             $text1 = imagettftext($image,15,0,80,200,$font_color,"../../fonts/Charmonman/Charmonman-Bold.ttf",$row5['title']);
                             imagejpeg($image,$output);
                             $flag2 = 1;
@@ -123,6 +140,8 @@
                             $flag2 = 0;
                             break;
                         }
+                    }
+                         
                     }
                     // else{
                     //     $flag2 = 0;
@@ -136,7 +155,7 @@
                      echo(json_encode(array('status' => 'success', 'message' => 'Results Updated')));
                 }
                 else{
-                     echo(json_encode(array('status' => 'failure', 'message' => 'Results NOT Updated')));
+                     echo(json_encode(array('status' => 'failure', 'message' => 'Only New ids are updated')));
                 }
                
             }

@@ -488,7 +488,15 @@ text-shadow: 0 0 2px #fff, 0 0 2px #0dcfdd, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0 
                     $("#paid").css("display", "block");
                     $("#pay").css("display", "none");
                 }
-
+                //FEEDBACK
+                // if (Data.result.feedback_status == "0") {
+                //     $("#feedback").css("display", "block");
+                // } else {
+                //     $("#download").html('Download Your Certificate <a style="color:white" href="./images/certificates/' +
+                //         localStorage.innoID + '.jpg" download>Here</a>')
+                //     $("#download").css("display", "block");
+                // }
+                //THROUGH CA REGISTRATION
                 if (Data.result.through_ca_id == "0") {
                     $("#find_ca").css("display", "block");
                 } else {
