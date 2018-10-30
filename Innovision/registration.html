@@ -75,6 +75,26 @@
             background-color: black;
             display: block;
         }*/
+        .glow1 {
+display: inline-block;
+border-radius: 5px;
+color: #fff;
+-webkit-animation: glow1 1s ease-in-out infinite alternate;
+-moz-animation: glow1 1s ease-in-out infinite alternate;
+animation: glow1 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow1 {
+from {
+text-shadow: 0 0 0px #fff, 0 0 10px #fff, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0
+10px black;
+}
+to {
+text-shadow: 0 0 2px #fff, 0 0 2px #0dcfdd, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0
+0 2px #0dcfdc;
+}
+}
+
   .f-links {
     padding: 0.2em;
     display: block;
@@ -212,6 +232,9 @@
           </li>
           <li class="signed_in signout_opt signout">
             <a style="text-decoration: none;" href="javascript:void(0)" title="">Sign Out</a>
+          </li>
+          <li>
+            <a class="glow1" style="text-decoration: none;" href="https://fastechfashions.com/quickview/catalog/5bd5d58551a6654d2649e5e0" title="">Wanna grab a T-shirt?</a>
           </li>
 
         </ul>

@@ -68,6 +68,7 @@
 		<script>
 			function populate(eventArr) {
 				//console.log(eventArr);
+				$("#ename").html(eventArr.title);
 				$(".poster").children("div").html("<img height='200' width='200' class='img-responsive' src='" + eventArr[
 					"image_path"].slice(4, ) + "'>");
 				var event_desc = (eventArr["description"]).split("\n");
@@ -100,7 +101,7 @@
 		</script>
 		<div class="container-fluid">
 			<div style="background-color: #111111;color: white;width: 100%;padding: 1em;text-align: center;">
-				<h1>Event Name</h1>
+				<h1 id="ename"></h1>
 			</div>
 			<div class="row" style="margin:1em">
 				<div class="col-md-3 col-sm-12 custom" style="text-align: center;">
