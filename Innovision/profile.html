@@ -54,6 +54,14 @@ text-align: center;
 -moz-animation: glow 2s ease-in-out infinite alternate;
 animation: glow 2s ease-in-out infinite alternate;
 }
+.glow1 {
+display: inline-block;
+border-radius: 5px;
+color: #fff;
+-webkit-animation: glow1 1s ease-in-out infinite alternate;
+-moz-animation: glow1 1s ease-in-out infinite alternate;
+animation: glow1 1s ease-in-out infinite alternate;
+}
 
 @-webkit-keyframes glow {
 from {
@@ -65,6 +73,18 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
 0 80px #0dcfdc;
 }
 }
+
+@-webkit-keyframes glow1 {
+from {
+text-shadow: 0 0 0px #fff, 0 0 10px #fff, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0
+10px black;
+}
+to {
+text-shadow: 0 0 2px #fff, 0 0 2px #0dcfdd, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0
+0 2px #0dcfdc;
+}
+}
+
             *{box-sizing: border-box; font-family: 'Quicksand';}
             
             .card{
@@ -333,7 +353,10 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     <li class="signed_in signout_opt signout">
                         <a style="text-decoration: none;" href="javascript:void(0)" title="">Sign Out</a>
                     </li>
-
+                    <li>
+                        <a class="glow1" style="text-decoration: none;" href="https://fastechfashions.com/quickview/catalog/5bd5d58551a6654d2649e5e0" title="">Wanna grab a T-shirt?</a>
+                    </li>
+                    
                 </ul>
                 <script>
                     $(document).ready(function () {
@@ -345,6 +368,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                             $(".profile").css("display", "block");
                             $(".ca").css("display", "none");
                         }
+
                     });
 
                 </script>
@@ -450,14 +474,12 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
             }
 
             function display_profile(Data) {
-                //console.log(Data.result);
+                console.log(Data.result);
                 localStorage.innoID = Data.result.inno_id;
-                localStorage.name = Data.result.name;
-                localStorage.email = Data.result.email;
-                localStorage.phone = Data.result.phone;
-                localStorage.college = Data.result.college;
                 if (Data.result.payment_status.localeCompare("N") == 0) {
-
+                    localStorage.name = Data.result.name;
+                    localStorage.email = Data.result.email;
+                    localStorage.phone = Data.result.phone;
 
                     $("#pay").css("display", "block");
                     $("#paid").css("display", "none");
@@ -466,15 +488,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     $("#paid").css("display", "block");
                     $("#pay").css("display", "none");
                 }
-                //FEEDBACK
-                /*if (Data.result.feedback_status == "0") {
-                    $("#feedback").css("display", "block");
-                } else {
-                    $("#download").html('Download Your Certificate <a style="color:white" href="./images/certificates/' +
-                        localStorage.innoID + '.jpg" download>Here</a>')
-                    $("#download").css("display", "block");
-                }*/
-                //THROUGH CA REGISTRATION
+
                 if (Data.result.through_ca_id == "0") {
                     $("#find_ca").css("display", "block");
                 } else {
@@ -488,7 +502,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                                 'Wanna edit choice? <a href = "javascript:void(0)" style = "color:white;font-weight:bold" id = "yes"> Click here </a>'
                             );
                             $("#find_ca").css("display", "block");
-                            //console.log(data);
+                            console.log(data);
                         },
                         error: function (data) {
 
@@ -531,16 +545,12 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     </div>
                 </div> <!-- end row section-intro -->
                 <center class="basic_info">
-                    <h3 id="download" style="display:none"></h3>
-                    <h3 id="feedback" style="display:none">Fill in the
-                        feedback form to get
-                        your innovision'18 certificate <a style="color: white" href="feedback.html">Here</a></h3>
                     <h3 class="glow" style="color:white;display:none" id="your_ca"></h3>
                     <h3 class="glow" style="color:white;display:none" id="find_ca">Are You Registered Through a CA ? <a
                             href="javascript:void(0)" style="color:white;font-weight:bold" id="yes">Click here</a></h3>
                     <select name="ca_id" id="ca" style="color:white;font-size:1em;font-weight:bold;background-color:black;display:none">
                         <option value="0">--Select Name Below --</option>
-                        <option value="0">--NONE--</option>
+                    <option value="0">--NONE--</option>
                     </select>
                     <p id="reg_ca" style="display:none"><button class="btn btn-sm btn-info" style="color:black">Submit</button></p>
                     <h1>PAYMENT STATUS</h1>
@@ -554,10 +564,6 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
                     <h3 id="pmail"></h3>
                     <p class="lead">Contact No</p>
                     <h3 id="pphone"></h3>
-                    <div class="certificates">
-                            <p class="lead">Certificates</p>
-                        <!-- <div style="display: block"><a href="javascript:void(0)" download><span class="fa fa-download"></span></a> <span>ABC.jpg</span></div> -->
-                    </div>
                 </center>
                 <script src="./js/ajax/payment.js"></script>
 
@@ -565,7 +571,7 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
             </div> <!-- end intro-wrap -->
             <script>
                 function registeredEvents(dataArr) {
-                    //console.log(dataArr);
+                    console.log(dataArr);
                     for (var i = 0; i < dataArr.length; i++) {
                         $.ajax({
                             type: "GET",
@@ -719,7 +725,8 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
 
             <div id="go-top">
                 <a class="smoothscroll" title="Back to Top" href="#portfolio">
-                    <i class="fa fa-long-arrow-up" style="font-size: 2.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-up" style="font-size: 2.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"
+                        aria-hidden="true"></i>
                 </a>
             </div>
 
@@ -763,9 +770,9 @@ text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc
 
                     });
                 });
+
             </script>
-            
-            <script src="./js/ajax/fetch_certificates.js"></script>
+
     </body>
 
 </html>
